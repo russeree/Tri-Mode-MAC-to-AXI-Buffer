@@ -34,6 +34,10 @@ module TRI_MODE_MAC_STIMULUS(
     /* INPUT TO MAC */ 
     input         wire mac_rxrqrd_i                    
     );
+    parameter mem_entries = 32768;
+    reg [31:0] mem_array [mem_entries - 1:0];
+    int i;
+    
     /* Inital Statments */
     initial begin
         mac_clk_o   = `_false;       
@@ -43,13 +47,27 @@ module TRI_MODE_MAC_STIMULUS(
         mac_rxda_i  = `_false;      
         mac_rxsop_i = `_false;     
         mac_rxeop_i = `_false;     
-        mac_rxdv_i  = `_false; 
+        mac_rxdv_i  = `_false;
+        tsk_mem_ld();
         tsk_rst();
     end 
     /* RESET TASK */
     task tsk_rst;
         `_RST_DLY mac_rst_o = !mac_rst_o;
         `_RST_HLD mac_rst_o = !mac_rst_o; 
-    endtask 
+    endtask
+    /* MEMORY LOAD WITH RANDOM DATA */
+    task tsk_mem_ld;
+        for(i = 0; i < mem_entries; i++) begin
+            mem_array[i] = $random;
+        end
+        foreach (mem_array[i]) begin
+            $write(" %h", mem_array[i]);
+            $display;
+        end
+    endtask
+    /* Task Set Packet Ready */ 
+    task tsk_set_
+    
 endmodule
 `endif 
