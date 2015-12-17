@@ -7,7 +7,7 @@
 // Module Name: TRI_MODE_MAC_STIMULUS
 // Project Name: rFPGA Ethernet Core 
 // Target Devices: Kintex 7 XC7325T
-// Tool Versions: 2015.4 Vivado
+// Tool Versions: 2015.4 Vivado !!!ISE NOT SUPPROTED!!!
 // Description: Simple tri mode full packet out stimilus; A more complete
 // implementation is on the way. 
 // Dependencies: None
@@ -21,6 +21,20 @@
 `include "TRI_MODE_MAC_SIM_DEF.vh"
 
 `ifdef _SIMULATION
+/* RANDOM NUMBER GENERATION */
+class random_range_seed;
+    typedef struct packed{
+        int low,high;
+    } low_high;
+    int seed = 42;
+    low_high range = {0,10};
+    function int rand_range_gen;
+        int out;
+        out = range.low + {$random(seed)} % (range.high - range.low);
+        return out; 
+    endfunction
+endclass  
+
 module TRI_MODE_MAC_STIMULUS(
     /* OUTPUT FROM MAC */ 
     output reg        mac_clk_o, 
@@ -34,7 +48,8 @@ module TRI_MODE_MAC_STIMULUS(
     /* INPUT TO MAC */ 
     input         wire mac_rxrqrd_i                    
     );
-    parameter mem_entries = 32768;
+    parameter int mem_entries = 32768;
+    parameter int packet_size = 20000;
     reg [31:0] mem_array [mem_entries - 1:0];
     int i;
     
@@ -69,17 +84,22 @@ module TRI_MODE_MAC_STIMULUS(
     /* Task Set Packet Ready */ 
     task tsk_set_read_ready;
         input packet_length;
+        int low   = 0; 
+        int high  = packet_size - 1;
+        int seed  = 42;
+        int pause = 0;
+        /* Class creation and function exection */
+        random_range_seed rand_pause;
+        rand_pause = new();
+        rand_pause.range = {low,high};
+        rand_pause.seed = seed;
+        /* Set pause to random varible */
+        pause = rand_pause.rand_range_gen;
+        /* Begin the transfer */
         @ (posedge mac_clk_o) begin
             mac_rxda_o = 1'b1; 
         end
     endtask
-    
-    class random_range_even_dist;
-        int low = 0; 
-        int high = 100;
-        rand integer random;
-        constraint range {random dist {[(low+1):(high-1)] := 1};}
-    endclass  
 
 endmodule
 `endif 
