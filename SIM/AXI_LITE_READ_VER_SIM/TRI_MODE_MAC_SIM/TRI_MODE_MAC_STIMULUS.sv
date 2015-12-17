@@ -26,11 +26,11 @@ module TRI_MODE_MAC_STIMULUS(
     output reg        mac_clk_o, 
     output reg        mac_rst_o,
     output reg [31:0] mac_rxd_o,
-    output reg [1:0]  mac_ben_i,
-    output reg        mac_rxda_i,                            
-    output reg        mac_rxsop_i,                           
-    output reg        mac_rxeop_i,                           
-    output reg        mac_rxdv_i,                            
+    output reg [1:0]  mac_ben_o,
+    output reg        mac_rxda_o,                            
+    output reg        mac_rxsop_o,                           
+    output reg        mac_rxeop_o,                           
+    output reg        mac_rxdv_o,                            
     /* INPUT TO MAC */ 
     input         wire mac_rxrqrd_i                    
     );
@@ -43,11 +43,11 @@ module TRI_MODE_MAC_STIMULUS(
         mac_clk_o   = `_false;       
         mac_rst_o   = `_false;       
         mac_rxd_o   = `_false;
-        mac_ben_i   = `_false;       
-        mac_rxda_i  = `_false;      
-        mac_rxsop_i = `_false;     
-        mac_rxeop_i = `_false;     
-        mac_rxdv_i  = `_false;
+        mac_ben_o   = `_false;       
+        mac_rxda_o  = `_false;      
+        mac_rxsop_o = `_false;     
+        mac_rxeop_o = `_false;     
+        mac_rxdv_o  = `_false;
         tsk_mem_ld();
         tsk_rst();
     end 
@@ -67,7 +67,19 @@ module TRI_MODE_MAC_STIMULUS(
         end
     endtask
     /* Task Set Packet Ready */ 
-    task tsk_set_
+    task tsk_set_read_ready;
+        input packet_length;
+        @ (posedge mac_clk_o) begin
+            mac_rxda_o = 1'b1; 
+        end
+    endtask
     
+    class random_range_even_dist;
+        int low = 0; 
+        int high = 100;
+        rand integer random;
+        constraint range {random dist {[(low+1):(high-1)] := 1};}
+    endclass  
+
 endmodule
 `endif 
