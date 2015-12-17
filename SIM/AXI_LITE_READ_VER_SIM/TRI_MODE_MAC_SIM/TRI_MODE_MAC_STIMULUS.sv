@@ -97,7 +97,11 @@ module TRI_MODE_MAC_STIMULUS(
         pause = rand_pause.rand_range_gen;
         /* Begin the transfer */
         @ (posedge mac_clk_o) begin
-            mac_rxda_o = 1'b1; 
+            mac_rxda_o = 1'b1;
+        end 
+        fork
+             
+        join
         end
     endtask
 
