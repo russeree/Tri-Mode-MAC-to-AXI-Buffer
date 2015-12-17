@@ -10,7 +10,7 @@
 // Tool Versions: 2015.4 Vivado !!!ISE NOT SUPPROTED!!!
 // Description: Simple tri mode full packet out stimilus; A more complete
 // implementation is on the way. 
-// Dependencies: None
+// Dependencies: VIVADO
 // 
 // Revision: 0.0.1
 // Revision 0.0.2 Data Added
