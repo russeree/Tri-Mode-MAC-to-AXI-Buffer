@@ -37,12 +37,14 @@ module TRI_MODE_MAC_STIMULUS(
     /* INPUT TO MAC */ 
     input  wire mac_rxrqrd_i                    
     );
+    /* Status varibel to keep track of errors and notifications */
     int status;
+    /* TRI mode PHY Class */ 
     tri_mode_phy_stim_state tri_mode_state;
-    //Parameters
+    /* Parameters */
     parameter int mem_entries = 32768;
     parameter int packet_size = 20000;
-    
+    /* Memory Array that holds MAC stimilus output: Use to compare to expected memory contents */ 
     reg [31:0] mem_array [mem_entries - 1:0];
     /* Inital Statments */
     initial begin
@@ -57,28 +59,13 @@ module TRI_MODE_MAC_STIMULUS(
         mac_rxdv_o  = `_false;
         tsk_mem_ld();
         tsk_rst();
+        /* Class: Get packet size */
         tri_mode_state.cur_state.packet_size = packet_size;
+        /* Set the halt value for the data valid buffer */
         status = tri_mode_state.set_halt_value($random); 
+        /* Set ready begins the transfer */
         status = tri_mode_state.set_ready();
     end 
-    /* RESET TASK */
-    task tsk_rst;
-        `_RST_DLY mac_rst_o = !mac_rst_o;
-        `_RST_HLD mac_rst_o = !mac_rst_o;
-        status = tri_mode_state.reset; 
-    endtask
-    /* MEMORY LOAD WITH RANDOM DATA */
-    task tsk_mem_ld;
-        for(int i = 0; i < mem_entries; i++) begin
-            mem_array[i] = $random;
-        end
-        `ifdef `_dbg_verbose
-            foreach (mem_array[i]) begin
-                $write(" %h", mem_array[i]);
-                $display;
-            end
-        `endif 
-    endtask
     /* Update Class */
     always @ (posedge mac_clk_o) begin
         status = tri_mode_state.mac_rxd_update;
@@ -99,6 +86,24 @@ module TRI_MODE_MAC_STIMULUS(
     always begin
         #5 mac_clk_o = !mac_clk_o;
     end
- //   status = tri_mode_state.set_halt_value(42);
+    /******* TASKS GO HERE *******/
+    /* RESET TASK */
+     task tsk_rst;
+         `_RST_DLY mac_rst_o = !mac_rst_o;
+         `_RST_HLD mac_rst_o = !mac_rst_o;
+         status = tri_mode_state.reset; 
+     endtask
+     /* MEMORY LOAD WITH RANDOM DATA */
+     task tsk_mem_ld;
+         for(int i = 0; i < mem_entries; i++) begin
+             mem_array[i] = $random;
+         end
+         `ifdef `_dbg_verbose
+             foreach (mem_array[i]) begin
+                 $write(" %h", mem_array[i]);
+                 $display;
+             end
+         `endif 
+     endtask
 endmodule
 `endif 
