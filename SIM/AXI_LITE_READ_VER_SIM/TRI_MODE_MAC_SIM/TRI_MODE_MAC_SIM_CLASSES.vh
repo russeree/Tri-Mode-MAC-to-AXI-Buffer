@@ -38,6 +38,7 @@ class tri_mode_phy_stim_state;
     int read_data; 
     /* LOCAL VARS */
     local int status;                   // CLASS STATUS
+    local int data_valid_state          // THIS INTEGER TRACKS THE STATE OF THE DATA VLID FOR TOGGLE DELAYS 
     local int current_packet_count;     // CURRENT NUMBER VALUE OF RXD_ADDRESS
     local int packet_halt_count;        // HALT DURATION COUNTER
     local int data_valid_count = 0;     // COUNTS UPWARD TO SIMULATE DATA VALID DELAY
