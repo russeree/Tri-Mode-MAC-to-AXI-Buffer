@@ -44,15 +44,8 @@ class tri_mode_phy_stim_state;
     local int data_not_avalible_count;
     /* Run this per clock cycle to update the class */ 
     function int mac_rxd_update;
-        if(read_data == 1)
-            data_avalible_count = data_avalible_count + 1;
-        else
-            data_avalible_count = 0;
-        if (data_avalible_count == 4)
-            cur_state.data_valid = 1;
-        if (cur_state.data_valid == 1)
-            status = rxd_transfer;
-        return status;
+        /*** FIXME ***/
+        /* Get a strategy to fix*/ 
     endfunction  
     /* Determine the packet halt value */
     function int set_halt_value (int seed);
@@ -75,13 +68,13 @@ class tri_mode_phy_stim_state;
         end 
         return 0;
     endfunction
-    /* Set the MAC data out as ready */
+    /* VERIFIED: Set the MAC data out as ready */
     function int set_ready;
         cur_state.data_avalible = 1;
         $display("@ %0dns DATA NOW AVALIBLE", $time);
         return 0;
     endfunction
-    /* Reset the MAC state */
+    /* VERIFIED: Reset the MAC state */
     function int reset;
         cur_state.memory_address = 0;
         cur_state.packet_halted = 0;
