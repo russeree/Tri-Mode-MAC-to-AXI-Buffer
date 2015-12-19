@@ -19,6 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 `include "timescale.vh"
 `include "TRI_MODE_MAC_SIM_DEF.vh"
+`include "TRI_MODE_MAC_SIM_CLASSES.vh"
 
 `ifdef _SIMULATION
 /* RANDOM NUMBER GENERATION */
