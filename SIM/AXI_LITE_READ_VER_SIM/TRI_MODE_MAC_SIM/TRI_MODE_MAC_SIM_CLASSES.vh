@@ -50,8 +50,10 @@ class tri_mode_phy_stim_state;
                 data_valid_count = data_valid_count + 1; 
                 if(data_valid_count == 4) begin
                     cur_state.data_valid = 1;
+                    data_valid_state = 1;
                 end
             end
+            if(
         end
         if(cur_state.data_valid == 1)
             status = rxd_transfer;
