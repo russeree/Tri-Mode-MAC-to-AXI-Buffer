@@ -40,12 +40,20 @@ class tri_mode_phy_stim_state;
     local int status;                   // CLASS STATUS
     local int current_packet_count;     // CURRENT NUMBER VALUE OF RXD_ADDRESS
     local int packet_halt_count;        // HALT DURATION COUNTER
-    local int data_avalible_count;      // COUNTS UPWARD TO SIMULATE DATA VALID DELAY
+    local int data_valid_count = 0;     // COUNTS UPWARD TO SIMULATE DATA VALID DELAY
     local int data_not_avalible_count;  // COUNTS UPWARD TO SIMULATE DATA NOT VALID DELAY
     /* Run this per clock cycle to update the class state */ 
     function int mac_rxd_update;
-        /*** FIXME ***/
-        /* Get a strategy to fix*/ 
+        if(cur_state.data_avalible == 1) begin
+            if(read_data == 1) begin
+                data_valid_count = data_valid_count + 1; 
+                if(data_valid_count == 4) begin
+                    cur_state.data_valid = 1;
+                end
+            end
+        end
+        if(cur_state.data_valid == 1)
+            status = rxd_transfer;
     endfunction  
     /* VERIFIED: Determine the packet halt value */
     function int set_halt_value (int seed);

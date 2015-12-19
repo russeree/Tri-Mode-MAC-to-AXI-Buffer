@@ -77,9 +77,9 @@ module TRI_MODE_MAC_STIMULUS(
         if(tri_mode_state.cur_state.data_avalible == 1) 
             `ifdef _FORCE_INPUTS force mac_rxrqrd_i = 1'b1; `endif
         tri_mode_state.read_data = mac_rxrqrd_i;
-        mac_rxda_o = tri_mode_state.cur_state.data_avalible; 
-        mac_rxdv_o = tri_mode_state.cur_state.data_valid;
-        mac_rxd_o  = mem_array[tri_mode_state.cur_state.memory_address];
+        mac_rxda_o <= tri_mode_state.cur_state.data_avalible; 
+        mac_rxdv_o <= tri_mode_state.cur_state.data_valid;
+        mac_rxd_o  <= mem_array[tri_mode_state.cur_state.memory_address];
     end
     
     /* Clock Generation */
