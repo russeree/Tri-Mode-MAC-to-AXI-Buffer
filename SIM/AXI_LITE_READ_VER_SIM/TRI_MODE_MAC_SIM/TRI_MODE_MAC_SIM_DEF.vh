@@ -5,7 +5,7 @@
 /* FORCE INPUTS FOR SIMULATION */
 `define _FORCE_INPUTS 1
 /* Define RST_HOLD and DELAY values relative to timescale */ 
-`define _RST_DLY #50
+`define _RST_DLY #55
 `define _RST_HLD #100
 /* BOOLEAN TYPES */ 
 `define _true  1'b1

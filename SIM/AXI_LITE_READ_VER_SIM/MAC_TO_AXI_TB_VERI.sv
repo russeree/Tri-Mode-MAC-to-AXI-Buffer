@@ -21,10 +21,10 @@ module MAC_TO_AXI_VERI_TB;
     reg [31:0] axi_ra_addr_int;
     
     MAC_TO_AXI_BUFFER AXI_BUF_0(
-        .mac_clk_i(1'b0), 
-        .mac_rst_i(1'b0), 
-        .mac_rxd_i(32'b0), 
-        .mac_ben_i(2'b0), 
+        .mac_clk_i(mac_clk_o), 
+        .mac_rst_i(mac_rst_o), 
+        .mac_rxd_i(mac_rxd_o), 
+        .mac_ben_i(mac_ben_o), 
         .mac_rxda_i(1'b0), 
         .mac_rxsop_i(1'b0),
         .mac_rxeop_i(1'b0), 
@@ -41,7 +41,22 @@ module MAC_TO_AXI_VERI_TB;
         .S_AXI_RVALID(axi_r_vald_int), 
         .S_AXI_RREADY(axi_r_ready_int)
         );
-        
+    wire mac_clk_o;
+    wire mac_rst_o;
+    wire [31:0] mac_rxd_o;
+    wire [1:0] mac_ben_o;
+    TRI_MODE_MAC_STIMULUS mac_stim_0(
+        mac_clk_o (mac_clk_o), 
+        mac_rst_o (mac_rst_o),
+        mac_rxd_o (mac_rxd_o),
+        mac_ben_o (mac_ben_o),
+            output reg        mac_rxda_o,                            
+            output reg        mac_rxsop_o,                           
+            output reg        mac_rxeop_o,                           
+            output reg        mac_rxdv_o,                            
+            /* INPUT TO MAC */ 
+            input  wire mac_rxrqrd_i                    
+            ); 
         initial begin
             axi_clk_i          =  1'b0;
             axi_rst_i          =  1'b1;

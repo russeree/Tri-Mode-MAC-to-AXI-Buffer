@@ -35,17 +35,19 @@ class tri_mode_phy_stim_state;
         int end_of_packet;             // IS IT THE END OF THE PACKET
     } tri_mode_vars;
     tri_mode_vars cur_state = {0,0,0,0,0,0,0};
+    tri_mode_vars nxt_state;
     int read_data; 
     /* LOCAL VARS */
     local int status;                   // CLASS STATUS
-    local int data_valid_state          // THIS INTEGER TRACKS THE STATE OF THE DATA VLID FOR TOGGLE DELAYS 
+    local int data_valid_state;         // THIS INTEGER TRACKS THE STATE OF THE DATA VLID FOR TOGGLE DELAYS 
     local int current_packet_count;     // CURRENT NUMBER VALUE OF RXD_ADDRESS
     local int packet_halt_count;        // HALT DURATION COUNTER
     local int data_valid_count = 0;     // COUNTS UPWARD TO SIMULATE DATA VALID DELAY
     local int data_not_avalible_count;  // COUNTS UPWARD TO SIMULATE DATA NOT VALID DELAY
+    /* Add function new here please */
     /* Run this per clock cycle to update the class state */ 
     function int mac_rxd_update;
-        if(cur_state.data_avalible == 1) begin
+        if(nxt_state.data_avalible == 1) begin
             if(read_data == 1) begin
                 data_valid_count = data_valid_count + 1; 
                 if(data_valid_count == 4) begin
@@ -53,10 +55,10 @@ class tri_mode_phy_stim_state;
                     data_valid_state = 1;
                 end
             end
-            if(
         end
-        if(cur_state.data_valid == 1)
+        if(nxt_state.data_valid == 1)
             status = rxd_transfer;
+        nxt_state = cur_state;
     endfunction  
     /* VERIFIED: Determine the packet halt value */
     function int set_halt_value (int seed);

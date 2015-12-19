@@ -64,7 +64,7 @@ module TRI_MODE_MAC_STIMULUS(
         /* Set the halt value for the data valid buffer */
         status = tri_mode_state.set_halt_value($random); 
         /* Set ready begins the transfer */
-        status = tri_mode_state.set_ready();
+        #50 status = tri_mode_state.set_ready();
     end 
     /* Update Class */
     always @ (posedge mac_clk_o) begin
