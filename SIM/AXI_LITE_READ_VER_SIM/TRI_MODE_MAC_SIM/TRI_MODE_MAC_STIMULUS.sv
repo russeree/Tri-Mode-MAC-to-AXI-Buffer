@@ -87,7 +87,7 @@ class tri_mode_phy_stim_state;
     /* Set the MAC data out as ready */
     function int set_ready;
         cur_state.data_avalible = 1;
-        $display("DATA NOW AVALIBLE");
+        $display("@ %0dns DATA NOW AVALIBLE", $time);
         return 0;
     endfunction
     /* Reset the MAC state */
@@ -99,7 +99,7 @@ class tri_mode_phy_stim_state;
         cur_state.start_of_packet = 0;
         cur_state.end_of_packet = 0;
         current_packet_count = 0;
-        $display("RESET SUCCESSFULL");
+        $display("@ %0dns, RESET SUCCESSFULL", $time);
         return 0;
     endfunction
 endclass 
@@ -152,15 +152,17 @@ module TRI_MODE_MAC_STIMULUS(
         for(int i = 0; i < mem_entries; i++) begin
             mem_array[i] = $random;
         end
-        foreach (mem_array[i]) begin
-            $write(" %h", mem_array[i]);
-            $display;
-        end
+        `ifdef `_dbg_verbose
+            foreach (mem_array[i]) begin
+                $write(" %h", mem_array[i]);
+                $display;
+            end
+        `endif 
     endtask
     /* Update Class */
     always @ (posedge mac_clk_o) begin
         status = tri_mode_state.mac_rxd_update;
-        $display("%d at adderess %d", mem_array[tri_mode_state.cur_state.memory_address],tri_mode_state.cur_state.memory_address);
+        $display("Read value %d at adderess %d", mem_array[tri_mode_state.cur_state.memory_address],tri_mode_state.cur_state.memory_address);
     end
 
     /* RXD output */

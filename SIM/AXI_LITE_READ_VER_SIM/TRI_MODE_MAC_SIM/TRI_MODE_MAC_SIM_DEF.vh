@@ -1,5 +1,7 @@
 /* Define Simulation */
 `define _SIMULATION
+/* Verbose debugging */
+// `define _dbg_verbose 1
 /* Define RST_HOLD and DELAY values relative to timescale */ 
 `define _RST_DLY #50
 `define _RST_HLD #100
