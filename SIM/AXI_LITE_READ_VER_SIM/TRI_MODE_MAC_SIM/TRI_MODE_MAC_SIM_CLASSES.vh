@@ -26,28 +26,28 @@ endclass
 class tri_mode_phy_stim_state;
     /* MAC Varibles */
     typedef struct packed{
-        int packet_size;
-        int memory_address;
-        int packet_halted;
-        int data_avalible; 
-        int data_valid;
-        int start_of_packet;
-        int end_of_packet;
+        int packet_size;               // SIZE OF PACKET 
+        int memory_address;            // CURRENT MEMORY ADDRESS OUTPUT
+        int packet_halted;             // IS THE PACKET IN A HALT STATE
+        int data_avalible;             // IS DATA AVALIBLE TO BE READ
+        int data_valid;                // IS THE DATA READ VALID
+        int start_of_packet;           // IS IT THE START OF THE PACKET
+        int end_of_packet;             // IS IT THE END OF THE PACKET
     } tri_mode_vars;
     tri_mode_vars cur_state = {0,0,0,0,0,0,0};
     int read_data; 
     /* LOCAL VARS */
-    local int status;
-    local int current_packet_count;
-    local int packet_halt_count;
-    local int data_avalible_count;
-    local int data_not_avalible_count;
-    /* Run this per clock cycle to update the class */ 
+    local int status;                   // CLASS STATUS
+    local int current_packet_count;     // CURRENT NUMBER VALUE OF RXD_ADDRESS
+    local int packet_halt_count;        // HALT DURATION COUNTER
+    local int data_avalible_count;      // COUNTS UPWARD TO SIMULATE DATA VALID DELAY
+    local int data_not_avalible_count;  // COUNTS UPWARD TO SIMULATE DATA NOT VALID DELAY
+    /* Run this per clock cycle to update the class state */ 
     function int mac_rxd_update;
         /*** FIXME ***/
         /* Get a strategy to fix*/ 
     endfunction  
-    /* Determine the packet halt value */
+    /* VERIFIED: Determine the packet halt value */
     function int set_halt_value (int seed);
         random_range_seed random_val = new();
         random_val.range = {0, cur_state.packet_size};

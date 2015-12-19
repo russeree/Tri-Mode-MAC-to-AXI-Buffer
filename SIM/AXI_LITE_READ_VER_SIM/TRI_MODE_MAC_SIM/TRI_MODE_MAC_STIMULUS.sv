@@ -75,7 +75,7 @@ module TRI_MODE_MAC_STIMULUS(
     /* RXD output */
     always @ (posedge mac_clk_o) begin
         if(tri_mode_state.cur_state.data_avalible == 1) 
-            force mac_rxrqrd_i = 1'b1;
+            `ifdef _FORCE_INPUTS force mac_rxrqrd_i = 1'b1; `endif
         tri_mode_state.read_data = mac_rxrqrd_i;
         mac_rxda_o = tri_mode_state.cur_state.data_avalible; 
         mac_rxdv_o = tri_mode_state.cur_state.data_valid;
@@ -86,7 +86,6 @@ module TRI_MODE_MAC_STIMULUS(
     always begin
         #5 mac_clk_o = !mac_clk_o;
     end
-    /******* TASKS GO HERE *******/
     /* RESET TASK */
      task tsk_rst;
          `_RST_DLY mac_rst_o = !mac_rst_o;
@@ -98,7 +97,7 @@ module TRI_MODE_MAC_STIMULUS(
          for(int i = 0; i < mem_entries; i++) begin
              mem_array[i] = $random;
          end
-         `ifdef `_dbg_verbose
+         `ifdef `_DBG_VERBOSE
              foreach (mem_array[i]) begin
                  $write(" %h", mem_array[i]);
                  $display;
