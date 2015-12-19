@@ -33,7 +33,34 @@ class random_range_seed;
         out = range.low + {$random(seed)} % (range.high - range.low);
         return out; 
     endfunction
-endclass  
+endclass
+
+class tri_mode_phy_stim_state;
+    /* MAC Varibles */
+    typedef struct packed{
+        int packet_size = 0;
+        int packet_halted = 0;
+        int data_valid = 0;
+        int start_of_packet = 0;
+        int end_of_packet = 0;
+    } tri_mode_vars;
+    /* Current Packet Count*/ 
+    local int current_packet_count;
+    local int packet_halted;
+    local int packet_halt_count; 
+    /* Determine the packet halt value */
+    function void set_halt_value (int seed);
+        random_range_seed random_val = new();
+        random_val.range = {0, packet_size};
+        random_val.seed = seed;
+        packet_halt_count = random_val.random_range_gen();
+    endfunction
+    /* Set the MAC data out as ready */
+    function int set_ready;
+        data_valid = 1;
+        return data_valid;
+    endfunction
+endclass 
 
 module TRI_MODE_MAC_STIMULUS(
     /* OUTPUT FROM MAC */ 
@@ -48,11 +75,10 @@ module TRI_MODE_MAC_STIMULUS(
     /* INPUT TO MAC */ 
     input         wire mac_rxrqrd_i                    
     );
+    //Parameters
     parameter int mem_entries = 32768;
     parameter int packet_size = 20000;
     reg [31:0] mem_array [mem_entries - 1:0];
-    int i;
-    
     /* Inital Statments */
     initial begin
         mac_clk_o   = `_false;       
@@ -73,7 +99,7 @@ module TRI_MODE_MAC_STIMULUS(
     endtask
     /* MEMORY LOAD WITH RANDOM DATA */
     task tsk_mem_ld;
-        for(i = 0; i < mem_entries; i++) begin
+        for(int i = 0; i < mem_entries; i++) begin
             mem_array[i] = $random;
         end
         foreach (mem_array[i]) begin
@@ -81,29 +107,8 @@ module TRI_MODE_MAC_STIMULUS(
             $display;
         end
     endtask
-    /* Task Set Packet Ready */ 
-    task tsk_set_read_ready;
-        input packet_length;
-        int low   = 0; 
-        int high  = packet_size - 1;
-        int seed  = 42;
-        int pause = 0;
-        /* Class creation and function exection */
-        random_range_seed rand_pause;
-        rand_pause = new();
-        rand_pause.range = {low,high};
-        rand_pause.seed = seed;
-        /* Set pause to random varible */
-        pause = rand_pause.rand_range_gen;
-        /* Begin the transfer */
-        @ (posedge mac_clk_o) begin
-            mac_rxda_o = 1'b1;
-        end 
-        fork
-             
-        join
-        end
-    endtask
-
+    /* Load the stimulus state into the tri-mode class */
+    tri_mode_phy_stim_state tri_mode_state = new();
+    
 endmodule
 `endif 
