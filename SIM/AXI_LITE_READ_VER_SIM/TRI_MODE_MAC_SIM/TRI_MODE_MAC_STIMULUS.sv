@@ -44,6 +44,8 @@ module TRI_MODE_MAC_STIMULUS(
     /* Parameters */
     parameter int mem_entries = 32768;
     parameter int packet_size = 20000;
+    parameter int halt_count  = 10000;
+    parameter int halt_length = 55;
     /* Memory Array that holds MAC stimilus output: Use to compare to expected memory contents */ 
     reg [31:0] mem_array [mem_entries - 1:0];
     /* Inital Statments */
@@ -59,21 +61,36 @@ module TRI_MODE_MAC_STIMULUS(
         mac_rxdv_o  = `_false;
         tsk_mem_ld();
         tsk_rst();
-        /* Class: Get packet size */
-        tri_mode_state.cur_state.packet_size = packet_size;
-        /* Set the halt value for the data valid buffer */
-        status = tri_mode_state.set_halt_value($random); 
-        /* Set ready begins the transfer */
-        #50 status = tri_mode_state.set_ready();
     end 
-    /* Update Class */
+    /* Reading State Machine */
     enum logic [2:0] {IDLE, READ_AVALIBLE, READING, HALT}
-        state, nxt_state; 
+        state, nxt_state;
+    reg [31:0] address;
+    reg [31:0] read_valid_delay_coutner;
+    reg [31:0] read_halt_counter;
+    /* Reade Meale state machine */ 
     always_ff @ (posedge mac_clk_o) begin
         if (mac_rst_o)
-            state = IDLE;
-        else
-            state = nxt_state;
+            state <= IDLE;
+        else begin
+            state <= nxt_state;
+            case(state)
+                IDLE: begin
+                    mac_rxda_o <= `_true;
+                    nxt_state <= READ_AVALIBLE;
+                end
+                READ_AVALIBLE: begin
+                    if(mac_rxrqrd_i) begin
+                        nxt_state <= READING;
+                        read_valid_delay_counter <= 1;
+                        read_halt_counter <= 1;    
+                    end
+                    else begin
+                        read_valid_delay_counter <= 0;
+                    end
+                end
+            endcase  
+        end
     end
     /* Clock Generation */
     always begin
