@@ -58,9 +58,10 @@ class tri_mode_phy_stim_state;
             data_avalible_count = data_avalible_count + 1;
         else
             data_avalible_count = 0;
-        if(data_avalible_count == 4)
+        if (data_avalible_count == 4)
             cur_state.data_valid = 1;
-        status = rxd_transfer;
+        if (cur_state.data_valid == 1)
+            status = rxd_transfer;
         return status;
     endfunction  
     /* Determine the packet halt value */
@@ -69,7 +70,7 @@ class tri_mode_phy_stim_state;
         random_val.range = {0, cur_state.packet_size};
         random_val.seed = seed;
         packet_halt_count = random_val.rand_range_gen();
-        $display("Cycles in packet to halt = %d \n", packet_halt_count);
+        $display("Cycles in packet to halt = %d", packet_halt_count);
         return (0);
     endfunction
     /* Transfer a packet by moving the address counter up 1 */
@@ -167,7 +168,8 @@ module TRI_MODE_MAC_STIMULUS(
 
     /* RXD output */
     always @ (posedge mac_clk_o) begin
-        mac_rxd_o <= mem_array[tri_mode_state.cur_state.memory_address];
+        mac_rxda_o <= tri_mode_state.cur_state.data_avalible; 
+        mac_rxd_o  <= mem_array[tri_mode_state.cur_state.memory_address];
     end
     
     /* Clock Generation */
