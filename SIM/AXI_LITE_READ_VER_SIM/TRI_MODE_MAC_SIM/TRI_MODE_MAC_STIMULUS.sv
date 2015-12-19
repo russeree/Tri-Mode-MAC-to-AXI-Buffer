@@ -67,31 +67,24 @@ module TRI_MODE_MAC_STIMULUS(
         #50 status = tri_mode_state.set_ready();
     end 
     /* Update Class */
-    always @ (posedge mac_clk_o) begin
-        status = tri_mode_state.mac_rxd_update;
-        $display("Read value %d at adderess %d", mem_array[tri_mode_state.cur_state.memory_address],tri_mode_state.cur_state.memory_address);
+    enum logic [2:0] {IDLE, READ_AVALIBLE, READING, HALT}
+        state, nxt_state; 
+    always_ff @ (posedge mac_clk_o) begin
+        if (mac_rst_o)
+            state = IDLE;
+        else
+            state = nxt_state;
     end
-
-    /* RXD output */
-    always @ (posedge mac_clk_o) begin
-        if(tri_mode_state.cur_state.data_avalible == 1) 
-            `ifdef _FORCE_INPUTS force mac_rxrqrd_i = 1'b1; `endif
-        tri_mode_state.read_data = mac_rxrqrd_i;
-        mac_rxda_o <= tri_mode_state.cur_state.data_avalible; 
-        mac_rxdv_o <= tri_mode_state.cur_state.data_valid;
-        mac_rxd_o  <= mem_array[tri_mode_state.cur_state.memory_address];
-    end
-    
     /* Clock Generation */
     always begin
         #5 mac_clk_o = !mac_clk_o;
     end
     /* RESET TASK */
-     task tsk_rst;
+    task tsk_rst;
          `_RST_DLY mac_rst_o = !mac_rst_o;
          `_RST_HLD mac_rst_o = !mac_rst_o;
          status = tri_mode_state.reset; 
-     endtask
+    endtask
      /* MEMORY LOAD WITH RANDOM DATA */
      task tsk_mem_ld;
          for(int i = 0; i < mem_entries; i++) begin

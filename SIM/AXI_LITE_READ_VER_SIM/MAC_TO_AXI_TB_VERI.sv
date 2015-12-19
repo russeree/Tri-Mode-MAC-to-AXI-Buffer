@@ -46,46 +46,46 @@ module MAC_TO_AXI_VERI_TB;
     wire [31:0] mac_rxd_o;
     wire [1:0] mac_ben_o;
     TRI_MODE_MAC_STIMULUS mac_stim_0(
-        mac_clk_o (mac_clk_o), 
-        mac_rst_o (mac_rst_o),
-        mac_rxd_o (mac_rxd_o),
-        mac_ben_o (mac_ben_o),
-            output reg        mac_rxda_o,                            
-            output reg        mac_rxsop_o,                           
-            output reg        mac_rxeop_o,                           
-            output reg        mac_rxdv_o,                            
+        .mac_clk_o   (mac_clk_o), 
+        .mac_rst_o   (mac_rst_o),
+        .mac_rxd_o   (mac_rxd_o),
+        .mac_ben_o   (mac_ben_o),
+        .mac_rxda_o  (),                            
+        .mac_rxsop_o (),                           
+        .mac_rxeop_o (),                           
+        .mac_rxdv_o  (),                            
             /* INPUT TO MAC */ 
-            input  wire mac_rxrqrd_i                    
-            ); 
-        initial begin
-            axi_clk_i          =  1'b0;
-            axi_rst_i          =  1'b1;
-            axi_ra_addr_int    = 32'b0;
-            axi_ra_addr_v_int  =  1'b0; 
-            axi_r_ready_int    =  1'b0;
-            #20 axi_rst_i      =  1'b0;
-            #20 axi_rst_i      =  1'b1; 
-        end
+        .mac_rxrqrd_i                    
+     ); 
+    initial begin
+        axi_clk_i          =  1'b0;
+        axi_rst_i          =  1'b1;
+        axi_ra_addr_int    = 32'b0;
+        axi_ra_addr_v_int  =  1'b0; 
+        axi_r_ready_int    =  1'b0;
+        #20 axi_rst_i      =  1'b0;
+        #20 axi_rst_i      =  1'b1; 
+    end
         
-        /* FULL AXI4 LITE READ ADDRESS AND DARA CHANNEL CYCLE */
-        task axi4_lite_read_full;
-            axi_r_ready_int <= 1'b1; 
-            axi_ra_addr_int <= axi_ra_addr_int + 1'b1;
-            @(posedge axi_clk_i)
-                axi_r_ready_int <= 1'b0;  
-                axi_ra_addr_v_int <= 1'b1;
-            @(posedge axi_clk_i)
-                if (axi_r_vald_int)
-                    axi_r_ready_int <= 1'b0;
-            @(posedge axi_clk_i)
-                if (axi_r_vald_int)
-                    axi_ra_addr_v_int <= 1'b0;
-        endtask
-        
-        /* Run the teask forever */
-        always begin
-            axi4_lite_read_full();
-        end    
+    /* FULL AXI4 LITE READ ADDRESS AND DARA CHANNEL CYCLE */
+    task axi4_lite_read_full;
+        axi_r_ready_int <= 1'b1; 
+        axi_ra_addr_int <= axi_ra_addr_int + 1'b1;
+        @(posedge axi_clk_i)
+            axi_r_ready_int <= 1'b0;  
+            axi_ra_addr_v_int <= 1'b1;
+        @(posedge axi_clk_i)
+            if (axi_r_vald_int)
+                axi_r_ready_int <= 1'b0;
+        @(posedge axi_clk_i)
+            if (axi_r_vald_int)
+                axi_ra_addr_v_int <= 1'b0;
+    endtask
+
+    /* Run the teask forever */
+    always begin
+        axi4_lite_read_full();
+    end    
         
         always begin
             #2.5 axi_clk_i = !axi_clk_i;
