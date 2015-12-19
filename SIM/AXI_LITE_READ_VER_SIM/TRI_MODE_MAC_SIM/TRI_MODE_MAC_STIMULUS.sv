@@ -41,14 +41,28 @@ class tri_mode_phy_stim_state;
         int packet_size;
         int memory_address;
         int packet_halted;
+        int data_avalible; 
         int data_valid;
         int start_of_packet;
         int end_of_packet;
     } tri_mode_vars;
-    tri_mode_vars cur_state = {0,0,0,0,0,0}; 
+    tri_mode_vars cur_state = {0,0,0,0,0,0,0}; 
     /* LOCAL VARS */
+    local int status;
     local int current_packet_count;
-    local int packet_halt_count; 
+    local int packet_halt_count;
+    local int data_avalible_count;
+    /* Run this per clock cycle to update the class */ 
+    function int mac_rxd_update;
+        if(cur_state.data_avalible)
+            data_avalible_count = data_avalible_count + 1;
+        else
+            data_avalible_count = 0;
+        if(data_avalible_count == 4)
+            cur_state.data_valid = 1;
+        status = rxd_transfer;
+        return status;
+    endfunction  
     /* Determine the packet halt value */
     function int set_halt_value (int seed);
         random_range_seed random_val = new();
@@ -60,27 +74,32 @@ class tri_mode_phy_stim_state;
     endfunction
     /* Transfer a packet by moving the address counter up 1 */
     function int rxd_transfer;
-        current_packet_count = current_packet_count + 1;
+        if (current_packet_count != packet_halt_count) begin
+            current_packet_count = current_packet_count + 1;
+        end
         cur_state.memory_address = cur_state.memory_address + 1;
         if (current_packet_count == packet_halt_count) begin
             cur_state.packet_halted = 1;
             cur_state.data_valid = 0; 
         end 
         return 0;
-    endfunction 
+    endfunction
     /* Set the MAC data out as ready */
     function int set_ready;
-        cur_state.data_valid = 1;
-        return cur_state.data_valid;
+        cur_state.data_avalible = 1;
+        $display("DATA NOW AVALIBLE");
+        return 0;
     endfunction
     /* Reset the MAC state */
     function int reset;
         cur_state.memory_address = 0;
         cur_state.packet_halted = 0;
+        cur_state.data_avalible = 0;
         cur_state.data_valid = 0;
         cur_state.start_of_packet = 0;
         cur_state.end_of_packet = 0;
         current_packet_count = 0;
+        $display("RESET SUCCESSFULL");
         return 0;
     endfunction
 endclass 
@@ -138,13 +157,12 @@ module TRI_MODE_MAC_STIMULUS(
             $display;
         end
     endtask
-    
+    /* Update Class */
     always @ (posedge mac_clk_o) begin
-        if (tri_mode_state.cur_state.data_valid == 1) begin
-            status = tri_mode_state.rxd_transfer;
-            $display("%d at adderess %d", mem_array[tri_mode_state.cur_state.memory_address],tri_mode_state.cur_state.memory_address);
-        end
+        status = tri_mode_state.mac_rxd_update;
+        $display("%d at adderess %d", mem_array[tri_mode_state.cur_state.memory_address],tri_mode_state.cur_state.memory_address);
     end
+
     /* RXD output */
     always @ (posedge mac_clk_o) begin
         mac_rxd_o <= mem_array[tri_mode_state.cur_state.memory_address];
