@@ -46,15 +46,17 @@ class tri_mode_phy_stim_state;
         int start_of_packet;
         int end_of_packet;
     } tri_mode_vars;
-    tri_mode_vars cur_state = {0,0,0,0,0,0,0}; 
+    tri_mode_vars cur_state = {0,0,0,0,0,0,0};
+    int read_data; 
     /* LOCAL VARS */
     local int status;
     local int current_packet_count;
     local int packet_halt_count;
     local int data_avalible_count;
+    local int data_not_avalible_count;
     /* Run this per clock cycle to update the class */ 
     function int mac_rxd_update;
-        if(cur_state.data_avalible)
+        if(read_data == 1)
             data_avalible_count = data_avalible_count + 1;
         else
             data_avalible_count = 0;
@@ -99,6 +101,7 @@ class tri_mode_phy_stim_state;
         cur_state.data_valid = 0;
         cur_state.start_of_packet = 0;
         cur_state.end_of_packet = 0;
+        read_data = 0;
         current_packet_count = 0;
         $display("@ %0dns, RESET SUCCESSFULL", $time);
         return 0;
@@ -116,7 +119,7 @@ module TRI_MODE_MAC_STIMULUS(
     output reg        mac_rxeop_o,                           
     output reg        mac_rxdv_o,                            
     /* INPUT TO MAC */ 
-    input         wire mac_rxrqrd_i                    
+    input  wire mac_rxrqrd_i                    
     );
     int status;
     tri_mode_phy_stim_state tri_mode_state;
@@ -168,8 +171,12 @@ module TRI_MODE_MAC_STIMULUS(
 
     /* RXD output */
     always @ (posedge mac_clk_o) begin
-        mac_rxda_o <= tri_mode_state.cur_state.data_avalible; 
-        mac_rxd_o  <= mem_array[tri_mode_state.cur_state.memory_address];
+        if(tri_mode_state.cur_state.data_avalible == 1) 
+            force mac_rxrqrd_i = 1'b1;
+        tri_mode_state.read_data = mac_rxrqrd_i;
+        mac_rxda_o = tri_mode_state.cur_state.data_avalible; 
+        mac_rxdv_o = tri_mode_state.cur_state.data_valid;
+        mac_rxd_o  = mem_array[tri_mode_state.cur_state.memory_address];
     end
     
     /* Clock Generation */
