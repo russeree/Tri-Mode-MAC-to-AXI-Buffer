@@ -38,27 +38,50 @@ endclass
 class tri_mode_phy_stim_state;
     /* MAC Varibles */
     typedef struct packed{
-        int packet_size = 0;
-        int packet_halted = 0;
-        int data_valid = 0;
-        int start_of_packet = 0;
-        int end_of_packet = 0;
+        int packet_size;
+        int memory_address;
+        int packet_halted;
+        int data_valid;
+        int start_of_packet;
+        int end_of_packet;
     } tri_mode_vars;
-    /* Current Packet Count*/ 
+    tri_mode_vars cur_state = {0,0,0,0,0,0}; 
+    /* LOCAL VARS */
     local int current_packet_count;
-    local int packet_halted;
     local int packet_halt_count; 
     /* Determine the packet halt value */
-    function void set_halt_value (int seed);
+    function int set_halt_value (int seed);
         random_range_seed random_val = new();
-        random_val.range = {0, packet_size};
+        random_val.range = {0, cur_state.packet_size};
         random_val.seed = seed;
-        packet_halt_count = random_val.random_range_gen();
+        packet_halt_count = random_val.rand_range_gen();
+        $display("Cycles in packet to halt = %d \n", packet_halt_count);
+        return (0);
     endfunction
+    /* Transfer a packet by moving the address counter up 1 */
+    function int rxd_transfer;
+        current_packet_count = current_packet_count + 1;
+        cur_state.memory_address = cur_state.memory_address + 1;
+        if (current_packet_count == packet_halt_count) begin
+            cur_state.packet_halted = 1;
+            cur_state.data_valid = 0; 
+        end 
+        return 0;
+    endfunction 
     /* Set the MAC data out as ready */
     function int set_ready;
-        data_valid = 1;
-        return data_valid;
+        cur_state.data_valid = 1;
+        return cur_state.data_valid;
+    endfunction
+    /* Reset the MAC state */
+    function int reset;
+        cur_state.memory_address = 0;
+        cur_state.packet_halted = 0;
+        cur_state.data_valid = 0;
+        cur_state.start_of_packet = 0;
+        cur_state.end_of_packet = 0;
+        current_packet_count = 0;
+        return 0;
     endfunction
 endclass 
 
@@ -75,12 +98,16 @@ module TRI_MODE_MAC_STIMULUS(
     /* INPUT TO MAC */ 
     input         wire mac_rxrqrd_i                    
     );
+    int status;
+    tri_mode_phy_stim_state tri_mode_state;
     //Parameters
     parameter int mem_entries = 32768;
     parameter int packet_size = 20000;
+    
     reg [31:0] mem_array [mem_entries - 1:0];
     /* Inital Statments */
     initial begin
+        tri_mode_state = new();
         mac_clk_o   = `_false;       
         mac_rst_o   = `_false;       
         mac_rxd_o   = `_false;
@@ -91,11 +118,15 @@ module TRI_MODE_MAC_STIMULUS(
         mac_rxdv_o  = `_false;
         tsk_mem_ld();
         tsk_rst();
+        tri_mode_state.cur_state.packet_size = packet_size;
+        status = tri_mode_state.set_halt_value($random); 
+        status = tri_mode_state.set_ready();
     end 
     /* RESET TASK */
     task tsk_rst;
         `_RST_DLY mac_rst_o = !mac_rst_o;
-        `_RST_HLD mac_rst_o = !mac_rst_o; 
+        `_RST_HLD mac_rst_o = !mac_rst_o;
+        status = tri_mode_state.reset; 
     endtask
     /* MEMORY LOAD WITH RANDOM DATA */
     task tsk_mem_ld;
@@ -107,8 +138,22 @@ module TRI_MODE_MAC_STIMULUS(
             $display;
         end
     endtask
-    /* Load the stimulus state into the tri-mode class */
-    tri_mode_phy_stim_state tri_mode_state = new();
     
+    always @ (posedge mac_clk_o) begin
+        if (tri_mode_state.cur_state.data_valid == 1) begin
+            status = tri_mode_state.rxd_transfer;
+            $display("%d at adderess %d", mem_array[tri_mode_state.cur_state.memory_address],tri_mode_state.cur_state.memory_address);
+        end
+    end
+    /* RXD output */
+    always @ (posedge mac_clk_o) begin
+        mac_rxd_o <= mem_array[tri_mode_state.cur_state.memory_address];
+    end
+    
+    /* Clock Generation */
+    always begin
+        #5 mac_clk_o = !mac_clk_o;
+    end
+ //   status = tri_mode_state.set_halt_value(42);
 endmodule
 `endif 

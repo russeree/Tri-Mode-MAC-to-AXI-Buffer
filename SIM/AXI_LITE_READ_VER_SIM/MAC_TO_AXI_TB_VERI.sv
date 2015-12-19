@@ -23,8 +23,8 @@ module MAC_TO_AXI_VERI_TB;
     MAC_TO_AXI_BUFFER AXI_BUF_0(
         .mac_clk_i(1'b0), 
         .mac_rst_i(1'b0), 
-        .mac_rxd_i(1'b0), 
-        .mac_ben_i(1'b0), 
+        .mac_rxd_i(32'b0), 
+        .mac_ben_i(2'b0), 
         .mac_rxda_i(1'b0), 
         .mac_rxsop_i(1'b0),
         .mac_rxeop_i(1'b0), 

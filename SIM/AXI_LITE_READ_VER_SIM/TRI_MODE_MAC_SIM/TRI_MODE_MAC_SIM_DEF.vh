@@ -4,5 +4,5 @@
 `define _RST_DLY #50
 `define _RST_HLD #100
 /* BOOLEAN TYPES */ 
-`define _true  1'b0
-`define _false 1'b1 
+`define _true  1'b1
+`define _false 1'b0 
