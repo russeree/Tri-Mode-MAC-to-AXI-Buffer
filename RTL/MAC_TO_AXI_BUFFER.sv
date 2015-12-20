@@ -29,8 +29,8 @@
 `include "MAC_TO_AXI_BUFFER.vh"  
 
 module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i, mac_rxsop_i, mac_rxeop_i, mac_rxdv_i, mac_rxrqrd_i,
-    ACLK,ARESETN,S_AXI_ARADDR,S_AXI_ARVALID,S_AXI_ARREADY,S_AXI_RDATA,S_AXI_RRESP, S_AXI_RVALID, S_AXI_RREADY, S_AXI_AWADDR, S_AXI_AWPROT, S_AXI_AWVALID, S_AXI_AWREADY,
-    S_AXI_WDATA, S_AXI_WSTRB, S_AXI_WVALID, S_AXI_WREADY, S_AXI_BRESP, S_AXI_BVALID, S_AXI_BREADY);
+    ACLK,ARESETN, S_AXI_ARADDR, S_AXI_ARVALID, S_AXI_ARREADY, S_AXI_RDATA, S_AXI_RRESP, S_AXI_RVALID, S_AXI_RREADY, S_AXI_AWADDR, S_AXI_AWPROT, 
+    S_AXI_AWVALID, S_AXI_AWREADY, S_AXI_WDATA, S_AXI_WSTRB, S_AXI_WVALID, S_AXI_WREADY, S_AXI_BRESP, S_AXI_BVALID, S_AXI_BREADY);
     /* Parameters: MAC INTERFACE and FIFO CONFIG */
     parameter integer _dat_w_mac                  = 32;                  // MAC BITS RX Data output width
     parameter integer _ben_w_mac                  = 2;                   // MAC BITS RX Data output byte enable width 
@@ -107,6 +107,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
 `ifdef _ARCH_XIL (* ram_style="block" *) `endif
     reg [_dat_w_mem-1:0] packet_out_1_buffer_mem   [(2**_addr_w_mem)-1:0];
     /* AXI Write interface */
+    enum logic [3:0] {wr_idle, wr_trans_addr, wr_trans_valid} axi_wr_state;
     always @ (posedge clk_i) begin
         if (!rst_i) begin
         end
