@@ -32,9 +32,10 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
     ACLK,ARESETN,S_AXI_ARADDR,S_AXI_ARVALID,S_AXI_ARREADY,S_AXI_RDATA,S_AXI_RRESP, S_AXI_RVALID, S_AXI_RREADY);
     /* Parameters: MAC INTERFACE and FIFO CONFIG */
     parameter integer _dat_w_mac                  = 32;                  // MAC BITS RX Data output width
-    parameter integer _ben_w_mac                  = 2;                   // MAC BITS RX Data output byte enable width; 
-    parameter integer _addr_w_mem                 = 14;                  // XIL BITS FIFO MACRO ENTRIES SIZE
+    parameter integer _ben_w_mac                  = 2;                   // MAC BITS RX Data output byte enable width 
+    parameter integer _addr_w_mem                 = 9;                   // XIL BITS FIFO MACRO ENTRIES SIZE; 9 = CURRENT MAX SIZE 1500 or 1.5KB  
     parameter integer _dat_w_mem                  = 32;                  // XIL BITS FIFO MACRO WORD SIZE
+    /* AXI Parameters */
     parameter integer C_S_AXI_ADDR_WIDTH          = 32;
     parameter integer C_S_AXI_DATA_WIDTH          = 32;
     /* INPUT FROM MAC */
@@ -48,7 +49,6 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
     input mac_rxdv_i;                             // MAC -O READ DATA VALID
     /* OUTPUT TO MAC */ 
     output reg mac_rxrqrd_i;                      // MAC -I READ REQUEST
-    /* AXI4 LITE SIGNALS, INPUTS, OUTPUTS */
     /* AXI4 LTIE System Signals */ 
     input wire ACLK;
     input wire ARESETN;
@@ -70,6 +70,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
     reg                 pip_int; /* Packet in Progress */
     /* Byte enable input mask */
     wire [_dat_w_mac-1:0] mac_d_mask_int;
+    /* Generate the byte enable mask for the last word sent */ 
     generate
         if ((_dat_w_mac == 32) && (_ben_w_mac == 2)) begin
             assign mac_d_mask_int = 
@@ -82,7 +83,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
             $error("Not a supported config: please add an ertry"); 
         end 
     endgenerate
-    /* UDP SINGLE PACKET BUFFER, INFERED BLOCK RAM MEMORIES */  
+    /* Generate the packet buffer memory */  
 `ifdef _ARCH_XIL (* ram_style="block" *) `endif
     reg [_dat_w_mem-1:0] packet_buffer_mem [(2**_addr_w_mem)-1:0];
     /* Write the contents of _MEMORY_CONTENTS_BIN to the memory interface for AXI SIMULTATION
@@ -113,7 +114,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
             mac_rxrqrd_i    <= 1'b0;
             pkt_wr_addr_int <= 1'b0;
             pkt_count_int   <= 1'b0;
-        end 
+        end
         else
             case(mem_state_int)
                 s_idle: begin
@@ -161,8 +162,10 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
                     end
                 end
             endcase
-    end      
-    /* MEMORY TO AXI4 LITE READ Lite Interface */
+    end
+    /* MEMORY TO AXI4 LITE READ Lite Interface
+     * Verified it reads properly in sequential addresses
+     */ 
     enum logic [0:0] {axi_addr = 1'b0,
                       axi_rd   = 1'b1} axi_rd_state_int;               
     always @ (posedge ACLK) begin
