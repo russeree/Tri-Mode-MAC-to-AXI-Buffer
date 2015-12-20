@@ -80,7 +80,7 @@ module TRI_MODE_MAC_STIMULUS(
                     if(mac_rxrqrd_i) begin
                         nxt_state                <= READING;
                         read_valid_delay_counter <= 1;
-                        read_halt_counter        <= 1;   
+                        read_halt_counter        <= 1;
                         address                  <= 0;
                         sop_set                  <= 0;
                         mac_rxeop_o              <= 0;

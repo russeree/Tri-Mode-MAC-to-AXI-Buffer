@@ -14,7 +14,7 @@
     `define _SIMULATION
     // Memory contents processing
     `ifdef _EDA_XIL_WIN
-        `define _MEMORY_CONTENTS_BIN "C:\\Users\\Reese\\udp_packet_parser_module\\udp_packet_parser_module.srcs\\sources_1\\new\\udp_sim_mem.mem"
+        `define _MEMORY_CONTENTS_BIN "C:\Users\Reese\udp_packet_parser_module\udp_packet_parser_module.srcs\GLOBAL\MEMORY_FILES\axi_buffer_mem.mem"
     `endif
     `ifdef _EDA_XIL_LIN
         `define _MEMORY_CONTENTS_BIN ./
