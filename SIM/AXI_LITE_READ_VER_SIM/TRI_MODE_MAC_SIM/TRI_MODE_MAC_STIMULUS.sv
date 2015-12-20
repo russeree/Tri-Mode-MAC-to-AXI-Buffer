@@ -41,16 +41,15 @@ module TRI_MODE_MAC_STIMULUS(
     parameter int mem_entries = 32768;
     parameter int packet_size = 20000;
     parameter int halt_count  = 10000;
-    parameter int halt_length = 55;
+    parameter int halt_length = 10000;
     /* Memory Array that holds MAC stimilus output: Use to compare to expected memory contents */ 
     reg [31:0] mem_array [mem_entries - 1:0];
     /* Inital Statments */
     initial begin
-        mac_clk_o   = `_false;       
-        mac_clk_o   = `_false;       
+        mac_clk_o   = `_false;        
         mac_rst_o   = `_false;       
         mac_rxd_o   = `_false;
-        mac_ben_o   = `_false;       
+        mac_ben_o   = 2'b11;       
         mac_rxda_o  = `_false;      
         mac_rxsop_o = `_false;     
         mac_rxeop_o = `_false;     
@@ -74,7 +73,6 @@ module TRI_MODE_MAC_STIMULUS(
             case(state)
                 IDLE: begin
                     mac_rxda_o <= `_true;
-                    mac_rxeop_o <= `_false;
                     nxt_state  <= READ_AVALIBLE;
                 end
                 READ_AVALIBLE: begin
@@ -86,6 +84,7 @@ module TRI_MODE_MAC_STIMULUS(
                         address                  <= 0;
                         sop_set                  <= 0;
                         mac_rxeop_o              <= 0;
+                        mac_rxdv_o               <= 0;
                     end
                     else begin
                         read_valid_delay_counter<= 0;
@@ -102,6 +101,7 @@ module TRI_MODE_MAC_STIMULUS(
                         if (sop_set == 0) begin
                             mac_rxsop_o <= 1;
                             sop_set <= 1'b1;
+                            mac_rxdv_o <= 1;
                         end
                         else
                             mac_rxsop_o <= 0;
@@ -109,18 +109,23 @@ module TRI_MODE_MAC_STIMULUS(
                     if (read_halt_counter == halt_count) begin
                         nxt_state <= HALT;
                     end
+                    if (address == (packet_size - 1)) begin
+                        mac_rxeop_o <=1;
+                    end
                     if (address == packet_size) begin
-                        mac_rxeop_o <= 1;
+                        mac_rxeop_o <= 0;
                         nxt_state <= IDLE; 
-                    end 
+                    end
                 end 
                 HALT: begin
                     read_halt_counter <= read_halt_counter + 1;
                     if (read_halt_counter == halt_count  + 4) begin
                         mac_rxda_o <= `_false;
+                        mac_rxdv_o <= 0;
                     end 
                     if (read_halt_counter == (halt_count  + 4 + halt_length)) begin
                         mac_rxda_o <= `_true;
+                        mac_rxdv_o <= 1;
                         read_valid_delay_counter <= 0;
                         nxt_state <= READING;
                     end

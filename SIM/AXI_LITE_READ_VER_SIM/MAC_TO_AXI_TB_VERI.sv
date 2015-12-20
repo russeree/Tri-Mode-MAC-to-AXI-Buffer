@@ -13,6 +13,15 @@ module MAC_TO_AXI_VERI_TB;
     wire [1:0]  axi_r_resp_int;
     wire [31:0] axi_r_data_int;
     wire        axi_r_vald_int ;
+    wire mac_clk_o;
+    wire mac_rst_o;
+    wire [31:0] mac_rxd_o;
+    wire [1:0] mac_ben_o;
+    wire mac_rxda_o;
+    wire mac_rxsop_o;
+    wire mac_rxeop_o;
+    wire mac_rxdv_o;
+    wire mac_rxrqrd_i;
     
     reg axi_clk_i;
     reg axi_rst_i;
@@ -25,11 +34,11 @@ module MAC_TO_AXI_VERI_TB;
         .mac_rst_i(mac_rst_o), 
         .mac_rxd_i(mac_rxd_o), 
         .mac_ben_i(mac_ben_o), 
-        .mac_rxda_i(1'b0), 
-        .mac_rxsop_i(1'b0),
-        .mac_rxeop_i(1'b0), 
-        .mac_rxdv_i(1'b0), 
-        .mac_rxrqrd_i(),
+        .mac_rxda_i(mac_rxda_o), 
+        .mac_rxsop_i(mac_rxsop_o),
+        .mac_rxeop_i(mac_rxeop_o), 
+        .mac_rxdv_i(mac_rxdv_o), 
+        .mac_rxrqrd_i(mac_rxrqrd_i),
         /* AXI SIGNALS */
         .ACLK(axi_clk_i),
         .ARESETN(axi_rst_i),
@@ -41,21 +50,19 @@ module MAC_TO_AXI_VERI_TB;
         .S_AXI_RVALID(axi_r_vald_int), 
         .S_AXI_RREADY(axi_r_ready_int)
         );
-    wire mac_clk_o;
-    wire mac_rst_o;
-    wire [31:0] mac_rxd_o;
-    wire [1:0] mac_ben_o;
+
+    
     TRI_MODE_MAC_STIMULUS mac_stim_0(
         .mac_clk_o   (mac_clk_o), 
         .mac_rst_o   (mac_rst_o),
         .mac_rxd_o   (mac_rxd_o),
         .mac_ben_o   (mac_ben_o),
-        .mac_rxda_o  (),                            
-        .mac_rxsop_o (),                           
-        .mac_rxeop_o (),                           
-        .mac_rxdv_o  (),                            
+        .mac_rxda_o  (mac_rxda_o),                            
+        .mac_rxsop_o (mac_rxsop_o),                           
+        .mac_rxeop_o (mac_rxeop_o),                           
+        .mac_rxdv_o  (mac_rxdv_o),                            
             /* INPUT TO MAC */ 
-        .mac_rxrqrd_i                    
+        .mac_rxrqrd_i (mac_rxrqrd_i)              
      ); 
     initial begin
         axi_clk_i          =  1'b0;
