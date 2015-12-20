@@ -62,13 +62,11 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
     output reg                             S_AXI_RVALID;
     input  wire                            S_AXI_RREADY;
     /* INTERNAL REGISTERS */
-    reg [_addr_w_mem:1] pkt_wr_addr_int;
-    reg [_addr_w_mem:1] pkt_rd_addr_int; 
+    reg [_addr_w_mem:0] pkt_wr_addr_int;
+    reg [_addr_w_mem:0] pkt_rd_addr_int; 
     reg [_dat_w_mac:0]  mac_rxd_buf_int;
     reg [_dat_w_mem:0]  pkt_rd_dout_int;
     reg [31:0]          pkt_count_int;
-    reg                 pkt_wr_int;
-    reg [1:0]           pkt_start_det;
     reg                 pip_int; /* Packet in Progress */
     /* Byte enable input mask */
     wire [_dat_w_mac-1:0] mac_d_mask_int;
@@ -76,7 +74,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
         if ((_dat_w_mac == 32) && (_ben_w_mac == 2)) begin
             assign mac_d_mask_int = 
                 (mac_ben_i == 2'b00) ? {{24{1'b0}},{8{1'b1}}} :
-                (mac_ben_i == 2'b01) ? {{16{1'b0}},{{16'b1}}} :
+                (mac_ben_i == 2'b01) ? {{16{1'b0}},{16{1'b1}}} :
                 (mac_ben_i == 2'b10) ? {{8{1'b0}},{{24'b1}}} :
                 (mac_ben_i == 2'b11) ? {32{1'b1}} : 32'b0; 
         end
