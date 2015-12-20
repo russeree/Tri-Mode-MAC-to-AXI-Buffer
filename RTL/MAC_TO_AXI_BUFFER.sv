@@ -29,7 +29,8 @@
 `include "MAC_TO_AXI_BUFFER.vh"  
 
 module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i, mac_rxsop_i, mac_rxeop_i, mac_rxdv_i, mac_rxrqrd_i,
-    ACLK,ARESETN,S_AXI_ARADDR,S_AXI_ARVALID,S_AXI_ARREADY,S_AXI_RDATA,S_AXI_RRESP, S_AXI_RVALID, S_AXI_RREADY);
+    ACLK,ARESETN,S_AXI_ARADDR,S_AXI_ARVALID,S_AXI_ARREADY,S_AXI_RDATA,S_AXI_RRESP, S_AXI_RVALID, S_AXI_RREADY, S_AXI_AWADDR, S_AXI_AWPROT, S_AXI_AWVALID, S_AXI_AWREADY,
+    S_AXI_WDATA, S_AXI_WSTRB, S_AXI_WVALID, S_AXI_WREADY, S_AXI_BRESP, S_AXI_BVALID, S_AXI_BREADY);
     /* Parameters: MAC INTERFACE and FIFO CONFIG */
     parameter integer _dat_w_mac                  = 32;                  // MAC BITS RX Data output width
     parameter integer _ben_w_mac                  = 2;                   // MAC BITS RX Data output byte enable width 
@@ -52,6 +53,20 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
     /* AXI4 LTIE System Signals */ 
     input wire ACLK;
     input wire ARESETN;
+    /* Slave Interface Write Address Ports */
+    input  wire [C_S_AXI_ADDR_WIDTH-1:0]   S_AXI_AWADDR;
+    input  wire [3-1:0]                    S_AXI_AWPROT;
+    input  wire                            S_AXI_AWVALID;
+    output reg                             S_AXI_AWREADY; 
+    /* Slave Interface Write Data Ports */
+    input  wire [C_S_AXI_DATA_WIDTH-1:0]   S_AXI_WDATA;
+    input  wire [C_S_AXI_DATA_WIDTH/8-1:0] S_AXI_WSTRB;
+    input  wire                            S_AXI_WVALID;
+    output reg                             S_AXI_WREADY;
+    /* Slave Interface Write Response Ports */
+    output reg [2-1:0]                     S_AXI_BRESP;
+    output reg                             S_AXI_BVALID;
+    input  wire                            S_AXI_BREADY;
     /* Read Channels */
     input  wire [C_S_AXI_ADDR_WIDTH-1:0]   S_AXI_ARADDR;
     input  wire                            S_AXI_ARVALID;
@@ -83,21 +98,33 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
             $error("Not a supported config: please add an ertry"); 
         end 
     endgenerate
-    /* Generate the packet buffer memory */  
+    /* Generate packet input buffer memory */  
 `ifdef _ARCH_XIL (* ram_style="block" *) `endif
-    reg [_dat_w_mem-1:0] packet_buffer_mem [(2**_addr_w_mem)-1:0];
+    reg [_dat_w_mem-1:0] packet_in_buffer_mem   [(2**_addr_w_mem)-1:0];
+    /* Generate packet output buffer memory */
+`ifdef _ARCH_XIL (* ram_style="block" *) `endif
+    reg [_dat_w_mem-1:0] packet_out_0_buffer_mem   [(2**_addr_w_mem)-1:0];
+`ifdef _ARCH_XIL (* ram_style="block" *) `endif
+    reg [_dat_w_mem-1:0] packet_out_1_buffer_mem   [(2**_addr_w_mem)-1:0];
+    /* AXI Write interface */
+    always @ (posedge clk_i) begin
+        if (!rst_i) begin
+        end
+        else begin
+        end
+    end 
     /* Write the contents of _MEMORY_CONTENTS_BIN to the memory interface for AXI SIMULTATION
      * The file location is defined in the verilog header file 
-     */ 
+     */
 `ifdef _SIMULATION
     integer r, file;
     integer mem_size = (2**_addr_w_mem);
     initial begin
         file = $fopen(`_MEMORY_CONTENTS_BIN,"rb");
-        r    = $fread(packet_buffer_mem, file, 0, mem_size);
+        r    = $fread(packet_in_buffer_mem  , file, 0, mem_size);
         $write("$fread read %0d  bytes: ", r);
-        foreach (packet_buffer_mem[i])
-            $write(" %h", packet_buffer_mem[i]);
+        foreach (packet_in_buffer_mem  [i])
+            $write(" %h", packet_in_buffer_mem  [i]);
             $display;
         end 
 `endif
@@ -106,20 +133,20 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
      * This will gaurentee 1 whole packet will be received from the MAC 
      */
     enum logic [0:0] {s_idle    = 1'b0,
-                      s_wr      = 1'b1} mem_state_int;
+                      s_wr      = 1'b1} mem_in_state_int;
     always @ (posedge mac_clk_i) begin
         if (mac_rst_i) begin
-            mem_state_int   <= s_idle;
+            mem_in_state_int   <= s_idle;
             pip_int         <= 1'b0;
             mac_rxrqrd_i    <= 1'b0;
             pkt_wr_addr_int <= 1'b0;
             pkt_count_int   <= 1'b0;
         end
         else
-            case(mem_state_int)
+            case(mem_in_state_int)
                 s_idle: begin
                     if(mac_rxda_i) begin
-                        mem_state_int   <= s_wr;
+                        mem_in_state_int   <= s_wr;
                         mac_rxrqrd_i    <= 1'b1;
                         pkt_wr_addr_int <= 1'b0; 
                     end 
@@ -137,7 +164,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
                         3'b0x1: begin
                             mac_rxrqrd_i  <= 1'b0;
                             pip_int       <= 1'b0;
-                            mem_state_int <= s_idle;
+                            mem_in_state_int <= s_idle;
                         end 
                         3'b100: begin
                             mac_rxrqrd_i  <= 1'b1;
@@ -150,7 +177,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
                         3'b1x1: begin
                             mac_rxrqrd_i  <= 1'b1;
                             pip_int       <= 1'b0;
-                            mem_state_int <= s_idle;
+                            mem_in_state_int <= s_idle;
                         end
                         default:
                             /* CASE STUB */
@@ -158,7 +185,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
                     endcase 
                     if(mac_rxdv_i) begin
                         pkt_wr_addr_int <= pkt_wr_addr_int + 1'b1; 
-                        packet_buffer_mem[pkt_wr_addr_int] <= (mac_rxd_i & mac_d_mask_int);
+                        packet_in_buffer_mem  [pkt_wr_addr_int] <= (mac_rxd_i & mac_d_mask_int);
                     end
                 end
             endcase
@@ -189,7 +216,7 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
                         S_AXI_RRESP <= 2'b10;
                     end
                     if(S_AXI_ARADDR <= {_addr_w_mem{1'b1}}) begin
-                        S_AXI_RDATA <= packet_buffer_mem[S_AXI_ARADDR];
+                        S_AXI_RDATA <= packet_in_buffer_mem  [S_AXI_ARADDR];
                         S_AXI_RRESP <= 2'b00; 
                     end
                 end
