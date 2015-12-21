@@ -26,7 +26,7 @@ module bram_w_be_wrapper(addra_i, addrb_i, dina_i, dinb_i, clka_i, clkb_i, wea_i
    
     parameter NB_COL = 4;                              // Specify number of columns (number of bytes)
     parameter COL_WIDTH = 8;                           // Specify column width (byte width, typically 8 or 9)
-    parameter RAM_DEPTH = 350000;                        // Specify RAM depth (number of entries)
+    parameter RAM_DEPTH = 1600;                        // Specify RAM depth (number of entries)
     parameter RAM_PERFORMANCE = "HIGH_PERFORMANCE";    // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
     parameter INIT_FILE = "";                          // Specify name/location of RAM initialization file if using one (leave blank if not)
     
@@ -37,7 +37,7 @@ module bram_w_be_wrapper(addra_i, addrb_i, dina_i, dinb_i, clka_i, clkb_i, wea_i
     input  wire clka_i;                                // Port A clock
     input  wire clkb_i;                                // Port B clock
     input  wire [NB_COL-1:0] wea_i;                    // Port A write enable
-    input  wire [NB_COL-1:0] web_i;		             // Port B write enable
+    input  wire [NB_COL-1:0] web_i;		               // Port B write enable
     input  wire ena_i;                                 // Port A RAM Enable, for additional power savings, disable BRAM when not in use
     input  wire enb_i;                                 // Port B RAM Enable, for additional power savings, disable BRAM when not in use
     input  wire rsta_i;                                // Port A output reset (does not affect memory contents)
