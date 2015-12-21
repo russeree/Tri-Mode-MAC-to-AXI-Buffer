@@ -106,14 +106,6 @@ module MAC_TO_AXI_BUFFER (mac_clk_i, mac_rst_i, mac_rxd_i, mac_ben_i, mac_rxda_i
     reg [_dat_w_mem-1:0] packet_out_0_buffer_mem   [(2**_addr_w_mem)-1:0];
 `ifdef _ARCH_XIL (* ram_style="block" *) `endif
     reg [_dat_w_mem-1:0] packet_out_1_buffer_mem   [(2**_addr_w_mem)-1:0];
-    /* AXI Write interface */
-    enum logic [3:0] {wr_idle, wr_trans_addr, wr_trans_valid} axi_wr_state;
-    always @ (posedge clk_i) begin
-        if (!rst_i) begin
-        end
-        else begin
-        end
-    end 
     /* Write the contents of _MEMORY_CONTENTS_BIN to the memory interface for AXI SIMULTATION
      * The file location is defined in the verilog header file 
      */
