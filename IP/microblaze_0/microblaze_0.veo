@@ -68,25 +68,6 @@ microblaze_0 your_instance_name (
   .IWAIT(IWAIT),                          // input wire IWAIT
   .ICE(ICE),                              // input wire ICE
   .IUE(IUE),                              // input wire IUE
-  .M_AXI_IP_AWADDR(M_AXI_IP_AWADDR),      // output wire [31 : 0] M_AXI_IP_AWADDR
-  .M_AXI_IP_AWPROT(M_AXI_IP_AWPROT),      // output wire [2 : 0] M_AXI_IP_AWPROT
-  .M_AXI_IP_AWVALID(M_AXI_IP_AWVALID),    // output wire M_AXI_IP_AWVALID
-  .M_AXI_IP_AWREADY(M_AXI_IP_AWREADY),    // input wire M_AXI_IP_AWREADY
-  .M_AXI_IP_WDATA(M_AXI_IP_WDATA),        // output wire [31 : 0] M_AXI_IP_WDATA
-  .M_AXI_IP_WSTRB(M_AXI_IP_WSTRB),        // output wire [3 : 0] M_AXI_IP_WSTRB
-  .M_AXI_IP_WVALID(M_AXI_IP_WVALID),      // output wire M_AXI_IP_WVALID
-  .M_AXI_IP_WREADY(M_AXI_IP_WREADY),      // input wire M_AXI_IP_WREADY
-  .M_AXI_IP_BRESP(M_AXI_IP_BRESP),        // input wire [1 : 0] M_AXI_IP_BRESP
-  .M_AXI_IP_BVALID(M_AXI_IP_BVALID),      // input wire M_AXI_IP_BVALID
-  .M_AXI_IP_BREADY(M_AXI_IP_BREADY),      // output wire M_AXI_IP_BREADY
-  .M_AXI_IP_ARADDR(M_AXI_IP_ARADDR),      // output wire [31 : 0] M_AXI_IP_ARADDR
-  .M_AXI_IP_ARPROT(M_AXI_IP_ARPROT),      // output wire [2 : 0] M_AXI_IP_ARPROT
-  .M_AXI_IP_ARVALID(M_AXI_IP_ARVALID),    // output wire M_AXI_IP_ARVALID
-  .M_AXI_IP_ARREADY(M_AXI_IP_ARREADY),    // input wire M_AXI_IP_ARREADY
-  .M_AXI_IP_RDATA(M_AXI_IP_RDATA),        // input wire [31 : 0] M_AXI_IP_RDATA
-  .M_AXI_IP_RRESP(M_AXI_IP_RRESP),        // input wire [1 : 0] M_AXI_IP_RRESP
-  .M_AXI_IP_RVALID(M_AXI_IP_RVALID),      // input wire M_AXI_IP_RVALID
-  .M_AXI_IP_RREADY(M_AXI_IP_RREADY),      // output wire M_AXI_IP_RREADY
   .Data_Addr(Data_Addr),                  // output wire [0 : 31] Data_Addr
   .Data_Read(Data_Read),                  // input wire [0 : 31] Data_Read
   .Data_Write(Data_Write),                // output wire [0 : 31] Data_Write

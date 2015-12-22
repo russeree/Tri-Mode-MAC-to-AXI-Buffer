@@ -1,7 +1,7 @@
 -- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2015.4.1 (win64) Build 1431336 Fri Dec 11 14:52:45 MST 2015
--- Date        : Mon Dec 21 06:51:04 2015
+-- Date        : Mon Dec 21 07:45:45 2015
 -- Host        : computer0 running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Reese/udp_packet_parser_module/udp_packet_parser_module.srcs/IP/microblaze_0/microblaze_0_sim_netlist.vhdl
@@ -1478,600 +1478,6 @@ mem_access_completed_reg: unisim.vcomponents.FDRE
       CE => '1',
       D => mem_access_completed0,
       Q => \^mem_daxi_data_strobe\,
-      R => \out\(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_0_IAXI_Interface is
-  port (
-    iext_ready : out STD_LOGIC;
-    IReady1_out : out STD_LOGIC;
-    D : out STD_LOGIC_VECTOR ( 32 downto 0 );
-    Q : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    E : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Clk : in STD_LOGIC;
-    \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    M_AXI_IP_RVALID : in STD_LOGIC;
-    IReady : in STD_LOGIC;
-    IWAIT : in STD_LOGIC;
-    M_AXI_IP_ARREADY : in STD_LOGIC;
-    \Using_FPGA.Native\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_IP_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_0_IAXI_Interface : entity is "IAXI_Interface";
-end microblaze_0_IAXI_Interface;
-
-architecture STRUCTURE of microblaze_0_IAXI_Interface is
-  signal \^d\ : STD_LOGIC_VECTOR ( 32 downto 0 );
-  signal M_AXI_IP_ARVALID_i_i_1_n_0 : STD_LOGIC;
-  signal ib_addr_strobe_d1 : STD_LOGIC;
-  signal \^iext_ready\ : STD_LOGIC;
-begin
-  D(32 downto 0) <= \^d\(32 downto 0);
-  iext_ready <= \^iext_ready\;
-\IAXI_Data_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(31),
-      Q => Q(31),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(21),
-      Q => Q(21),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(20),
-      Q => Q(20),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(19),
-      Q => Q(19),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[13]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(18),
-      Q => Q(18),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[14]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(17),
-      Q => Q(17),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[15]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(16),
-      Q => Q(16),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[16]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(15),
-      Q => Q(15),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[17]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(14),
-      Q => Q(14),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[18]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(13),
-      Q => Q(13),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[19]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(12),
-      Q => Q(12),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(30),
-      Q => Q(30),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[20]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(11),
-      Q => Q(11),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[21]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(10),
-      Q => Q(10),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[22]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(9),
-      Q => Q(9),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[23]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(8),
-      Q => Q(8),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[24]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(7),
-      Q => Q(7),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[25]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(6),
-      Q => Q(6),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[26]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(5),
-      Q => Q(5),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[27]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(4),
-      Q => Q(4),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[28]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(3),
-      Q => Q(3),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[29]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(2),
-      Q => Q(2),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(29),
-      Q => Q(29),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[30]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(1),
-      Q => Q(1),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[31]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(0),
-      Q => Q(0),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(28),
-      Q => Q(28),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(27),
-      Q => Q(27),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(26),
-      Q => Q(26),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(25),
-      Q => Q(25),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(24),
-      Q => Q(24),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(23),
-      Q => Q(23),
-      R => \out\(0)
-    );
-\IAXI_Data_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RDATA(22),
-      Q => Q(22),
-      R => \out\(0)
-    );
-I_AS_INST_0_i_1: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"E"
-    )
-        port map (
-      I0 => \^iext_ready\,
-      I1 => IReady,
-      O => IReady1_out
-    );
-M_AXI_IP_ARVALID_i_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000FF1010"
-    )
-        port map (
-      I0 => IReady,
-      I1 => IWAIT,
-      I2 => ib_addr_strobe_d1,
-      I3 => M_AXI_IP_ARREADY,
-      I4 => \^d\(0),
-      I5 => \out\(0),
-      O => M_AXI_IP_ARVALID_i_i_1_n_0
-    );
-M_AXI_IP_ARVALID_i_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_ARVALID_i_i_1_n_0,
-      Q => \^d\(0),
-      R => '0'
-    );
-ib_addr_strobe_d1_reg: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => E(0),
-      Q => ib_addr_strobe_d1,
-      R => '0'
-    );
-\instr_addr_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(31),
-      Q => \^d\(32),
-      R => '0'
-    );
-\instr_addr_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(21),
-      Q => \^d\(22),
-      R => '0'
-    );
-\instr_addr_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(20),
-      Q => \^d\(21),
-      R => '0'
-    );
-\instr_addr_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(19),
-      Q => \^d\(20),
-      R => '0'
-    );
-\instr_addr_reg[13]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(18),
-      Q => \^d\(19),
-      R => '0'
-    );
-\instr_addr_reg[14]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(17),
-      Q => \^d\(18),
-      R => '0'
-    );
-\instr_addr_reg[15]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(16),
-      Q => \^d\(17),
-      R => '0'
-    );
-\instr_addr_reg[16]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(15),
-      Q => \^d\(16),
-      R => '0'
-    );
-\instr_addr_reg[17]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(14),
-      Q => \^d\(15),
-      R => '0'
-    );
-\instr_addr_reg[18]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(13),
-      Q => \^d\(14),
-      R => '0'
-    );
-\instr_addr_reg[19]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(12),
-      Q => \^d\(13),
-      R => '0'
-    );
-\instr_addr_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(30),
-      Q => \^d\(31),
-      R => '0'
-    );
-\instr_addr_reg[20]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(11),
-      Q => \^d\(12),
-      R => '0'
-    );
-\instr_addr_reg[21]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(10),
-      Q => \^d\(11),
-      R => '0'
-    );
-\instr_addr_reg[22]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(9),
-      Q => \^d\(10),
-      R => '0'
-    );
-\instr_addr_reg[23]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(8),
-      Q => \^d\(9),
-      R => '0'
-    );
-\instr_addr_reg[24]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(7),
-      Q => \^d\(8),
-      R => '0'
-    );
-\instr_addr_reg[25]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(6),
-      Q => \^d\(7),
-      R => '0'
-    );
-\instr_addr_reg[26]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(5),
-      Q => \^d\(6),
-      R => '0'
-    );
-\instr_addr_reg[27]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(4),
-      Q => \^d\(5),
-      R => '0'
-    );
-\instr_addr_reg[28]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(3),
-      Q => \^d\(4),
-      R => '0'
-    );
-\instr_addr_reg[29]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(2),
-      Q => \^d\(3),
-      R => '0'
-    );
-\instr_addr_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(29),
-      Q => \^d\(30),
-      R => '0'
-    );
-\instr_addr_reg[30]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(1),
-      Q => \^d\(2),
-      R => '0'
-    );
-\instr_addr_reg[31]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(0),
-      Q => \^d\(1),
-      R => '0'
-    );
-\instr_addr_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(28),
-      Q => \^d\(29),
-      R => '0'
-    );
-\instr_addr_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(27),
-      Q => \^d\(28),
-      R => '0'
-    );
-\instr_addr_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(26),
-      Q => \^d\(27),
-      R => '0'
-    );
-\instr_addr_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(25),
-      Q => \^d\(26),
-      R => '0'
-    );
-\instr_addr_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(24),
-      Q => \^d\(25),
-      R => '0'
-    );
-\instr_addr_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(23),
-      Q => \^d\(24),
-      R => '0'
-    );
-\instr_addr_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => E(0),
-      D => \Using_FPGA.Native\(22),
-      Q => \^d\(23),
-      R => '0'
-    );
-mem_access_completed_reg: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => M_AXI_IP_RVALID,
-      Q => \^iext_ready\,
       R => \out\(0)
     );
 end STRUCTURE;
@@ -4258,7 +3664,7 @@ entity microblaze_0_MB_FDR is
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     Clk : in STD_LOGIC;
     inHibit_EX : in STD_LOGIC;
-    IReady1_out : in STD_LOGIC;
+    IReady : in STD_LOGIC;
     mul_Executing_reg : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
     nonvalid_IFetch_n_reg_1 : in STD_LOGIC;
@@ -4303,7 +3709,7 @@ nonvalid_IFetch_n_i_1: unisim.vcomponents.LUT6
         port map (
       I0 => \^nonvalid_ifetch_n_reg\,
       I1 => inHibit_EX,
-      I2 => IReady1_out,
+      I2 => IReady,
       I3 => mul_Executing_reg,
       I4 => \Using_FPGA.Native_1\,
       I5 => nonvalid_IFetch_n_reg_1,
@@ -18268,550 +17674,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized66\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized66\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized66\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized66\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized68\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized68\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized68\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized68\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized70\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized70\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized70\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized70\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized72\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized72\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized72\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized72\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized74\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized74\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized74\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized74\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized76\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized76\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized76\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized76\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized78\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized78\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized78\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized78\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized80\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized80\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized80\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized80\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized82\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized82\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized82\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized82\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized84\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized84\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized84\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized84\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized86\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized86\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized86\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized86\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized88\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized88\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized88\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized88\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized90\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized90\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized90\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized90\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized92\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized92\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized92\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized92\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized94\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized94\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized94\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized94\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
-entity \microblaze_0_MB_LUT6_2__parameterized96\ is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    A0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    Instr : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of \microblaze_0_MB_LUT6_2__parameterized96\ : entity is "MB_LUT6_2";
-end \microblaze_0_MB_LUT6_2__parameterized96\;
-
-architecture STRUCTURE of \microblaze_0_MB_LUT6_2__parameterized96\ is
-  attribute box_type : string;
-  attribute box_type of \Using_FPGA.Native\ : label is "PRIMITIVE";
-begin
-\Using_FPGA.Native\: unisim.vcomponents.LUT6_2
-    generic map(
-      INIT => X"FF00F0F0CCCCAAAA"
-    )
-        port map (
-      I0 => A0(1),
-      I1 => Instr(1),
-      I2 => A0(0),
-      I3 => Instr(0),
-      I4 => IReady,
-      I5 => '1',
-      O5 => Y(1),
-      O6 => Y(0)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
 entity \microblaze_0_MB_LUT6__parameterized1\ is
   port (
     EX_Result : out STD_LOGIC_VECTOR ( 0 to 0 );
@@ -20387,8 +19249,8 @@ entity microblaze_0_MB_MUXCY_18 is
     ex_Valid_reg : out STD_LOGIC;
     SR : out STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native_1\ : out STD_LOGIC;
-    inHibit_EX0 : out STD_LOGIC;
     load_Store_i2 : out STD_LOGIC;
+    inHibit_EX0 : out STD_LOGIC;
     \Using_FPGA.Native_2\ : out STD_LOGIC;
     take_Intr_Now_II : in STD_LOGIC;
     \break_Pipe_i_reg__0\ : in STD_LOGIC;
@@ -20405,7 +19267,6 @@ entity microblaze_0_MB_MUXCY_18 is
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     take_NM_Break : in STD_LOGIC;
     nonvalid_IFetch_n_reg : in STD_LOGIC;
-    iext_ready : in STD_LOGIC;
     IReady : in STD_LOGIC;
     \Using_FPGA.Native_5\ : in STD_LOGIC;
     lopt : in STD_LOGIC;
@@ -20510,16 +19371,15 @@ ex_Valid_i_1: unisim.vcomponents.LUT6
       I5 => mem_access_completed_reg,
       O => ex_Valid_reg
     );
-inHibit_EX_i_4: unisim.vcomponents.LUT5
+inHibit_EX_i_4: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"4F4F4F44"
+      INIT => X"4F44"
     )
         port map (
       I0 => \Using_FPGA.take_Intr_2nd_Phase_reg_0\,
       I1 => \^take_intr_now_iii\,
       I2 => nonvalid_IFetch_n_reg,
-      I3 => iext_ready,
-      I4 => IReady,
+      I3 => IReady,
       O => inHibit_EX0
     );
 end STRUCTURE;
@@ -20531,7 +19391,7 @@ entity microblaze_0_MB_MUXCY_19 is
   port (
     valid_Fetch : out STD_LOGIC;
     nonvalid_IFetch_n_reg : in STD_LOGIC;
-    IReady1_out : in STD_LOGIC;
+    IReady : in STD_LOGIC;
     lopt : in STD_LOGIC;
     lopt_1 : out STD_LOGIC
   );
@@ -20639,19 +19499,17 @@ entity microblaze_0_MB_MUXCY_21 is
   port (
     ifetch_carry2 : out STD_LOGIC;
     iFetch_In_Progress_reg : out STD_LOGIC;
-    I_AS : out STD_LOGIC;
     missed_IFetch_reg : out STD_LOGIC;
+    I_AS : out STD_LOGIC;
     \Synchronize.use_sync_reset.sync_reg[2]\ : in STD_LOGIC;
     ifetch_carry1 : in STD_LOGIC;
+    mbar_decode_I : in STD_LOGIC;
+    ex_Valid_reg : in STD_LOGIC;
+    mul_Executing : in STD_LOGIC;
     iFetch_In_Progress : in STD_LOGIC;
-    iext_ready : in STD_LOGIC;
     IReady : in STD_LOGIC;
     missed_IFetch : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
-    mul_Executing : in STD_LOGIC;
-    ex_Valid_reg : in STD_LOGIC;
-    mbar_decode_I : in STD_LOGIC;
-    IReady1_out : in STD_LOGIC;
     lopt : in STD_LOGIC;
     lopt_1 : out STD_LOGIC
   );
@@ -20681,31 +19539,32 @@ I_AS_INST_0: unisim.vcomponents.LUT6
       I1 => mul_Executing,
       I2 => ex_Valid_reg,
       I3 => mbar_decode_I,
-      I4 => IReady1_out,
+      I4 => IReady,
       I5 => iFetch_In_Progress,
       O => \^i_as\
     );
-iFetch_In_Progress_i_1: unisim.vcomponents.LUT4
+iFetch_In_Progress_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"AAAE"
+      INIT => X"7F007F00FFFF7F00"
     )
         port map (
-      I0 => \^i_as\,
-      I1 => iFetch_In_Progress,
-      I2 => iext_ready,
-      I3 => IReady,
+      I0 => mbar_decode_I,
+      I1 => ex_Valid_reg,
+      I2 => mul_Executing,
+      I3 => \^ifetch_carry2\,
+      I4 => iFetch_In_Progress,
+      I5 => IReady,
       O => iFetch_In_Progress_reg
     );
-missed_IFetch_i_1: unisim.vcomponents.LUT5
+missed_IFetch_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"101F1010"
+      INIT => X"4744"
     )
         port map (
       I0 => IReady,
-      I1 => iext_ready,
-      I2 => missed_IFetch,
-      I3 => \^i_as\,
-      I4 => \Using_FPGA.Native_0\,
+      I1 => missed_IFetch,
+      I2 => \^i_as\,
+      I3 => \Using_FPGA.Native_0\,
       O => missed_IFetch_reg
     );
 end STRUCTURE;
@@ -28289,7 +27148,7 @@ entity microblaze_0_MB_SRL16E is
     \Using_FPGA.Native_1\ : out STD_LOGIC;
     mtsmsr_write_i_reg : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native_2\ : in STD_LOGIC;
     \Using_FPGA.Native_3\ : in STD_LOGIC;
     \Using_FPGA.Native_4\ : in STD_LOGIC;
@@ -28354,7 +27213,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[0]\
     );
 \Using_FPGA.Native_i_1__121\: unisim.vcomponents.LUT2
@@ -28502,7 +27361,7 @@ entity microblaze_0_MB_SRL16E_28 is
   port (
     \instr_EX_i_reg[10]\ : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28532,7 +27391,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \instr_EX_i_reg[10]\
     );
 end STRUCTURE;
@@ -28544,7 +27403,7 @@ entity microblaze_0_MB_SRL16E_29 is
   port (
     \instr_EX_i_reg[11]\ : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28574,7 +27433,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \instr_EX_i_reg[11]\
     );
 end STRUCTURE;
@@ -28588,7 +27447,7 @@ entity microblaze_0_MB_SRL16E_30 is
     \Using_FPGA.set_BIP_I_reg\ : out STD_LOGIC;
     D_0 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28628,7 +27487,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[12]\
     );
 \Using_FPGA.Native_i_1__80\: unisim.vcomponents.LUT4
@@ -28675,7 +27534,7 @@ entity microblaze_0_MB_SRL16E_31 is
   port (
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28705,7 +27564,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => D(0)
     );
 end STRUCTURE;
@@ -28718,7 +27577,7 @@ entity microblaze_0_MB_SRL16E_32 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     mul_Executing0 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28755,7 +27614,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 mbar_first_i_1: unisim.vcomponents.LUT6
@@ -28780,7 +27639,7 @@ entity microblaze_0_MB_SRL16E_33 is
   port (
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28810,7 +27669,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => D(0)
     );
 end STRUCTURE;
@@ -28839,7 +27698,7 @@ entity microblaze_0_MB_SRL16E_34 is
     D_19 : out STD_LOGIC;
     D_20 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -28911,7 +27770,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[16]\
     );
 \Using_FPGA.Native_i_1__14\: unisim.vcomponents.LUT5
@@ -29305,7 +28164,7 @@ entity microblaze_0_MB_SRL16E_35 is
     \instr_EX_i_reg[17]\ : out STD_LOGIC;
     D_21 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -29342,7 +28201,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[17]\
     );
 \Using_FPGA.Native_i_1__31\: unisim.vcomponents.LUT6
@@ -29368,7 +28227,7 @@ entity microblaze_0_MB_SRL16E_36 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_22 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -29405,7 +28264,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__32\: unisim.vcomponents.LUT6
@@ -29431,7 +28290,7 @@ entity microblaze_0_MB_SRL16E_37 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_23 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -29468,7 +28327,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__33\: unisim.vcomponents.LUT6
@@ -29506,7 +28365,7 @@ entity microblaze_0_MB_SRL16E_38 is
     Sign_Extend_reg : out STD_LOGIC;
     is_lwx_I_reg : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -29627,7 +28486,7 @@ Sign_Extend_i_3: unisim.vcomponents.LUT4
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[1]\
     );
 \Using_FPGA.Native_i_2__2\: unisim.vcomponents.LUT6
@@ -29846,7 +28705,7 @@ entity microblaze_0_MB_SRL16E_39 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_24 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -29883,7 +28742,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__34\: unisim.vcomponents.LUT6
@@ -29909,7 +28768,7 @@ entity microblaze_0_MB_SRL16E_40 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_25 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -29946,7 +28805,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__35\: unisim.vcomponents.LUT6
@@ -29972,7 +28831,7 @@ entity microblaze_0_MB_SRL16E_41 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_26 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -30009,7 +28868,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__36\: unisim.vcomponents.LUT6
@@ -30155,7 +29014,7 @@ entity microblaze_0_MB_SRL16E_42 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_27 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -30192,7 +29051,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__37\: unisim.vcomponents.LUT6
@@ -30298,7 +29157,7 @@ entity microblaze_0_MB_SRL16E_43 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_28 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -30335,7 +29194,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__38\: unisim.vcomponents.LUT6
@@ -30481,7 +29340,7 @@ entity microblaze_0_MB_SRL16E_44 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_29 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -30518,7 +29377,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__39\: unisim.vcomponents.LUT6
@@ -30639,7 +29498,7 @@ entity microblaze_0_MB_SRL16E_45 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_30 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -30676,7 +29535,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__40\: unisim.vcomponents.LUT6
@@ -30812,7 +29671,7 @@ entity microblaze_0_MB_SRL16E_46 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_31 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -30849,7 +29708,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__41\: unisim.vcomponents.LUT6
@@ -30995,7 +29854,7 @@ entity microblaze_0_MB_SRL16E_47 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_32 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -31032,7 +29891,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__42\: unisim.vcomponents.LUT6
@@ -31138,7 +29997,7 @@ entity microblaze_0_MB_SRL16E_48 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_33 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -31175,7 +30034,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__43\: unisim.vcomponents.LUT6
@@ -31323,7 +30182,7 @@ entity microblaze_0_MB_SRL16E_49 is
     Compare_Instr_reg : out STD_LOGIC;
     write_Reg_reg : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -31394,7 +30253,7 @@ Compare_Instr_i_2: unisim.vcomponents.LUT6
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[2]\
     );
 mtsmsr_write_i_i_1: unisim.vcomponents.LUT6
@@ -31525,7 +30384,7 @@ entity microblaze_0_MB_SRL16E_50 is
     D : out STD_LOGIC_VECTOR ( 0 to 0 );
     D_34 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -31562,7 +30421,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^d\(0)
     );
 \Using_FPGA.Native_i_1__44\: unisim.vcomponents.LUT6
@@ -31710,7 +30569,7 @@ entity microblaze_0_MB_SRL16E_51 is
     Sext8_reg : out STD_LOGIC;
     D_35 : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -31778,7 +30637,7 @@ Sext8_i_1: unisim.vcomponents.LUT6
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[31]\
     );
 \Using_FPGA.Native_i_1__45\: unisim.vcomponents.LUT6
@@ -31887,7 +30746,7 @@ entity microblaze_0_MB_SRL16E_52 is
     inHibit_EX_reg : out STD_LOGIC;
     is_swx_I_reg : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -31942,7 +30801,7 @@ Select_Logic_i_1: unisim.vcomponents.LUT2
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[3]\
     );
 \Using_FPGA.reset_BIP_I_i_1\: unisim.vcomponents.LUT5
@@ -32131,7 +30990,7 @@ entity microblaze_0_MB_SRL16E_53 is
     Reg_Test_Equal_i : out STD_LOGIC;
     \Using_FPGA.Native_0\ : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native_1\ : in STD_LOGIC;
     \Using_FPGA.Native_2\ : in STD_LOGIC;
     \Using_FPGA.Native_3\ : in STD_LOGIC;
@@ -32186,7 +31045,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[4]\
     );
 \Using_FPGA.Native_i_1__120\: unisim.vcomponents.LUT2
@@ -32411,7 +31270,7 @@ entity microblaze_0_MB_SRL16E_54 is
     is_lwx_I_reg : out STD_LOGIC;
     byte_i_reg : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
     \Using_FPGA.Native_2\ : in STD_LOGIC;
@@ -32466,7 +31325,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_ex_i_reg[5]\
     );
 \Using_FPGA.Native_i_1__118\: unisim.vcomponents.LUT6
@@ -32571,7 +31430,7 @@ entity microblaze_0_MB_SRL16E_55 is
     jump2_I_reg : out STD_LOGIC;
     inHibit_EX_reg : out STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -32612,7 +31471,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => \^instr_of\(0)
     );
 inHibit_EX_i_3: unisim.vcomponents.LUT3
@@ -32658,7 +31517,7 @@ entity microblaze_0_MB_SRL16E_56 is
   port (
     instr_OF : out STD_LOGIC_VECTOR ( 0 to 0 );
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -32688,7 +31547,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => instr_OF(0)
     );
 end STRUCTURE;
@@ -32700,7 +31559,7 @@ entity microblaze_0_MB_SRL16E_57 is
   port (
     instr_OF : out STD_LOGIC_VECTOR ( 0 to 0 );
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -32730,7 +31589,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => instr_OF(0)
     );
 end STRUCTURE;
@@ -32742,7 +31601,7 @@ entity microblaze_0_MB_SRL16E_58 is
   port (
     instr_OF : out STD_LOGIC_VECTOR ( 0 to 0 );
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Using_FPGA.Native\ : in STD_LOGIC;
     \Using_FPGA.Native_0\ : in STD_LOGIC;
     \Using_FPGA.Native_1\ : in STD_LOGIC;
@@ -32772,7 +31631,7 @@ begin
       A3 => '0',
       CE => CI,
       CLK => Clk,
-      D => Y(0),
+      D => Instr(0),
       Q => instr_OF(0)
     );
 end STRUCTURE;
@@ -32785,7 +31644,7 @@ entity microblaze_0_mb_sync_bit is
     \out\ : out STD_LOGIC_VECTOR ( 0 to 0 );
     \No_Debug_Logic.sleep_reset_mode_reg\ : out STD_LOGIC;
     Sext8_reg : out STD_LOGIC;
-    ib_addr_strobe_d1_reg : out STD_LOGIC;
+    iFetch_In_Progress_reg : out STD_LOGIC;
     Debug_Rst : in STD_LOGIC;
     Reset : in STD_LOGIC;
     Mb_Reset : in STD_LOGIC;
@@ -32872,7 +31731,7 @@ Sext8_i_2: unisim.vcomponents.LUT2
     )
         port map (
       I0 => sync(2),
-      O => ib_addr_strobe_d1_reg
+      O => iFetch_In_Progress_reg
     );
 end STRUCTURE;
 library IEEE;
@@ -39918,9 +38777,9 @@ entity microblaze_0_PreFetch_Buffer is
     R : in STD_LOGIC;
     Clk : in STD_LOGIC;
     CI : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 31 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
     inHibit_EX : in STD_LOGIC;
-    IReady1_out : in STD_LOGIC;
+    IReady : in STD_LOGIC;
     mul_Executing_reg : in STD_LOGIC;
     \Using_FPGA.Native_5\ : in STD_LOGIC;
     nonvalid_IFetch_n_reg_0 : in STD_LOGIC;
@@ -40046,7 +38905,7 @@ begin
       S => S0_out,
       \Using_FPGA.Native\ => buffer_Addr_Carry_1,
       lopt => lopt,
-      lopt_1 => IReady1_out,
+      lopt_1 => IReady,
       lopt_2 => lopt_1,
       lopt_3 => nonvalid_IFetch_n_reg_0,
       lopt_4 => lopt_2,
@@ -40087,6 +38946,7 @@ begin
       I3_1 => I3_1,
       I3_2 => I3_2,
       I3_3 => I3_3,
+      Instr(0) => Instr(0),
       \Using_FPGA.Native\ => \Using_FPGA.Native_1\,
       \Using_FPGA.Native_0\ => \Using_FPGA.Native_2\,
       \Using_FPGA.Native_1\ => \Using_FPGA.Native_3\,
@@ -40106,7 +38966,6 @@ begin
       \Using_FPGA.Native_7\ => \Using_FPGA.Native_8\,
       \Using_FPGA.Native_8\ => \Using_FPGA.Native_9\,
       \Using_FPGA.Native_9\ => \Using_FPGA.Native_10\,
-      Y(0) => Y(0),
       d_AS_I15_out => d_AS_I15_out,
       inHibit_EX => inHibit_EX,
       \instr_EX_i_reg[0]\ => \^instr_of\(10),
@@ -40125,20 +38984,20 @@ begin
      port map (
       CI => CI,
       Clk => Clk,
+      Instr(0) => Instr(10),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(10),
       \instr_EX_i_reg[10]\ => \^instr_of\(0)
     );
 \PreFetch_Buffers[11].SRL16E_I\: entity work.microblaze_0_MB_SRL16E_29
      port map (
       CI => CI,
       Clk => Clk,
+      Instr(0) => Instr(11),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(11),
       \instr_EX_i_reg[11]\ => \^d\(20)
     );
 \PreFetch_Buffers[12].SRL16E_I\: entity work.microblaze_0_MB_SRL16E_30
@@ -40148,13 +39007,13 @@ begin
       D(1) => \^d\(20),
       D(0) => \^d\(18),
       D_0 => D_0,
+      Instr(0) => Instr(12),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.set_BIP_I_reg\ => \Using_FPGA.set_BIP_I_reg\,
       \Using_FPGA.set_BIP_I_reg_0\ => \Using_FPGA.set_BIP_I_reg_0\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(12),
       \instr_EX_i_reg[12]\ => \^d\(19),
       mul_Executing_reg => mul_Executing_reg_0,
       \out\(0) => \out\(0),
@@ -40166,21 +39025,21 @@ begin
       CI => CI,
       Clk => Clk,
       D(0) => \^d\(18),
+      Instr(0) => Instr(13),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
-      \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(13)
+      \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\
     );
 \PreFetch_Buffers[14].SRL16E_I\: entity work.microblaze_0_MB_SRL16E_32
      port map (
       CI => CI,
       Clk => Clk,
       D(0) => \^d\(17),
+      Instr(0) => Instr(14),
       S86_out => S86_out,
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(14),
       force_Val2_n_i3 => force_Val2_n_i3,
       mbar_first24_out => mbar_first24_out,
       mul_Executing0 => mul_Executing0,
@@ -40192,10 +39051,10 @@ begin
       CI => CI,
       Clk => Clk,
       D(0) => \^d\(16),
+      Instr(0) => Instr(15),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
-      \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(15)
+      \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\
     );
 \PreFetch_Buffers[16].SRL16E_I\: entity work.microblaze_0_MB_SRL16E_34
      port map (
@@ -40218,6 +39077,7 @@ begin
       D_7 => D_7,
       D_8 => D_8,
       D_9 => D_9,
+      Instr(0) => Instr(16),
       Reg2_Data(16) => Reg2_Data(0),
       Reg2_Data(15) => Reg2_Data(1),
       Reg2_Data(14) => Reg2_Data(2),
@@ -40240,7 +39100,6 @@ begin
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(16),
       ex_Result(16) => ex_Result(0),
       ex_Result(15) => ex_Result(1),
       ex_Result(14) => ex_Result(2),
@@ -40268,12 +39127,12 @@ begin
       CI => CI,
       Clk => Clk,
       D_21 => D_21,
+      Instr(0) => Instr(17),
       Reg2_Data(0) => Reg2_Data(17),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(17),
       ex_Result(0) => ex_Result(17),
       \instr_EX_i_reg[17]\ => \^d\(14),
       op2_Reg1 => op2_Reg1,
@@ -40285,12 +39144,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(13),
       D_22 => D_22,
+      Instr(0) => Instr(18),
       Reg2_Data(0) => Reg2_Data(18),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(18),
       ex_Result(0) => ex_Result(18),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40301,12 +39160,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(12),
       D_23 => D_23,
+      Instr(0) => Instr(19),
       Reg2_Data(0) => Reg2_Data(19),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(19),
       ex_Result(0) => ex_Result(19),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40321,6 +39180,7 @@ begin
       D(3 downto 2) => \^d\(6 downto 5),
       D(1 downto 0) => \^d\(3 downto 2),
       I213_out => I213_out,
+      Instr(0) => Instr(1),
       Sign_Extend_reg => Sign_Extend_reg,
       \Size_17to32.imm_Reg_reg[15]\(0) => \Size_17to32.imm_Reg_reg[15]\(0),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
@@ -40334,7 +39194,6 @@ begin
       \Using_FPGA.Native_7\ => \^instr_of\(6),
       \Using_FPGA.Native_8\ => \PreFetch_Buffers[2].SRL16E_I_n_3\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(1),
       byte_i_reg => \^byte_i_reg\,
       force_Val2_n_i3 => force_Val2_n_i3,
       \instr_EX_i_reg[1]\ => \^instr_of\(9),
@@ -40364,12 +39223,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(11),
       D_24 => D_24,
+      Instr(0) => Instr(20),
       Reg2_Data(0) => Reg2_Data(20),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(20),
       ex_Result(0) => ex_Result(20),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40380,12 +39239,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(10),
       D_25 => D_25,
+      Instr(0) => Instr(21),
       Reg2_Data(0) => Reg2_Data(21),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(21),
       ex_Result(0) => ex_Result(21),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40396,12 +39255,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(9),
       D_26 => D_26,
+      Instr(0) => Instr(22),
       Reg2_Data(0) => Reg2_Data(22),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(22),
       ex_Result(0) => ex_Result(22),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40412,12 +39271,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(8),
       D_27 => D_27,
+      Instr(0) => Instr(23),
       Reg2_Data(0) => Reg2_Data(23),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(23),
       ex_Result(0) => ex_Result(23),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40428,12 +39287,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(7),
       D_28 => D_28,
+      Instr(0) => Instr(24),
       Reg2_Data(0) => Reg2_Data(24),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(24),
       ex_Result(0) => ex_Result(24),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40444,12 +39303,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(6),
       D_29 => D_29,
+      Instr(0) => Instr(25),
       Reg2_Data(0) => Reg2_Data(25),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(25),
       ex_Result(0) => ex_Result(25),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40460,12 +39319,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(5),
       D_30 => D_30,
+      Instr(0) => Instr(26),
       Reg2_Data(0) => Reg2_Data(26),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(26),
       ex_Result(0) => ex_Result(26),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40476,12 +39335,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(4),
       D_31 => D_31,
+      Instr(0) => Instr(27),
       Reg2_Data(0) => Reg2_Data(27),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(27),
       ex_Result(0) => ex_Result(27),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40492,12 +39351,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(3),
       D_32 => D_32,
+      Instr(0) => Instr(28),
       Reg2_Data(0) => Reg2_Data(28),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(28),
       ex_Result(0) => ex_Result(28),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40508,12 +39367,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(2),
       D_33 => D_33,
+      Instr(0) => Instr(29),
       Reg2_Data(0) => Reg2_Data(29),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(29),
       ex_Result(0) => ex_Result(29),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40524,6 +39383,7 @@ begin
       Clk => Clk,
       Compare_Instr_reg => Compare_Instr_reg,
       D(0) => \^d\(14),
+      Instr(0) => Instr(2),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
@@ -40534,7 +39394,6 @@ begin
       \Using_FPGA.Native_6\ => \^instr_of\(5),
       \Using_FPGA.Native_7\ => \^instr_of\(7),
       \Using_FPGA.Native_8\ => \^instr_of\(6),
-      Y(0) => Y(2),
       compare_Instr => compare_Instr,
       \instr_EX_i_reg[2]\ => \^instr_of\(8),
       mtsmsr_write_i_reg => mtsmsr_write_i_reg,
@@ -40550,12 +39409,12 @@ begin
       Clk => Clk,
       D(0) => \^d\(1),
       D_34 => D_34,
+      Instr(0) => Instr(30),
       Reg2_Data(0) => Reg2_Data(30),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(30),
       ex_Result(0) => ex_Result(30),
       op2_Reg1 => op2_Reg1,
       opsel2_Imm => opsel2_Imm
@@ -40566,6 +39425,7 @@ begin
       Clk => Clk,
       D(1 downto 0) => \^d\(6 downto 5),
       D_35 => D_35,
+      Instr(0) => Instr(31),
       Reg2_Data(0) => Reg2_Data(31),
       Sext16_reg => Sext16_reg,
       Sext16_reg_0 => Sext16_reg_0,
@@ -40576,7 +39436,6 @@ begin
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Using_FPGA.take_Intr_2nd_Phase_reg\,
-      Y(0) => Y(31),
       ex_Result(0) => ex_Result(31),
       \instr_EX_i_reg[31]\ => \^d\(0),
       mul_Executing_reg => mul_Executing_reg_0,
@@ -40588,6 +39447,7 @@ begin
       CI => CI,
       Clk => Clk,
       D(0) => \^d\(10),
+      Instr(0) => Instr(3),
       Select_Logic_reg => Select_Logic_reg,
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
@@ -40600,7 +39460,6 @@ begin
       \Using_FPGA.Native_7\ => \^instr_of\(8),
       \Using_FPGA.Native_8\ => \^instr_of\(1),
       \Using_FPGA.reset_BIP_I_reg\ => \Using_FPGA.reset_BIP_I_reg\,
-      Y(0) => Y(3),
       inHibit_EX => inHibit_EX,
       inHibit_EX_reg => inHibit_EX_reg,
       \instr_EX_i_reg[3]\ => \^instr_of\(7),
@@ -40611,6 +39470,7 @@ begin
      port map (
       CI => CI,
       Clk => Clk,
+      Instr(0) => Instr(4),
       Reg_Test_Equal_N_i7_out => Reg_Test_Equal_N_i7_out,
       Reg_Test_Equal_i => Reg_Test_Equal_i,
       \Using_FPGA.Native\ => \Using_FPGA.Native_0\,
@@ -40626,7 +39486,6 @@ begin
       \Using_FPGA.Native_7\ => \^instr_of\(1),
       \Using_FPGA.Native_8\ => \^instr_of\(0),
       \Using_FPGA.Native_9\ => \^instr_of\(9),
-      Y(0) => Y(4),
       doublet => doublet,
       doublet_i_reg => doublet_i_reg,
       force1_i29_out => force1_i29_out,
@@ -40645,6 +39504,7 @@ begin
       Clk => Clk,
       DReady0_out => DReady0_out,
       I287_out => I287_out,
+      Instr(0) => Instr(5),
       S86_out => S86_out,
       \Using_FPGA.Native\ => \Using_FPGA.Native\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]\,
@@ -40658,7 +39518,6 @@ begin
       \Using_FPGA.Native_7\ => \PreFetch_Buffers[1].SRL16E_I_n_13\,
       \Using_FPGA.Native_8\ => \^instr_of\(10),
       \Using_FPGA.Native_9\ => \PreFetch_Buffers[3].SRL16E_I_n_4\,
-      Y(0) => Y(5),
       byte => byte,
       byte_i_reg => byte_i_reg_0,
       force_Val2_N => force_Val2_N,
@@ -40678,6 +39537,7 @@ begin
       CI => CI,
       Clk => Clk,
       D(0) => \^d\(20),
+      Instr(0) => Instr(6),
       S86_out => S86_out,
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
@@ -40688,7 +39548,6 @@ begin
       \Using_FPGA.Native_5\ => \^instr_of\(8),
       \Using_FPGA.Native_6\ => \^instr_of\(5),
       \Using_FPGA.Native_7\ => \^instr_of\(6),
-      Y(0) => Y(6),
       inHibit_EX_reg => inHibit_EX_reg_0,
       instr_OF(0) => \^instr_of\(4),
       jump2_I_reg => jump2_I_reg
@@ -40697,36 +39556,36 @@ begin
      port map (
       CI => CI,
       Clk => Clk,
+      Instr(0) => Instr(7),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(7),
       instr_OF(0) => \^instr_of\(3)
     );
 \PreFetch_Buffers[8].SRL16E_I\: entity work.microblaze_0_MB_SRL16E_57
      port map (
       CI => CI,
       Clk => Clk,
+      Instr(0) => Instr(8),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(8),
       instr_OF(0) => \^instr_of\(2)
     );
 \PreFetch_Buffers[9].SRL16E_I\: entity work.microblaze_0_MB_SRL16E_58
      port map (
       CI => CI,
       Clk => Clk,
+      Instr(0) => Instr(9),
       \Using_FPGA.Native\ => \^instr_ex_i_reg[9]\,
       \Using_FPGA.Native_0\ => \^instr_ex_i_reg[9]_0\,
       \Using_FPGA.Native_1\ => \^instr_ex_i_reg[9]_1\,
-      Y(0) => Y(9),
       instr_OF(0) => \^instr_of\(1)
     );
 of_valid_FDR_I: entity work.microblaze_0_MB_FDR
      port map (
       Clk => Clk,
-      IReady1_out => IReady1_out,
+      IReady => IReady,
       R => R,
       \Using_FPGA.Native_0\ => \Buffer_DFFs[3].MUXCY_XOR_I_n_0\,
       \Using_FPGA.Native_1\ => \Using_FPGA.Native_5\,
@@ -45193,184 +44052,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_0_mux_bus is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 0 to 31 );
-    A0 : in STD_LOGIC_VECTOR ( 0 to 31 );
-    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_0_mux_bus : entity is "mux_bus";
-end microblaze_0_mux_bus;
-
-architecture STRUCTURE of microblaze_0_mux_bus is
-begin
-\Mux_Loop[0].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized66\
-     port map (
-      A0(1) => A0(0),
-      A0(0) => A0(16),
-      IReady => IReady,
-      Instr(1) => Instr(0),
-      Instr(0) => Instr(16),
-      Y(1) => Y(0),
-      Y(0) => Y(16)
-    );
-\Mux_Loop[10].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized86\
-     port map (
-      A0(1) => A0(10),
-      A0(0) => A0(26),
-      IReady => IReady,
-      Instr(1) => Instr(10),
-      Instr(0) => Instr(26),
-      Y(1) => Y(10),
-      Y(0) => Y(26)
-    );
-\Mux_Loop[11].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized88\
-     port map (
-      A0(1) => A0(11),
-      A0(0) => A0(27),
-      IReady => IReady,
-      Instr(1) => Instr(11),
-      Instr(0) => Instr(27),
-      Y(1) => Y(11),
-      Y(0) => Y(27)
-    );
-\Mux_Loop[12].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized90\
-     port map (
-      A0(1) => A0(12),
-      A0(0) => A0(28),
-      IReady => IReady,
-      Instr(1) => Instr(12),
-      Instr(0) => Instr(28),
-      Y(1) => Y(12),
-      Y(0) => Y(28)
-    );
-\Mux_Loop[13].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized92\
-     port map (
-      A0(1) => A0(13),
-      A0(0) => A0(29),
-      IReady => IReady,
-      Instr(1) => Instr(13),
-      Instr(0) => Instr(29),
-      Y(1) => Y(13),
-      Y(0) => Y(29)
-    );
-\Mux_Loop[14].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized94\
-     port map (
-      A0(1) => A0(14),
-      A0(0) => A0(30),
-      IReady => IReady,
-      Instr(1) => Instr(14),
-      Instr(0) => Instr(30),
-      Y(1) => Y(14),
-      Y(0) => Y(30)
-    );
-\Mux_Loop[15].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized96\
-     port map (
-      A0(1) => A0(15),
-      A0(0) => A0(31),
-      IReady => IReady,
-      Instr(1) => Instr(15),
-      Instr(0) => Instr(31),
-      Y(1) => Y(15),
-      Y(0) => Y(31)
-    );
-\Mux_Loop[1].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized68\
-     port map (
-      A0(1) => A0(1),
-      A0(0) => A0(17),
-      IReady => IReady,
-      Instr(1) => Instr(1),
-      Instr(0) => Instr(17),
-      Y(1) => Y(1),
-      Y(0) => Y(17)
-    );
-\Mux_Loop[2].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized70\
-     port map (
-      A0(1) => A0(2),
-      A0(0) => A0(18),
-      IReady => IReady,
-      Instr(1) => Instr(2),
-      Instr(0) => Instr(18),
-      Y(1) => Y(2),
-      Y(0) => Y(18)
-    );
-\Mux_Loop[3].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized72\
-     port map (
-      A0(1) => A0(3),
-      A0(0) => A0(19),
-      IReady => IReady,
-      Instr(1) => Instr(3),
-      Instr(0) => Instr(19),
-      Y(1) => Y(3),
-      Y(0) => Y(19)
-    );
-\Mux_Loop[4].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized74\
-     port map (
-      A0(1) => A0(4),
-      A0(0) => A0(20),
-      IReady => IReady,
-      Instr(1) => Instr(4),
-      Instr(0) => Instr(20),
-      Y(1) => Y(4),
-      Y(0) => Y(20)
-    );
-\Mux_Loop[5].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized76\
-     port map (
-      A0(1) => A0(5),
-      A0(0) => A0(21),
-      IReady => IReady,
-      Instr(1) => Instr(5),
-      Instr(0) => Instr(21),
-      Y(1) => Y(5),
-      Y(0) => Y(21)
-    );
-\Mux_Loop[6].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized78\
-     port map (
-      A0(1) => A0(6),
-      A0(0) => A0(22),
-      IReady => IReady,
-      Instr(1) => Instr(6),
-      Instr(0) => Instr(22),
-      Y(1) => Y(6),
-      Y(0) => Y(22)
-    );
-\Mux_Loop[7].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized80\
-     port map (
-      A0(1) => A0(7),
-      A0(0) => A0(23),
-      IReady => IReady,
-      Instr(1) => Instr(7),
-      Instr(0) => Instr(23),
-      Y(1) => Y(7),
-      Y(0) => Y(23)
-    );
-\Mux_Loop[8].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized82\
-     port map (
-      A0(1) => A0(8),
-      A0(0) => A0(24),
-      IReady => IReady,
-      Instr(1) => Instr(8),
-      Instr(0) => Instr(24),
-      Y(1) => Y(8),
-      Y(0) => Y(24)
-    );
-\Mux_Loop[9].I_MUX_LUT6\: entity work.\microblaze_0_MB_LUT6_2__parameterized84\
-     port map (
-      A0(1) => A0(9),
-      A0(0) => A0(25),
-      IReady => IReady,
-      Instr(1) => Instr(9),
-      Instr(0) => Instr(25),
-      Y(1) => Y(9),
-      Y(0) => Y(25)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_0_ALU is
   port (
     LO : out STD_LOGIC;
@@ -46400,17 +45081,15 @@ entity microblaze_0_Decode is
     \Using_FPGA.Native_11\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     \trace_instruction_i_reg[0]\ : out STD_LOGIC_VECTOR ( 31 downto 0 );
     Clk : in STD_LOGIC;
-    Y : in STD_LOGIC_VECTOR ( 0 to 31 );
+    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
     DReady0_out : in STD_LOGIC;
-    IReady1_out : in STD_LOGIC;
+    IReady : in STD_LOGIC;
     \Synchronize.use_sync_reset.sync_reg[2]\ : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     Op1_Low : in STD_LOGIC_VECTOR ( 0 to 0 );
     alu_Carry : in STD_LOGIC;
     \Using_FPGA.Native_12\ : in STD_LOGIC;
     reg_zero : in STD_LOGIC;
-    iext_ready : in STD_LOGIC;
-    IReady : in STD_LOGIC;
     MEM_DAXI_Data_Strobe : in STD_LOGIC;
     DReady : in STD_LOGIC;
     mem_access : in STD_LOGIC;
@@ -46509,7 +45188,7 @@ architecture STRUCTURE of microblaze_0_Decode is
   signal \Using_FPGA.Using_Breakable_Pipe.Take_Intr_MUXCY_3_n_5\ : STD_LOGIC;
   signal \Using_FPGA.Using_Breakable_Pipe.Take_Intr_MUXCY_3_n_8\ : STD_LOGIC;
   signal \Using_FPGA.iFetch_MuxCY_2_n_1\ : STD_LOGIC;
-  signal \Using_FPGA.iFetch_MuxCY_2_n_3\ : STD_LOGIC;
+  signal \Using_FPGA.iFetch_MuxCY_2_n_2\ : STD_LOGIC;
   signal \Using_FPGA.of_PipeRun_MuxCY_1_n_1\ : STD_LOGIC;
   signal \Using_FPGA.of_PipeRun_MuxCY_1_n_10\ : STD_LOGIC;
   signal \Using_FPGA.of_PipeRun_MuxCY_1_n_2\ : STD_LOGIC;
@@ -46824,7 +45503,8 @@ PreFetch_Buffer_I: entity work.microblaze_0_PreFetch_Buffer
       I3_1 => I3_1,
       I3_2 => I3_2,
       I3_3 => I3_3,
-      IReady1_out => IReady1_out,
+      IReady => IReady,
+      Instr(0 to 31) => Instr(0 to 31),
       R => R_0,
       Reg2_Data(0 to 31) => Reg2_Data(0 to 31),
       Reg_Test_Equal_N_i7_out => Reg_Test_Equal_N_i7_out,
@@ -46855,7 +45535,6 @@ PreFetch_Buffer_I: entity work.microblaze_0_PreFetch_Buffer
       \Using_FPGA.set_BIP_I_reg\ => PreFetch_Buffer_I_n_37,
       \Using_FPGA.set_BIP_I_reg_0\ => \Using_FPGA.set_BIP_I_reg_n_0\,
       \Using_FPGA.take_Intr_2nd_Phase_reg\ => \^exception_or_brk\,
-      Y(0 to 31) => Y(0 to 31),
       buffer_Full => buffer_Full,
       byte => \^byte\,
       byte_i_reg => PreFetch_Buffer_I_n_47,
@@ -47643,7 +46322,6 @@ Unsigned_Op_reg: unisim.vcomponents.FDRE
       Write_MSR => \Data_Flow_I/MSR_Reg_I/Write_MSR\,
       \break_Pipe_i_reg__0\ => \break_Pipe_i_reg__0\,
       ex_Valid_reg => \Using_FPGA.Using_Breakable_Pipe.Take_Intr_MUXCY_3_n_3\,
-      iext_ready => iext_ready,
       inHibit_EX => inHibit_EX,
       inHibit_EX0 => inHibit_EX0,
       load_Store_i2 => load_Store_i2,
@@ -47661,7 +46339,7 @@ Unsigned_Op_reg: unisim.vcomponents.FDRE
     );
 \Using_FPGA.clean_iReady_MuxCY\: entity work.microblaze_0_MB_MUXCY_19
      port map (
-      IReady1_out => IReady1_out,
+      IReady => IReady,
       lopt => \^lopt_5\,
       lopt_1 => \^lopt_6\,
       nonvalid_IFetch_n_reg => nonvalid_IFetch_n_reg_n_0,
@@ -47703,21 +46381,19 @@ Unsigned_Op_reg: unisim.vcomponents.FDRE
 \Using_FPGA.iFetch_MuxCY_2\: entity work.microblaze_0_MB_MUXCY_21
      port map (
       IReady => IReady,
-      IReady1_out => IReady1_out,
       I_AS => \^d\(5),
       \Synchronize.use_sync_reset.sync_reg[2]\ => \Synchronize.use_sync_reset.sync_reg[2]\,
       \Using_FPGA.Native_0\ => \^jump\,
       ex_Valid_reg => \^p_71_in\,
       iFetch_In_Progress => iFetch_In_Progress,
       iFetch_In_Progress_reg => \Using_FPGA.iFetch_MuxCY_2_n_1\,
-      iext_ready => iext_ready,
       ifetch_carry1 => ifetch_carry1,
       ifetch_carry2 => ifetch_carry2,
       lopt => lopt_12,
       lopt_1 => lopt_13,
       mbar_decode_I => mbar_decode_I,
       missed_IFetch => missed_IFetch,
-      missed_IFetch_reg => \Using_FPGA.iFetch_MuxCY_2_n_3\,
+      missed_IFetch_reg => \Using_FPGA.iFetch_MuxCY_2_n_2\,
       mul_Executing => mul_Executing
     );
 \Using_FPGA.iFetch_MuxCY_3\: entity work.microblaze_0_MB_MUXCY_22
@@ -48338,7 +47014,7 @@ missed_IFetch_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \Using_FPGA.iFetch_MuxCY_2_n_3\,
+      D => \Using_FPGA.iFetch_MuxCY_2_n_2\,
       Q => missed_IFetch,
       R => \out\(0)
     );
@@ -51806,31 +50482,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity microblaze_0_instr_mux is
-  port (
-    Y : out STD_LOGIC_VECTOR ( 0 to 31 );
-    A0 : in STD_LOGIC_VECTOR ( 0 to 31 );
-    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
-    IReady : in STD_LOGIC
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of microblaze_0_instr_mux : entity is "instr_mux";
-end microblaze_0_instr_mux;
-
-architecture STRUCTURE of microblaze_0_instr_mux is
-begin
-\Mux_AB.AB_inst\: entity work.microblaze_0_mux_bus
-     port map (
-      A0(0 to 31) => A0(0 to 31),
-      IReady => IReady,
-      Instr(0 to 31) => Instr(0 to 31),
-      Y(0 to 31) => Y(0 to 31)
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_0_Data_Flow is
   port (
     Op1_Low : out STD_LOGIC_VECTOR ( 0 to 1 );
@@ -52616,14 +51267,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_0_MicroBlaze_Area is
   port (
-    D : out STD_LOGIC_VECTOR ( 393 downto 0 );
+    D : out STD_LOGIC_VECTOR ( 360 downto 0 );
     Sign_Extend_reg : out STD_LOGIC;
     Sleep : out STD_LOGIC;
     Clk : in STD_LOGIC;
+    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
+    IReady : in STD_LOGIC;
     \Synchronize.use_sync_reset.sync_reg[2]\ : in STD_LOGIC;
     \out\ : in STD_LOGIC_VECTOR ( 0 to 0 );
-    M_AXI_IP_RVALID : in STD_LOGIC;
-    IReady : in STD_LOGIC;
     DReady : in STD_LOGIC;
     Ext_NM_BRK : in STD_LOGIC;
     \Synchronize.use_sync_reset.sync_reg[2]_0\ : in STD_LOGIC;
@@ -52634,21 +51285,17 @@ entity microblaze_0_MicroBlaze_Area is
     \No_Debug_Logic.sleep_reset_mode_reg\ : in STD_LOGIC;
     Wakeup : in STD_LOGIC_VECTOR ( 0 to 1 );
     Data_Read : in STD_LOGIC_VECTOR ( 0 to 31 );
-    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
     M_AXI_DP_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M_AXI_DP_ARREADY : in STD_LOGIC;
     M_AXI_DP_WREADY : in STD_LOGIC;
-    M_AXI_DP_AWREADY : in STD_LOGIC;
-    IWAIT : in STD_LOGIC;
-    M_AXI_IP_ARREADY : in STD_LOGIC;
-    M_AXI_IP_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 )
+    M_AXI_DP_AWREADY : in STD_LOGIC
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of microblaze_0_MicroBlaze_Area : entity is "MicroBlaze_Area";
 end microblaze_0_MicroBlaze_Area;
 
 architecture STRUCTURE of microblaze_0_MicroBlaze_Area is
-  signal \^d\ : STD_LOGIC_VECTOR ( 393 downto 0 );
+  signal \^d\ : STD_LOGIC_VECTOR ( 360 downto 0 );
   signal DReady0_out : STD_LOGIC;
   signal Data_Flow_I_n_2 : STD_LOGIC;
   signal Data_Flow_I_n_252 : STD_LOGIC;
@@ -52679,7 +51326,6 @@ architecture STRUCTURE of microblaze_0_MicroBlaze_Area is
   signal Decode_I_n_61 : STD_LOGIC;
   signal Decode_I_n_62 : STD_LOGIC;
   signal Decode_I_n_69 : STD_LOGIC;
-  signal IReady1_out : STD_LOGIC;
   signal MEM_DAXI_Data_Strobe : STD_LOGIC;
   signal MSR : STD_LOGIC_VECTOR ( 28 to 30 );
   signal \MSR_Reg_I/MSR_Rst\ : STD_LOGIC;
@@ -52741,8 +51387,6 @@ architecture STRUCTURE of microblaze_0_MicroBlaze_Area is
   signal ex_Result : STD_LOGIC_VECTOR ( 0 to 31 );
   signal exception_kind : STD_LOGIC_VECTOR ( 29 to 29 );
   signal extend_Data_Read : STD_LOGIC_VECTOR ( 0 to 31 );
-  signal iext_instr : STD_LOGIC_VECTOR ( 0 to 31 );
-  signal iext_ready : STD_LOGIC;
   signal imm_Instr : STD_LOGIC;
   signal imm_Value : STD_LOGIC_VECTOR ( 0 to 15 );
   signal instr_EX_i : STD_LOGIC_VECTOR ( 0 to 31 );
@@ -52757,7 +51401,6 @@ architecture STRUCTURE of microblaze_0_MicroBlaze_Area is
   signal lopt_6 : STD_LOGIC;
   signal lopt_7 : STD_LOGIC;
   signal mem_access : STD_LOGIC;
-  signal mux_Instr_Read : STD_LOGIC_VECTOR ( 0 to 31 );
   signal opsel1_PC : STD_LOGIC;
   signal opsel1_SPR : STD_LOGIC;
   signal p_71_in : STD_LOGIC;
@@ -52785,11 +51428,11 @@ architecture STRUCTURE of microblaze_0_MicroBlaze_Area is
   attribute SOFT_HLUTNM of \trace_exception_kind_i[1]_i_1\ : label is "soft_lutpair55";
   attribute SOFT_HLUTNM of \trace_exception_kind_i[3]_i_1\ : label is "soft_lutpair55";
 begin
-  D(393 downto 0) <= \^d\(393 downto 0);
+  D(360 downto 0) <= \^d\(360 downto 0);
 Byte_Doublet_Handle_I: entity work.microblaze_0_Byte_Doublet_Handle
      port map (
-      D(29 downto 4) => \^d\(329 downto 304),
-      D(3 downto 0) => \^d\(292 downto 289),
+      D(29 downto 4) => \^d\(296 downto 271),
+      D(3 downto 0) => \^d\(259 downto 256),
       EX_Op2 => Data_Flow_I_n_2,
       Op1_Low(0 to 1) => Op1_Low(0 to 1),
       \Using_FPGA.Native\ => Data_Flow_I_n_35,
@@ -52797,14 +51440,14 @@ Byte_Doublet_Handle_I: entity work.microblaze_0_Byte_Doublet_Handle
       doublet => doublet,
       sel_LSB(1 downto 0) => sel_LSB(1 downto 0),
       \write_Addr_I_reg[0]\(0 to 23) => raw_Data_Write(0 to 23),
-      \write_Addr_I_reg[0]\(24) => \^d\(303),
-      \write_Addr_I_reg[0]\(25) => \^d\(302),
-      \write_Addr_I_reg[0]\(26) => \^d\(301),
-      \write_Addr_I_reg[0]\(27) => \^d\(300),
-      \write_Addr_I_reg[0]\(28) => \^d\(299),
-      \write_Addr_I_reg[0]\(29) => \^d\(298),
-      \write_Addr_I_reg[0]\(30) => \^d\(297),
-      \write_Addr_I_reg[0]\(31) => \^d\(296)
+      \write_Addr_I_reg[0]\(24) => \^d\(270),
+      \write_Addr_I_reg[0]\(25) => \^d\(269),
+      \write_Addr_I_reg[0]\(26) => \^d\(268),
+      \write_Addr_I_reg[0]\(27) => \^d\(267),
+      \write_Addr_I_reg[0]\(28) => \^d\(266),
+      \write_Addr_I_reg[0]\(29) => \^d\(265),
+      \write_Addr_I_reg[0]\(30) => \^d\(264),
+      \write_Addr_I_reg[0]\(31) => \^d\(263)
     );
 Data_Flow_I: entity work.microblaze_0_Data_Flow
      port map (
@@ -52816,7 +51459,7 @@ Data_Flow_I: entity work.microblaze_0_Data_Flow
       Buffer_Addr(1) => buffer_Addr(2),
       Buffer_Addr(0) => buffer_Addr(3),
       Clk => Clk,
-      D(29 downto 0) => \^d\(359 downto 330),
+      D(29 downto 0) => \^d\(326 downto 297),
       DI => pc_Incr,
       D_0 => \Operand_Select_I/OpSelect_Bits[31].Operand_Select_Bit_I/D\,
       D_1 => \Operand_Select_I/OpSelect_Bits[30].Operand_Select_Bit_I/D\,
@@ -52883,8 +51526,8 @@ Data_Flow_I: entity work.microblaze_0_Data_Flow
       I3_7 => \Operand_Select_I/OpSelect_Bits[26].Operand_Select_Bit_I/I3\,
       I3_9 => \Operand_Select_I/OpSelect_Bits[25].Operand_Select_Bit_I/I3\,
       IReady => valid_Fetch,
-      \Instr_Addr[0]\(71 downto 40) => \^d\(391 downto 360),
-      \Instr_Addr[0]\(39 downto 32) => \^d\(303 downto 296),
+      \Instr_Addr[0]\(71 downto 40) => \^d\(358 downto 327),
+      \Instr_Addr[0]\(39 downto 32) => \^d\(270 downto 263),
       \Instr_Addr[0]\(31 downto 0) => \^d\(110 downto 79),
       LO => alu_Carry,
       MSR(2) => MSR(28),
@@ -53011,8 +51654,8 @@ Decode_I: entity work.microblaze_0_Decode
       Buffer_Addr(1) => buffer_Addr(2),
       Buffer_Addr(0) => buffer_Addr(3),
       Clk => Clk,
-      D(6 downto 5) => \^d\(393 downto 392),
-      D(4 downto 2) => \^d\(295 downto 293),
+      D(6 downto 5) => \^d\(360 downto 359),
+      D(4 downto 2) => \^d\(262 downto 260),
       D(1) => \^d\(152),
       D(0) => \^d\(119),
       DReady => DReady,
@@ -53059,7 +51702,7 @@ Decode_I: entity work.microblaze_0_Decode
       I3_2 => \Operand_Select_I/OpSelect_Bits[27].Operand_Select_Bit_I/I3\,
       I3_3 => \Operand_Select_I/OpSelect_Bits[31].Operand_Select_Bit_I/I3\,
       IReady => IReady,
-      IReady1_out => IReady1_out,
+      Instr(0 to 31) => Instr(0 to 31),
       MEM_DAXI_Data_Strobe => MEM_DAXI_Data_Strobe,
       MSR_Rst => \MSR_Reg_I/MSR_Rst\,
       New_Value => \MSR_Reg_I/New_Value\,
@@ -53120,7 +51763,6 @@ Decode_I: entity work.microblaze_0_Decode
       \Using_FPGA.Native_8\ => Decode_I_n_113,
       \Using_FPGA.Native_9\ => Decode_I_n_114,
       Wakeup(0 to 1) => Wakeup(0 to 1),
-      Y(0 to 31) => mux_Instr_Read(0 to 31),
       alu_Carry => alu_Carry,
       alu_Op(0 to 1) => alu_Op(0 to 1),
       byte => byte,
@@ -53130,7 +51772,6 @@ Decode_I: entity work.microblaze_0_Decode
       data_Read_Mask(0) => \Result_Mux_I/data_Read_Mask\(23),
       doublet => doublet,
       ex_Result(0 to 31) => ex_Result(0 to 31),
-      iext_ready => iext_ready,
       imm_Value(0 to 15) => imm_Value(0 to 15),
       jump => jump,
       lopt => lopt,
@@ -53205,7 +51846,7 @@ Decode_I: entity work.microblaze_0_Decode
 \Using_Ext_Databus.DAXI_Interface_I1\: entity work.microblaze_0_DAXI_interface
      port map (
       Clk => Clk,
-      D(0) => \^d\(293),
+      D(0) => \^d\(260),
       DReady => DReady,
       DReady0_out => DReady0_out,
       DWait => DWait,
@@ -53218,8 +51859,8 @@ Decode_I: entity work.microblaze_0_Decode
       M_AXI_DP_RDATA(31 downto 0) => M_AXI_DP_RDATA(31 downto 0),
       M_AXI_DP_RVALID => M_AXI_DP_RVALID,
       M_AXI_DP_WREADY => M_AXI_DP_WREADY,
-      \Using_FPGA.Native\(67 downto 4) => \^d\(359 downto 296),
-      \Using_FPGA.Native\(3 downto 0) => \^d\(292 downto 289),
+      \Using_FPGA.Native\(67 downto 4) => \^d\(326 downto 263),
+      \Using_FPGA.Native\(3 downto 0) => \^d\(259 downto 256),
       extend_Data_Read(0 to 31) => extend_Data_Read(0 to 31),
       mem_access => mem_access,
       \out\(0) => \out\(0),
@@ -53233,60 +51874,6 @@ Decode_I: entity work.microblaze_0_Decode
       Q => mem_access,
       R => \out\(0)
     );
-\Using_I_AXI.IAXI_Interface_I1\: entity work.microblaze_0_IAXI_Interface
-     port map (
-      Clk => Clk,
-      D(32 downto 0) => \^d\(288 downto 256),
-      E(0) => \^d\(392),
-      IReady => IReady,
-      IReady1_out => IReady1_out,
-      IWAIT => IWAIT,
-      M_AXI_IP_ARREADY => M_AXI_IP_ARREADY,
-      M_AXI_IP_RDATA(31 downto 0) => M_AXI_IP_RDATA(31 downto 0),
-      M_AXI_IP_RVALID => M_AXI_IP_RVALID,
-      Q(31) => iext_instr(0),
-      Q(30) => iext_instr(1),
-      Q(29) => iext_instr(2),
-      Q(28) => iext_instr(3),
-      Q(27) => iext_instr(4),
-      Q(26) => iext_instr(5),
-      Q(25) => iext_instr(6),
-      Q(24) => iext_instr(7),
-      Q(23) => iext_instr(8),
-      Q(22) => iext_instr(9),
-      Q(21) => iext_instr(10),
-      Q(20) => iext_instr(11),
-      Q(19) => iext_instr(12),
-      Q(18) => iext_instr(13),
-      Q(17) => iext_instr(14),
-      Q(16) => iext_instr(15),
-      Q(15) => iext_instr(16),
-      Q(14) => iext_instr(17),
-      Q(13) => iext_instr(18),
-      Q(12) => iext_instr(19),
-      Q(11) => iext_instr(20),
-      Q(10) => iext_instr(21),
-      Q(9) => iext_instr(22),
-      Q(8) => iext_instr(23),
-      Q(7) => iext_instr(24),
-      Q(6) => iext_instr(25),
-      Q(5) => iext_instr(26),
-      Q(4) => iext_instr(27),
-      Q(3) => iext_instr(28),
-      Q(2) => iext_instr(29),
-      Q(1) => iext_instr(30),
-      Q(0) => iext_instr(31),
-      \Using_FPGA.Native\(31 downto 0) => \^d\(391 downto 360),
-      iext_ready => iext_ready,
-      \out\(0) => \out\(0)
-    );
-instr_mux_I1: entity work.microblaze_0_instr_mux
-     port map (
-      A0(0 to 31) => iext_instr(0 to 31),
-      IReady => IReady,
-      Instr(0 to 31) => Instr(0 to 31),
-      Y(0 to 31) => mux_Instr_Read(0 to 31)
-    );
 trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
@@ -53299,7 +51886,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(359),
+      D => \^d\(326),
       Q => \^d\(71),
       R => '0'
     );
@@ -53307,7 +51894,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(349),
+      D => \^d\(316),
       Q => \^d\(61),
       R => '0'
     );
@@ -53315,7 +51902,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(348),
+      D => \^d\(315),
       Q => \^d\(60),
       R => '0'
     );
@@ -53323,7 +51910,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(347),
+      D => \^d\(314),
       Q => \^d\(59),
       R => '0'
     );
@@ -53331,7 +51918,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(346),
+      D => \^d\(313),
       Q => \^d\(58),
       R => '0'
     );
@@ -53339,7 +51926,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(345),
+      D => \^d\(312),
       Q => \^d\(57),
       R => '0'
     );
@@ -53347,7 +51934,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(344),
+      D => \^d\(311),
       Q => \^d\(56),
       R => '0'
     );
@@ -53355,7 +51942,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(343),
+      D => \^d\(310),
       Q => \^d\(55),
       R => '0'
     );
@@ -53363,7 +51950,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(342),
+      D => \^d\(309),
       Q => \^d\(54),
       R => '0'
     );
@@ -53371,7 +51958,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(341),
+      D => \^d\(308),
       Q => \^d\(53),
       R => '0'
     );
@@ -53379,7 +51966,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(340),
+      D => \^d\(307),
       Q => \^d\(52),
       R => '0'
     );
@@ -53387,7 +51974,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(358),
+      D => \^d\(325),
       Q => \^d\(70),
       R => '0'
     );
@@ -53395,7 +51982,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(339),
+      D => \^d\(306),
       Q => \^d\(51),
       R => '0'
     );
@@ -53403,7 +51990,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(338),
+      D => \^d\(305),
       Q => \^d\(50),
       R => '0'
     );
@@ -53411,7 +51998,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(337),
+      D => \^d\(304),
       Q => \^d\(49),
       R => '0'
     );
@@ -53419,7 +52006,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(336),
+      D => \^d\(303),
       Q => \^d\(48),
       R => '0'
     );
@@ -53427,7 +52014,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(335),
+      D => \^d\(302),
       Q => \^d\(47),
       R => '0'
     );
@@ -53435,7 +52022,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(334),
+      D => \^d\(301),
       Q => \^d\(46),
       R => '0'
     );
@@ -53443,7 +52030,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(333),
+      D => \^d\(300),
       Q => \^d\(45),
       R => '0'
     );
@@ -53451,7 +52038,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(332),
+      D => \^d\(299),
       Q => \^d\(44),
       R => '0'
     );
@@ -53459,7 +52046,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(331),
+      D => \^d\(298),
       Q => \^d\(43),
       R => '0'
     );
@@ -53467,7 +52054,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(330),
+      D => \^d\(297),
       Q => \^d\(42),
       R => '0'
     );
@@ -53475,7 +52062,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(357),
+      D => \^d\(324),
       Q => \^d\(69),
       R => '0'
     );
@@ -53483,7 +52070,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(329),
+      D => \^d\(296),
       Q => \^d\(41),
       R => '0'
     );
@@ -53491,7 +52078,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(328),
+      D => \^d\(295),
       Q => \^d\(40),
       R => '0'
     );
@@ -53499,7 +52086,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(356),
+      D => \^d\(323),
       Q => \^d\(68),
       R => '0'
     );
@@ -53507,7 +52094,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(355),
+      D => \^d\(322),
       Q => \^d\(67),
       R => '0'
     );
@@ -53515,7 +52102,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(354),
+      D => \^d\(321),
       Q => \^d\(66),
       R => '0'
     );
@@ -53523,7 +52110,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(353),
+      D => \^d\(320),
       Q => \^d\(65),
       R => '0'
     );
@@ -53531,7 +52118,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(352),
+      D => \^d\(319),
       Q => \^d\(64),
       R => '0'
     );
@@ -53539,7 +52126,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(351),
+      D => \^d\(318),
       Q => \^d\(63),
       R => '0'
     );
@@ -53547,7 +52134,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(350),
+      D => \^d\(317),
       Q => \^d\(62),
       R => '0'
     );
@@ -53555,7 +52142,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(292),
+      D => \^d\(259),
       Q => \^d\(7),
       R => '0'
     );
@@ -53563,7 +52150,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(291),
+      D => \^d\(258),
       Q => \^d\(6),
       R => '0'
     );
@@ -53571,7 +52158,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(290),
+      D => \^d\(257),
       Q => \^d\(5),
       R => '0'
     );
@@ -53579,7 +52166,7 @@ trace_data_access_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(289),
+      D => \^d\(256),
       Q => \^d\(4),
       R => '0'
     );
@@ -53587,7 +52174,7 @@ trace_data_read_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(294),
+      D => \^d\(261),
       Q => \^d\(2),
       R => '0'
     );
@@ -53595,7 +52182,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(293),
+      D => \^d\(260),
       Q => \^d\(1),
       R => '0'
     );
@@ -53603,7 +52190,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(327),
+      D => \^d\(294),
       Q => \^d\(39),
       R => '0'
     );
@@ -53611,7 +52198,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(317),
+      D => \^d\(284),
       Q => \^d\(29),
       R => '0'
     );
@@ -53619,7 +52206,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(316),
+      D => \^d\(283),
       Q => \^d\(28),
       R => '0'
     );
@@ -53627,7 +52214,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(315),
+      D => \^d\(282),
       Q => \^d\(27),
       R => '0'
     );
@@ -53635,7 +52222,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(314),
+      D => \^d\(281),
       Q => \^d\(26),
       R => '0'
     );
@@ -53643,7 +52230,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(313),
+      D => \^d\(280),
       Q => \^d\(25),
       R => '0'
     );
@@ -53651,7 +52238,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(312),
+      D => \^d\(279),
       Q => \^d\(24),
       R => '0'
     );
@@ -53659,7 +52246,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(311),
+      D => \^d\(278),
       Q => \^d\(23),
       R => '0'
     );
@@ -53667,7 +52254,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(310),
+      D => \^d\(277),
       Q => \^d\(22),
       R => '0'
     );
@@ -53675,7 +52262,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(309),
+      D => \^d\(276),
       Q => \^d\(21),
       R => '0'
     );
@@ -53683,7 +52270,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(308),
+      D => \^d\(275),
       Q => \^d\(20),
       R => '0'
     );
@@ -53691,7 +52278,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(326),
+      D => \^d\(293),
       Q => \^d\(38),
       R => '0'
     );
@@ -53699,7 +52286,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(307),
+      D => \^d\(274),
       Q => \^d\(19),
       R => '0'
     );
@@ -53707,7 +52294,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(306),
+      D => \^d\(273),
       Q => \^d\(18),
       R => '0'
     );
@@ -53715,7 +52302,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(305),
+      D => \^d\(272),
       Q => \^d\(17),
       R => '0'
     );
@@ -53723,7 +52310,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(304),
+      D => \^d\(271),
       Q => \^d\(16),
       R => '0'
     );
@@ -53731,7 +52318,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(303),
+      D => \^d\(270),
       Q => \^d\(15),
       R => '0'
     );
@@ -53739,7 +52326,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(302),
+      D => \^d\(269),
       Q => \^d\(14),
       R => '0'
     );
@@ -53747,7 +52334,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(301),
+      D => \^d\(268),
       Q => \^d\(13),
       R => '0'
     );
@@ -53755,7 +52342,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(300),
+      D => \^d\(267),
       Q => \^d\(12),
       R => '0'
     );
@@ -53763,7 +52350,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(299),
+      D => \^d\(266),
       Q => \^d\(11),
       R => '0'
     );
@@ -53771,7 +52358,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(298),
+      D => \^d\(265),
       Q => \^d\(10),
       R => '0'
     );
@@ -53779,7 +52366,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(325),
+      D => \^d\(292),
       Q => \^d\(37),
       R => '0'
     );
@@ -53787,7 +52374,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(297),
+      D => \^d\(264),
       Q => \^d\(9),
       R => '0'
     );
@@ -53795,7 +52382,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(296),
+      D => \^d\(263),
       Q => \^d\(8),
       R => '0'
     );
@@ -53803,7 +52390,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(324),
+      D => \^d\(291),
       Q => \^d\(36),
       R => '0'
     );
@@ -53811,7 +52398,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(323),
+      D => \^d\(290),
       Q => \^d\(35),
       R => '0'
     );
@@ -53819,7 +52406,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(322),
+      D => \^d\(289),
       Q => \^d\(34),
       R => '0'
     );
@@ -53827,7 +52414,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(321),
+      D => \^d\(288),
       Q => \^d\(33),
       R => '0'
     );
@@ -53835,7 +52422,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(320),
+      D => \^d\(287),
       Q => \^d\(32),
       R => '0'
     );
@@ -53843,7 +52430,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(319),
+      D => \^d\(286),
       Q => \^d\(31),
       R => '0'
     );
@@ -53851,7 +52438,7 @@ trace_data_write_i_reg: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
-      D => \^d\(318),
+      D => \^d\(285),
       Q => \^d\(30),
       R => '0'
     );
@@ -54538,28 +53125,24 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity microblaze_0_MicroBlaze_Core is
   port (
-    D : out STD_LOGIC_VECTOR ( 393 downto 0 );
+    D : out STD_LOGIC_VECTOR ( 360 downto 0 );
     Sleep : out STD_LOGIC;
     Clk : in STD_LOGIC;
-    M_AXI_IP_RVALID : in STD_LOGIC;
+    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
+    IReady : in STD_LOGIC;
     Debug_Rst : in STD_LOGIC;
     Reset : in STD_LOGIC;
     Mb_Reset : in STD_LOGIC;
-    IReady : in STD_LOGIC;
     DReady : in STD_LOGIC;
     Reset_Mode : in STD_LOGIC_VECTOR ( 0 to 1 );
     Wakeup : in STD_LOGIC_VECTOR ( 0 to 1 );
     Ext_NM_BRK : in STD_LOGIC;
-    Instr : in STD_LOGIC_VECTOR ( 0 to 31 );
     M_AXI_DP_RVALID : in STD_LOGIC;
     M_AXI_DP_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
     M_AXI_DP_BVALID : in STD_LOGIC;
     M_AXI_DP_ARREADY : in STD_LOGIC;
     M_AXI_DP_WREADY : in STD_LOGIC;
     M_AXI_DP_AWREADY : in STD_LOGIC;
-    IWAIT : in STD_LOGIC;
-    M_AXI_IP_ARREADY : in STD_LOGIC;
-    M_AXI_IP_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
     Ext_BRK : in STD_LOGIC;
     DWait : in STD_LOGIC;
     Data_Read : in STD_LOGIC_VECTOR ( 0 to 31 )
@@ -54569,7 +53152,7 @@ entity microblaze_0_MicroBlaze_Core is
 end microblaze_0_MicroBlaze_Core;
 
 architecture STRUCTURE of microblaze_0_MicroBlaze_Core is
-  signal \Area.Core_n_394\ : STD_LOGIC;
+  signal \Area.Core_n_361\ : STD_LOGIC;
   signal \Decode_I/Reset17_out\ : STD_LOGIC;
   signal \No_Debug_Logic.sleep_reset_mode_reg_n_0\ : STD_LOGIC;
   signal Reset_DFF_n_1 : STD_LOGIC;
@@ -54579,14 +53162,13 @@ begin
 \Area.Core\: entity work.microblaze_0_MicroBlaze_Area
      port map (
       Clk => Clk,
-      D(393 downto 0) => D(393 downto 0),
+      D(360 downto 0) => D(360 downto 0),
       DReady => DReady,
       DWait => DWait,
       Data_Read(0 to 31) => Data_Read(0 to 31),
       Ext_BRK => Ext_BRK,
       Ext_NM_BRK => Ext_NM_BRK,
       IReady => IReady,
-      IWAIT => IWAIT,
       Instr(0 to 31) => Instr(0 to 31),
       M_AXI_DP_ARREADY => M_AXI_DP_ARREADY,
       M_AXI_DP_AWREADY => M_AXI_DP_AWREADY,
@@ -54594,11 +53176,8 @@ begin
       M_AXI_DP_RDATA(31 downto 0) => M_AXI_DP_RDATA(31 downto 0),
       M_AXI_DP_RVALID => M_AXI_DP_RVALID,
       M_AXI_DP_WREADY => M_AXI_DP_WREADY,
-      M_AXI_IP_ARREADY => M_AXI_IP_ARREADY,
-      M_AXI_IP_RDATA(31 downto 0) => M_AXI_IP_RDATA(31 downto 0),
-      M_AXI_IP_RVALID => M_AXI_IP_RVALID,
       \No_Debug_Logic.sleep_reset_mode_reg\ => \No_Debug_Logic.sleep_reset_mode_reg_n_0\,
-      Sign_Extend_reg => \Area.Core_n_394\,
+      Sign_Extend_reg => \Area.Core_n_361\,
       Sleep => Sleep,
       \Synchronize.use_sync_reset.sync_reg[2]\ => Reset_DFF_n_3,
       \Synchronize.use_sync_reset.sync_reg[2]_0\ => Reset_DFF_n_2,
@@ -54623,9 +53202,9 @@ Reset_DFF: entity work.microblaze_0_mb_sync_bit
       Reset => Reset,
       Reset_Mode(0 to 1) => Reset_Mode(0 to 1),
       Sext8_reg => Reset_DFF_n_2,
-      \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Area.Core_n_394\,
+      \Using_FPGA.take_Intr_2nd_Phase_reg\ => \Area.Core_n_361\,
       Wakeup(0 to 1) => Wakeup(0 to 1),
-      ib_addr_strobe_d1_reg => Reset_DFF_n_3,
+      iFetch_In_Progress_reg => Reset_DFF_n_3,
       \out\(0) => \Decode_I/Reset17_out\
     );
 end STRUCTURE;
@@ -55157,7 +53736,7 @@ entity microblaze_0_MicroBlaze is
   attribute C_INTERRUPT_IS_EDGE : integer;
   attribute C_INTERRUPT_IS_EDGE of microblaze_0_MicroBlaze : entity is 0;
   attribute C_I_AXI : integer;
-  attribute C_I_AXI of microblaze_0_MicroBlaze : entity is 1;
+  attribute C_I_AXI of microblaze_0_MicroBlaze : entity is 0;
   attribute C_I_LMB : integer;
   attribute C_I_LMB of microblaze_0_MicroBlaze : entity is 1;
   attribute C_LOCKSTEP_SLAVE : integer;
@@ -55381,8 +53960,6 @@ architecture STRUCTURE of microblaze_0_MicroBlaze is
   signal \^m_axi_dp_wdata\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^m_axi_dp_wstrb\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \^m_axi_dp_wvalid\ : STD_LOGIC;
-  signal \^m_axi_ip_araddr\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \^m_axi_ip_arvalid\ : STD_LOGIC;
   signal \^read_strobe\ : STD_LOGIC;
   signal \^trace_data_access\ : STD_LOGIC;
   signal \^trace_data_address\ : STD_LOGIC_VECTOR ( 0 to 31 );
@@ -60240,20 +58817,22 @@ begin
   LOCKSTEP_Out(776) <= \<const0>\;
   LOCKSTEP_Out(777) <= \<const0>\;
   LOCKSTEP_Out(778) <= \<const0>\;
-  LOCKSTEP_Out(779) <= \^lockstep_out\(779);
+  LOCKSTEP_Out(779) <= \<const0>\;
   LOCKSTEP_Out(780) <= \<const0>\;
   LOCKSTEP_Out(781) <= \<const0>\;
-  LOCKSTEP_Out(782) <= \^lockstep_out\(782);
+  LOCKSTEP_Out(782) <= \<const0>\;
   LOCKSTEP_Out(783) <= \<const0>\;
   LOCKSTEP_Out(784) <= \<const0>\;
   LOCKSTEP_Out(785) <= \<const0>\;
   LOCKSTEP_Out(786) <= \<const0>\;
   LOCKSTEP_Out(787) <= \<const0>\;
-  LOCKSTEP_Out(788) <= \^lockstep_out\(788);
+  LOCKSTEP_Out(788) <= \<const0>\;
   LOCKSTEP_Out(789) <= \<const0>\;
   LOCKSTEP_Out(790) <= \<const0>\;
   LOCKSTEP_Out(791) <= \<const0>\;
-  LOCKSTEP_Out(792 to 794) <= \^lockstep_out\(792 to 794);
+  LOCKSTEP_Out(792) <= \<const0>\;
+  LOCKSTEP_Out(793) <= \<const0>\;
+  LOCKSTEP_Out(794) <= \<const0>\;
   LOCKSTEP_Out(795) <= \<const0>\;
   LOCKSTEP_Out(796) <= \<const0>\;
   LOCKSTEP_Out(797) <= \<const0>\;
@@ -60295,7 +58874,38 @@ begin
   LOCKSTEP_Out(833) <= \<const0>\;
   LOCKSTEP_Out(834) <= \<const0>\;
   LOCKSTEP_Out(835) <= \<const0>\;
-  LOCKSTEP_Out(836 to 867) <= \^lockstep_out\(836 to 867);
+  LOCKSTEP_Out(836) <= \<const0>\;
+  LOCKSTEP_Out(837) <= \<const0>\;
+  LOCKSTEP_Out(838) <= \<const0>\;
+  LOCKSTEP_Out(839) <= \<const0>\;
+  LOCKSTEP_Out(840) <= \<const0>\;
+  LOCKSTEP_Out(841) <= \<const0>\;
+  LOCKSTEP_Out(842) <= \<const0>\;
+  LOCKSTEP_Out(843) <= \<const0>\;
+  LOCKSTEP_Out(844) <= \<const0>\;
+  LOCKSTEP_Out(845) <= \<const0>\;
+  LOCKSTEP_Out(846) <= \<const0>\;
+  LOCKSTEP_Out(847) <= \<const0>\;
+  LOCKSTEP_Out(848) <= \<const0>\;
+  LOCKSTEP_Out(849) <= \<const0>\;
+  LOCKSTEP_Out(850) <= \<const0>\;
+  LOCKSTEP_Out(851) <= \<const0>\;
+  LOCKSTEP_Out(852) <= \<const0>\;
+  LOCKSTEP_Out(853) <= \<const0>\;
+  LOCKSTEP_Out(854) <= \<const0>\;
+  LOCKSTEP_Out(855) <= \<const0>\;
+  LOCKSTEP_Out(856) <= \<const0>\;
+  LOCKSTEP_Out(857) <= \<const0>\;
+  LOCKSTEP_Out(858) <= \<const0>\;
+  LOCKSTEP_Out(859) <= \<const0>\;
+  LOCKSTEP_Out(860) <= \<const0>\;
+  LOCKSTEP_Out(861) <= \<const0>\;
+  LOCKSTEP_Out(862) <= \<const0>\;
+  LOCKSTEP_Out(863) <= \<const0>\;
+  LOCKSTEP_Out(864) <= \<const0>\;
+  LOCKSTEP_Out(865) <= \<const0>\;
+  LOCKSTEP_Out(866) <= \<const0>\;
+  LOCKSTEP_Out(867) <= \<const0>\;
   LOCKSTEP_Out(868) <= \<const0>\;
   LOCKSTEP_Out(869) <= \<const0>\;
   LOCKSTEP_Out(870) <= \<const0>\;
@@ -60305,18 +58915,24 @@ begin
   LOCKSTEP_Out(874) <= \<const0>\;
   LOCKSTEP_Out(875) <= \<const0>\;
   LOCKSTEP_Out(876) <= \<const0>\;
-  LOCKSTEP_Out(877) <= \^lockstep_out\(877);
+  LOCKSTEP_Out(877) <= \<const0>\;
   LOCKSTEP_Out(878) <= \<const0>\;
   LOCKSTEP_Out(879) <= \<const0>\;
-  LOCKSTEP_Out(880) <= \^lockstep_out\(880);
+  LOCKSTEP_Out(880) <= \<const0>\;
   LOCKSTEP_Out(881) <= \<const0>\;
   LOCKSTEP_Out(882) <= \<const0>\;
   LOCKSTEP_Out(883) <= \<const0>\;
-  LOCKSTEP_Out(884 to 886) <= \^lockstep_out\(884 to 886);
+  LOCKSTEP_Out(884) <= \<const0>\;
+  LOCKSTEP_Out(885) <= \<const0>\;
+  LOCKSTEP_Out(886) <= \<const0>\;
   LOCKSTEP_Out(887) <= \<const0>\;
   LOCKSTEP_Out(888) <= \<const0>\;
   LOCKSTEP_Out(889) <= \<const0>\;
-  LOCKSTEP_Out(890 to 894) <= \^lockstep_out\(890 to 894);
+  LOCKSTEP_Out(890) <= \<const0>\;
+  LOCKSTEP_Out(891) <= \<const0>\;
+  LOCKSTEP_Out(892) <= \<const0>\;
+  LOCKSTEP_Out(893) <= \<const0>\;
+  LOCKSTEP_Out(894) <= \<const0>\;
   LOCKSTEP_Out(895) <= \<const0>\;
   LOCKSTEP_Out(896 to 927) <= \^lockstep_out\(896 to 927);
   LOCKSTEP_Out(928) <= \<const0>\;
@@ -64294,13 +62910,44 @@ begin
   M_AXI_IC_WSTRB(0) <= \<const0>\;
   M_AXI_IC_WUSER(0) <= \<const0>\;
   M_AXI_IC_WVALID <= \<const0>\;
-  M_AXI_IP_ARADDR(31 downto 0) <= \^m_axi_ip_araddr\(31 downto 0);
+  M_AXI_IP_ARADDR(31) <= \<const0>\;
+  M_AXI_IP_ARADDR(30) <= \<const0>\;
+  M_AXI_IP_ARADDR(29) <= \<const0>\;
+  M_AXI_IP_ARADDR(28) <= \<const0>\;
+  M_AXI_IP_ARADDR(27) <= \<const0>\;
+  M_AXI_IP_ARADDR(26) <= \<const0>\;
+  M_AXI_IP_ARADDR(25) <= \<const0>\;
+  M_AXI_IP_ARADDR(24) <= \<const0>\;
+  M_AXI_IP_ARADDR(23) <= \<const0>\;
+  M_AXI_IP_ARADDR(22) <= \<const0>\;
+  M_AXI_IP_ARADDR(21) <= \<const0>\;
+  M_AXI_IP_ARADDR(20) <= \<const0>\;
+  M_AXI_IP_ARADDR(19) <= \<const0>\;
+  M_AXI_IP_ARADDR(18) <= \<const0>\;
+  M_AXI_IP_ARADDR(17) <= \<const0>\;
+  M_AXI_IP_ARADDR(16) <= \<const0>\;
+  M_AXI_IP_ARADDR(15) <= \<const0>\;
+  M_AXI_IP_ARADDR(14) <= \<const0>\;
+  M_AXI_IP_ARADDR(13) <= \<const0>\;
+  M_AXI_IP_ARADDR(12) <= \<const0>\;
+  M_AXI_IP_ARADDR(11) <= \<const0>\;
+  M_AXI_IP_ARADDR(10) <= \<const0>\;
+  M_AXI_IP_ARADDR(9) <= \<const0>\;
+  M_AXI_IP_ARADDR(8) <= \<const0>\;
+  M_AXI_IP_ARADDR(7) <= \<const0>\;
+  M_AXI_IP_ARADDR(6) <= \<const0>\;
+  M_AXI_IP_ARADDR(5) <= \<const0>\;
+  M_AXI_IP_ARADDR(4) <= \<const0>\;
+  M_AXI_IP_ARADDR(3) <= \<const0>\;
+  M_AXI_IP_ARADDR(2) <= \<const0>\;
+  M_AXI_IP_ARADDR(1) <= \<const0>\;
+  M_AXI_IP_ARADDR(0) <= \<const0>\;
   M_AXI_IP_ARBURST(1) <= \<const0>\;
-  M_AXI_IP_ARBURST(0) <= \<const1>\;
+  M_AXI_IP_ARBURST(0) <= \<const0>\;
   M_AXI_IP_ARCACHE(3) <= \<const0>\;
   M_AXI_IP_ARCACHE(2) <= \<const0>\;
-  M_AXI_IP_ARCACHE(1) <= \<const1>\;
-  M_AXI_IP_ARCACHE(0) <= \<const1>\;
+  M_AXI_IP_ARCACHE(1) <= \<const0>\;
+  M_AXI_IP_ARCACHE(0) <= \<const0>\;
   M_AXI_IP_ARID(0) <= \<const0>\;
   M_AXI_IP_ARLEN(7) <= \<const0>\;
   M_AXI_IP_ARLEN(6) <= \<const0>\;
@@ -64311,17 +62958,17 @@ begin
   M_AXI_IP_ARLEN(1) <= \<const0>\;
   M_AXI_IP_ARLEN(0) <= \<const0>\;
   M_AXI_IP_ARLOCK <= \<const0>\;
-  M_AXI_IP_ARPROT(2) <= \<const1>\;
+  M_AXI_IP_ARPROT(2) <= \<const0>\;
   M_AXI_IP_ARPROT(1) <= \<const0>\;
   M_AXI_IP_ARPROT(0) <= \<const0>\;
   M_AXI_IP_ARQOS(3) <= \<const0>\;
-  M_AXI_IP_ARQOS(2) <= \<const1>\;
-  M_AXI_IP_ARQOS(1) <= \<const1>\;
-  M_AXI_IP_ARQOS(0) <= \<const1>\;
+  M_AXI_IP_ARQOS(2) <= \<const0>\;
+  M_AXI_IP_ARQOS(1) <= \<const0>\;
+  M_AXI_IP_ARQOS(0) <= \<const0>\;
   M_AXI_IP_ARSIZE(2) <= \<const0>\;
-  M_AXI_IP_ARSIZE(1) <= \<const1>\;
+  M_AXI_IP_ARSIZE(1) <= \<const0>\;
   M_AXI_IP_ARSIZE(0) <= \<const0>\;
-  M_AXI_IP_ARVALID <= \^m_axi_ip_arvalid\;
+  M_AXI_IP_ARVALID <= \<const0>\;
   M_AXI_IP_AWADDR(31) <= \<const0>\;
   M_AXI_IP_AWADDR(30) <= \<const0>\;
   M_AXI_IP_AWADDR(29) <= \<const0>\;
@@ -64355,7 +63002,7 @@ begin
   M_AXI_IP_AWADDR(1) <= \<const0>\;
   M_AXI_IP_AWADDR(0) <= \<const0>\;
   M_AXI_IP_AWBURST(1) <= \<const0>\;
-  M_AXI_IP_AWBURST(0) <= \<const1>\;
+  M_AXI_IP_AWBURST(0) <= \<const0>\;
   M_AXI_IP_AWCACHE(3) <= \<const0>\;
   M_AXI_IP_AWCACHE(2) <= \<const0>\;
   M_AXI_IP_AWCACHE(1) <= \<const0>\;
@@ -64370,19 +63017,19 @@ begin
   M_AXI_IP_AWLEN(1) <= \<const0>\;
   M_AXI_IP_AWLEN(0) <= \<const0>\;
   M_AXI_IP_AWLOCK <= \<const0>\;
-  M_AXI_IP_AWPROT(2) <= \<const1>\;
+  M_AXI_IP_AWPROT(2) <= \<const0>\;
   M_AXI_IP_AWPROT(1) <= \<const0>\;
   M_AXI_IP_AWPROT(0) <= \<const0>\;
   M_AXI_IP_AWQOS(3) <= \<const0>\;
-  M_AXI_IP_AWQOS(2) <= \<const1>\;
-  M_AXI_IP_AWQOS(1) <= \<const1>\;
-  M_AXI_IP_AWQOS(0) <= \<const1>\;
+  M_AXI_IP_AWQOS(2) <= \<const0>\;
+  M_AXI_IP_AWQOS(1) <= \<const0>\;
+  M_AXI_IP_AWQOS(0) <= \<const0>\;
   M_AXI_IP_AWSIZE(2) <= \<const0>\;
-  M_AXI_IP_AWSIZE(1) <= \<const1>\;
+  M_AXI_IP_AWSIZE(1) <= \<const0>\;
   M_AXI_IP_AWSIZE(0) <= \<const0>\;
   M_AXI_IP_AWVALID <= \<const0>\;
   M_AXI_IP_BREADY <= \<const0>\;
-  M_AXI_IP_RREADY <= \<const1>\;
+  M_AXI_IP_RREADY <= \<const0>\;
   M_AXI_IP_WDATA(31) <= \<const0>\;
   M_AXI_IP_WDATA(30) <= \<const0>\;
   M_AXI_IP_WDATA(29) <= \<const0>\;
@@ -66885,14 +65532,6 @@ GND: unisim.vcomponents.GND
       Q => \^lockstep_out\(76),
       R => Reset
     );
-\LOCKSTEP_Out_reg[779]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(779),
-      R => Reset
-    );
 \LOCKSTEP_Out_reg[77]\: unisim.vcomponents.FDRE
      port map (
       C => Clk,
@@ -66901,52 +65540,12 @@ GND: unisim.vcomponents.GND
       Q => \^lockstep_out\(77),
       R => Reset
     );
-\LOCKSTEP_Out_reg[782]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(782),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[788]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(788),
-      R => Reset
-    );
 \LOCKSTEP_Out_reg[78]\: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
       D => \^data_write\(10),
       Q => \^lockstep_out\(78),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[792]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(792),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[793]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(793),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[794]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(794),
       R => Reset
     );
 \LOCKSTEP_Out_reg[79]\: unisim.vcomponents.FDRE
@@ -66989,124 +65588,12 @@ GND: unisim.vcomponents.GND
       Q => \^lockstep_out\(82),
       R => Reset
     );
-\LOCKSTEP_Out_reg[836]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(31),
-      Q => \^lockstep_out\(836),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[837]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(30),
-      Q => \^lockstep_out\(837),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[838]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(29),
-      Q => \^lockstep_out\(838),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[839]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(28),
-      Q => \^lockstep_out\(839),
-      R => Reset
-    );
 \LOCKSTEP_Out_reg[83]\: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
       D => \^data_write\(15),
       Q => \^lockstep_out\(83),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[840]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(27),
-      Q => \^lockstep_out\(840),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[841]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(26),
-      Q => \^lockstep_out\(841),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[842]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(25),
-      Q => \^lockstep_out\(842),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[843]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(24),
-      Q => \^lockstep_out\(843),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[844]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(23),
-      Q => \^lockstep_out\(844),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[845]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(22),
-      Q => \^lockstep_out\(845),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[846]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(21),
-      Q => \^lockstep_out\(846),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[847]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(20),
-      Q => \^lockstep_out\(847),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[848]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(19),
-      Q => \^lockstep_out\(848),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[849]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(18),
-      Q => \^lockstep_out\(849),
       R => Reset
     );
 \LOCKSTEP_Out_reg[84]\: unisim.vcomponents.FDRE
@@ -67117,156 +65604,12 @@ GND: unisim.vcomponents.GND
       Q => \^lockstep_out\(84),
       R => Reset
     );
-\LOCKSTEP_Out_reg[850]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(17),
-      Q => \^lockstep_out\(850),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[851]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(16),
-      Q => \^lockstep_out\(851),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[852]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(15),
-      Q => \^lockstep_out\(852),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[853]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(14),
-      Q => \^lockstep_out\(853),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[854]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(13),
-      Q => \^lockstep_out\(854),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[855]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(12),
-      Q => \^lockstep_out\(855),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[856]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(11),
-      Q => \^lockstep_out\(856),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[857]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(10),
-      Q => \^lockstep_out\(857),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[858]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(9),
-      Q => \^lockstep_out\(858),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[859]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(8),
-      Q => \^lockstep_out\(859),
-      R => Reset
-    );
 \LOCKSTEP_Out_reg[85]\: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
       D => \^data_write\(17),
       Q => \^lockstep_out\(85),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[860]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(7),
-      Q => \^lockstep_out\(860),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[861]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(6),
-      Q => \^lockstep_out\(861),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[862]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(5),
-      Q => \^lockstep_out\(862),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[863]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(4),
-      Q => \^lockstep_out\(863),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[864]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(3),
-      Q => \^lockstep_out\(864),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[865]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(2),
-      Q => \^lockstep_out\(865),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[866]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(1),
-      Q => \^lockstep_out\(866),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[867]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_araddr\(0),
-      Q => \^lockstep_out\(867),
       R => Reset
     );
 \LOCKSTEP_Out_reg[86]\: unisim.vcomponents.FDRE
@@ -67277,14 +65620,6 @@ GND: unisim.vcomponents.GND
       Q => \^lockstep_out\(86),
       R => Reset
     );
-\LOCKSTEP_Out_reg[877]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(877),
-      R => Reset
-    );
 \LOCKSTEP_Out_reg[87]\: unisim.vcomponents.FDRE
      port map (
       C => Clk,
@@ -67293,84 +65628,12 @@ GND: unisim.vcomponents.GND
       Q => \^lockstep_out\(87),
       R => Reset
     );
-\LOCKSTEP_Out_reg[880]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(880),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[884]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(884),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[885]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(885),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[886]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(886),
-      R => Reset
-    );
 \LOCKSTEP_Out_reg[88]\: unisim.vcomponents.FDRE
      port map (
       C => Clk,
       CE => '1',
       D => \^data_write\(20),
       Q => \^lockstep_out\(88),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[890]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(890),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[891]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(891),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[892]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(892),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[893]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => \^m_axi_ip_arvalid\,
-      Q => \^lockstep_out\(893),
-      R => Reset
-    );
-\LOCKSTEP_Out_reg[894]\: unisim.vcomponents.FDRE
-     port map (
-      C => Clk,
-      CE => '1',
-      D => '1',
-      Q => \^lockstep_out\(894),
       R => Reset
     );
 \LOCKSTEP_Out_reg[896]\: unisim.vcomponents.FDRE
@@ -68144,113 +66407,111 @@ GND: unisim.vcomponents.GND
 MicroBlaze_Core_I: entity work.microblaze_0_MicroBlaze_Core
      port map (
       Clk => Clk,
-      D(393) => \^ifetch\,
-      D(392) => \^i_as\,
-      D(391) => \^instr_addr\(0),
-      D(390) => \^instr_addr\(1),
-      D(389) => \^instr_addr\(2),
-      D(388) => \^instr_addr\(3),
-      D(387) => \^instr_addr\(4),
-      D(386) => \^instr_addr\(5),
-      D(385) => \^instr_addr\(6),
-      D(384) => \^instr_addr\(7),
-      D(383) => \^instr_addr\(8),
-      D(382) => \^instr_addr\(9),
-      D(381) => \^instr_addr\(10),
-      D(380) => \^instr_addr\(11),
-      D(379) => \^instr_addr\(12),
-      D(378) => \^instr_addr\(13),
-      D(377) => \^instr_addr\(14),
-      D(376) => \^instr_addr\(15),
-      D(375) => \^instr_addr\(16),
-      D(374) => \^instr_addr\(17),
-      D(373) => \^instr_addr\(18),
-      D(372) => \^instr_addr\(19),
-      D(371) => \^instr_addr\(20),
-      D(370) => \^instr_addr\(21),
-      D(369) => \^instr_addr\(22),
-      D(368) => \^instr_addr\(23),
-      D(367) => \^instr_addr\(24),
-      D(366) => \^instr_addr\(25),
-      D(365) => \^instr_addr\(26),
-      D(364) => \^instr_addr\(27),
-      D(363) => \^instr_addr\(28),
-      D(362) => \^instr_addr\(29),
-      D(361) => \^instr_addr\(30),
-      D(360) => \^instr_addr\(31),
-      D(359) => \^data_addr\(0),
-      D(358) => \^data_addr\(1),
-      D(357) => \^data_addr\(2),
-      D(356) => \^data_addr\(3),
-      D(355) => \^data_addr\(4),
-      D(354) => \^data_addr\(5),
-      D(353) => \^data_addr\(6),
-      D(352) => \^data_addr\(7),
-      D(351) => \^data_addr\(8),
-      D(350) => \^data_addr\(9),
-      D(349) => \^data_addr\(10),
-      D(348) => \^data_addr\(11),
-      D(347) => \^data_addr\(12),
-      D(346) => \^data_addr\(13),
-      D(345) => \^data_addr\(14),
-      D(344) => \^data_addr\(15),
-      D(343) => \^data_addr\(16),
-      D(342) => \^data_addr\(17),
-      D(341) => \^data_addr\(18),
-      D(340) => \^data_addr\(19),
-      D(339) => \^data_addr\(20),
-      D(338) => \^data_addr\(21),
-      D(337) => \^data_addr\(22),
-      D(336) => \^data_addr\(23),
-      D(335) => \^data_addr\(24),
-      D(334) => \^data_addr\(25),
-      D(333) => \^data_addr\(26),
-      D(332) => \^data_addr\(27),
-      D(331) => \^data_addr\(28),
-      D(330) => \^data_addr\(29),
-      D(329) => \^data_addr\(30),
-      D(328) => \^data_addr\(31),
-      D(327) => \^data_write\(0),
-      D(326) => \^data_write\(1),
-      D(325) => \^data_write\(2),
-      D(324) => \^data_write\(3),
-      D(323) => \^data_write\(4),
-      D(322) => \^data_write\(5),
-      D(321) => \^data_write\(6),
-      D(320) => \^data_write\(7),
-      D(319) => \^data_write\(8),
-      D(318) => \^data_write\(9),
-      D(317) => \^data_write\(10),
-      D(316) => \^data_write\(11),
-      D(315) => \^data_write\(12),
-      D(314) => \^data_write\(13),
-      D(313) => \^data_write\(14),
-      D(312) => \^data_write\(15),
-      D(311) => \^data_write\(16),
-      D(310) => \^data_write\(17),
-      D(309) => \^data_write\(18),
-      D(308) => \^data_write\(19),
-      D(307) => \^data_write\(20),
-      D(306) => \^data_write\(21),
-      D(305) => \^data_write\(22),
-      D(304) => \^data_write\(23),
-      D(303) => \^data_write\(24),
-      D(302) => \^data_write\(25),
-      D(301) => \^data_write\(26),
-      D(300) => \^data_write\(27),
-      D(299) => \^data_write\(28),
-      D(298) => \^data_write\(29),
-      D(297) => \^data_write\(30),
-      D(296) => \^data_write\(31),
-      D(295) => \^d_as\,
-      D(294) => \^read_strobe\,
-      D(293) => \^write_strobe\,
-      D(292) => \^byte_enable\(0),
-      D(291) => \^byte_enable\(1),
-      D(290) => \^byte_enable\(2),
-      D(289) => \^byte_enable\(3),
-      D(288 downto 257) => \^m_axi_ip_araddr\(31 downto 0),
-      D(256) => \^m_axi_ip_arvalid\,
+      D(360) => \^ifetch\,
+      D(359) => \^i_as\,
+      D(358) => \^instr_addr\(0),
+      D(357) => \^instr_addr\(1),
+      D(356) => \^instr_addr\(2),
+      D(355) => \^instr_addr\(3),
+      D(354) => \^instr_addr\(4),
+      D(353) => \^instr_addr\(5),
+      D(352) => \^instr_addr\(6),
+      D(351) => \^instr_addr\(7),
+      D(350) => \^instr_addr\(8),
+      D(349) => \^instr_addr\(9),
+      D(348) => \^instr_addr\(10),
+      D(347) => \^instr_addr\(11),
+      D(346) => \^instr_addr\(12),
+      D(345) => \^instr_addr\(13),
+      D(344) => \^instr_addr\(14),
+      D(343) => \^instr_addr\(15),
+      D(342) => \^instr_addr\(16),
+      D(341) => \^instr_addr\(17),
+      D(340) => \^instr_addr\(18),
+      D(339) => \^instr_addr\(19),
+      D(338) => \^instr_addr\(20),
+      D(337) => \^instr_addr\(21),
+      D(336) => \^instr_addr\(22),
+      D(335) => \^instr_addr\(23),
+      D(334) => \^instr_addr\(24),
+      D(333) => \^instr_addr\(25),
+      D(332) => \^instr_addr\(26),
+      D(331) => \^instr_addr\(27),
+      D(330) => \^instr_addr\(28),
+      D(329) => \^instr_addr\(29),
+      D(328) => \^instr_addr\(30),
+      D(327) => \^instr_addr\(31),
+      D(326) => \^data_addr\(0),
+      D(325) => \^data_addr\(1),
+      D(324) => \^data_addr\(2),
+      D(323) => \^data_addr\(3),
+      D(322) => \^data_addr\(4),
+      D(321) => \^data_addr\(5),
+      D(320) => \^data_addr\(6),
+      D(319) => \^data_addr\(7),
+      D(318) => \^data_addr\(8),
+      D(317) => \^data_addr\(9),
+      D(316) => \^data_addr\(10),
+      D(315) => \^data_addr\(11),
+      D(314) => \^data_addr\(12),
+      D(313) => \^data_addr\(13),
+      D(312) => \^data_addr\(14),
+      D(311) => \^data_addr\(15),
+      D(310) => \^data_addr\(16),
+      D(309) => \^data_addr\(17),
+      D(308) => \^data_addr\(18),
+      D(307) => \^data_addr\(19),
+      D(306) => \^data_addr\(20),
+      D(305) => \^data_addr\(21),
+      D(304) => \^data_addr\(22),
+      D(303) => \^data_addr\(23),
+      D(302) => \^data_addr\(24),
+      D(301) => \^data_addr\(25),
+      D(300) => \^data_addr\(26),
+      D(299) => \^data_addr\(27),
+      D(298) => \^data_addr\(28),
+      D(297) => \^data_addr\(29),
+      D(296) => \^data_addr\(30),
+      D(295) => \^data_addr\(31),
+      D(294) => \^data_write\(0),
+      D(293) => \^data_write\(1),
+      D(292) => \^data_write\(2),
+      D(291) => \^data_write\(3),
+      D(290) => \^data_write\(4),
+      D(289) => \^data_write\(5),
+      D(288) => \^data_write\(6),
+      D(287) => \^data_write\(7),
+      D(286) => \^data_write\(8),
+      D(285) => \^data_write\(9),
+      D(284) => \^data_write\(10),
+      D(283) => \^data_write\(11),
+      D(282) => \^data_write\(12),
+      D(281) => \^data_write\(13),
+      D(280) => \^data_write\(14),
+      D(279) => \^data_write\(15),
+      D(278) => \^data_write\(16),
+      D(277) => \^data_write\(17),
+      D(276) => \^data_write\(18),
+      D(275) => \^data_write\(19),
+      D(274) => \^data_write\(20),
+      D(273) => \^data_write\(21),
+      D(272) => \^data_write\(22),
+      D(271) => \^data_write\(23),
+      D(270) => \^data_write\(24),
+      D(269) => \^data_write\(25),
+      D(268) => \^data_write\(26),
+      D(267) => \^data_write\(27),
+      D(266) => \^data_write\(28),
+      D(265) => \^data_write\(29),
+      D(264) => \^data_write\(30),
+      D(263) => \^data_write\(31),
+      D(262) => \^d_as\,
+      D(261) => \^read_strobe\,
+      D(260) => \^write_strobe\,
+      D(259) => \^byte_enable\(0),
+      D(258) => \^byte_enable\(1),
+      D(257) => \^byte_enable\(2),
+      D(256) => \^byte_enable\(3),
       D(255 downto 224) => \^m_axi_dp_awaddr\(31 downto 0),
       D(223) => \^m_axi_dp_awvalid\,
       D(222 downto 191) => \^m_axi_dp_wdata\(31 downto 0),
@@ -68449,7 +66710,6 @@ MicroBlaze_Core_I: entity work.microblaze_0_MicroBlaze_Core
       Ext_BRK => Ext_BRK,
       Ext_NM_BRK => Ext_NM_BRK,
       IReady => IReady,
-      IWAIT => IWAIT,
       Instr(0 to 31) => Instr(0 to 31),
       M_AXI_DP_ARREADY => M_AXI_DP_ARREADY,
       M_AXI_DP_AWREADY => M_AXI_DP_AWREADY,
@@ -68457,9 +66717,6 @@ MicroBlaze_Core_I: entity work.microblaze_0_MicroBlaze_Core
       M_AXI_DP_RDATA(31 downto 0) => M_AXI_DP_RDATA(31 downto 0),
       M_AXI_DP_RVALID => M_AXI_DP_RVALID,
       M_AXI_DP_WREADY => M_AXI_DP_WREADY,
-      M_AXI_IP_ARREADY => M_AXI_IP_ARREADY,
-      M_AXI_IP_RDATA(31 downto 0) => M_AXI_IP_RDATA(31 downto 0),
-      M_AXI_IP_RVALID => M_AXI_IP_RVALID,
       Mb_Reset => Mb_Reset,
       Reset => Reset,
       Reset_Mode(0 to 1) => Reset_Mode(0 to 1),
@@ -68490,25 +66747,6 @@ entity microblaze_0 is
     IWAIT : in STD_LOGIC;
     ICE : in STD_LOGIC;
     IUE : in STD_LOGIC;
-    M_AXI_IP_AWADDR : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_IP_AWPROT : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M_AXI_IP_AWVALID : out STD_LOGIC;
-    M_AXI_IP_AWREADY : in STD_LOGIC;
-    M_AXI_IP_WDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_IP_WSTRB : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_IP_WVALID : out STD_LOGIC;
-    M_AXI_IP_WREADY : in STD_LOGIC;
-    M_AXI_IP_BRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_IP_BVALID : in STD_LOGIC;
-    M_AXI_IP_BREADY : out STD_LOGIC;
-    M_AXI_IP_ARADDR : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_IP_ARPROT : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M_AXI_IP_ARVALID : out STD_LOGIC;
-    M_AXI_IP_ARREADY : in STD_LOGIC;
-    M_AXI_IP_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_IP_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_IP_RVALID : in STD_LOGIC;
-    M_AXI_IP_RREADY : out STD_LOGIC;
     Data_Addr : out STD_LOGIC_VECTOR ( 0 to 31 );
     Data_Read : in STD_LOGIC_VECTOR ( 0 to 31 );
     Data_Write : out STD_LOGIC_VECTOR ( 0 to 31 );
@@ -68545,7 +66783,7 @@ entity microblaze_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of microblaze_0 : entity is "microblaze_0,MicroBlaze,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of microblaze_0 : entity is "microblaze_0,MicroBlaze,{x_ipProduct=Vivado 2015.4.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=microblaze,x_ipVersion=9.5,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_SCO=0,C_FREQ=0,C_USE_CONFIG_RESET=0,C_NUM_SYNC_FF_CLK=2,C_NUM_SYNC_FF_CLK_IRQ=1,C_NUM_SYNC_FF_CLK_DEBUG=2,C_NUM_SYNC_FF_DBG_CLK=1,C_FAULT_TOLERANT=0,C_ECC_USE_CE_EXCEPTION=0,C_LOCKSTEP_SLAVE=0,C_ENDIANNESS=1,C_FAMILY=kintex7,C_DATA_SIZE=32,C_INSTANCE=microblaze_0,C_AVOID_PRIMITIVES=0,C_AREA_OPTIMIZED=1,C_OPTIMIZATION=0,C_INTERCONNECT=2,C_BASE_VECTORS=0x00000000,C_M_AXI_DP_THREAD_ID_WIDTH=1,C_M_AXI_DP_DATA_WIDTH=32,C_M_AXI_DP_ADDR_WIDTH=32,C_M_AXI_DP_EXCLUSIVE_ACCESS=0,C_M_AXI_D_BUS_EXCEPTION=0,C_M_AXI_IP_THREAD_ID_WIDTH=1,C_M_AXI_IP_DATA_WIDTH=32,C_M_AXI_IP_ADDR_WIDTH=32,C_M_AXI_I_BUS_EXCEPTION=0,C_D_LMB=1,C_D_AXI=1,C_I_LMB=1,C_I_AXI=1,C_USE_MSR_INSTR=0,C_USE_PCMP_INSTR=0,C_USE_BARREL=0,C_USE_DIV=0,C_USE_HW_MUL=0,C_USE_FPU=0,C_USE_REORDER_INSTR=0,C_UNALIGNED_EXCEPTIONS=0,C_ILL_OPCODE_EXCEPTION=0,C_DIV_ZERO_EXCEPTION=0,C_FPU_EXCEPTION=0,C_FSL_LINKS=0,C_USE_EXTENDED_FSL_INSTR=0,C_FSL_EXCEPTION=0,C_USE_STACK_PROTECTION=0,C_IMPRECISE_EXCEPTIONS=0,C_USE_INTERRUPT=0,C_USE_EXT_BRK=1,C_USE_EXT_NM_BRK=1,C_USE_MMU=0,C_MMU_DTLB_SIZE=2,C_MMU_ITLB_SIZE=1,C_MMU_TLB_ACCESS=3,C_MMU_ZONES=2,C_MMU_PRIVILEGED_INSTR=0,C_USE_BRANCH_TARGET_CACHE=0,C_BRANCH_TARGET_CACHE_SIZE=0,C_PC_WIDTH=32,C_PVR=0,C_PVR_USER1=0x00,C_PVR_USER2=0x00000000,C_DYNAMIC_BUS_SIZING=0,C_RESET_MSR=0x00000000,C_OPCODE_0x0_ILLEGAL=0,C_DEBUG_ENABLED=0,C_NUMBER_OF_PC_BRK=0,C_NUMBER_OF_RD_ADDR_BRK=0,C_NUMBER_OF_WR_ADDR_BRK=0,C_DEBUG_EVENT_COUNTERS=5,C_DEBUG_LATENCY_COUNTERS=1,C_DEBUG_COUNTER_WIDTH=32,C_DEBUG_TRACE_SIZE=8192,C_DEBUG_EXTERNAL_TRACE=0,C_DEBUG_PROFILE_SIZE=0,C_INTERRUPT_IS_EDGE=0,C_EDGE_IS_POSITIVE=1,C_ASYNC_INTERRUPT=1,C_M0_AXIS_DATA_WIDTH=32,C_S0_AXIS_DATA_WIDTH=32,C_M1_AXIS_DATA_WIDTH=32,C_S1_AXIS_DATA_WIDTH=32,C_M2_AXIS_DATA_WIDTH=32,C_S2_AXIS_DATA_WIDTH=32,C_M3_AXIS_DATA_WIDTH=32,C_S3_AXIS_DATA_WIDTH=32,C_M4_AXIS_DATA_WIDTH=32,C_S4_AXIS_DATA_WIDTH=32,C_M5_AXIS_DATA_WIDTH=32,C_S5_AXIS_DATA_WIDTH=32,C_M6_AXIS_DATA_WIDTH=32,C_S6_AXIS_DATA_WIDTH=32,C_M7_AXIS_DATA_WIDTH=32,C_S7_AXIS_DATA_WIDTH=32,C_M8_AXIS_DATA_WIDTH=32,C_S8_AXIS_DATA_WIDTH=32,C_M9_AXIS_DATA_WIDTH=32,C_S9_AXIS_DATA_WIDTH=32,C_M10_AXIS_DATA_WIDTH=32,C_S10_AXIS_DATA_WIDTH=32,C_M11_AXIS_DATA_WIDTH=32,C_S11_AXIS_DATA_WIDTH=32,C_M12_AXIS_DATA_WIDTH=32,C_S12_AXIS_DATA_WIDTH=32,C_M13_AXIS_DATA_WIDTH=32,C_S13_AXIS_DATA_WIDTH=32,C_M14_AXIS_DATA_WIDTH=32,C_S14_AXIS_DATA_WIDTH=32,C_M15_AXIS_DATA_WIDTH=32,C_S15_AXIS_DATA_WIDTH=32,C_ICACHE_BASEADDR=0x00000000,C_ICACHE_HIGHADDR=0x3fffffff,C_USE_ICACHE=0,C_ALLOW_ICACHE_WR=1,C_ADDR_TAG_BITS=0,C_CACHE_BYTE_SIZE=4096,C_ICACHE_LINE_LEN=4,C_ICACHE_ALWAYS_USED=0,C_ICACHE_STREAMS=0,C_ICACHE_VICTIMS=0,C_ICACHE_FORCE_TAG_LUTRAM=0,C_ICACHE_DATA_WIDTH=0,C_M_AXI_IC_THREAD_ID_WIDTH=1,C_M_AXI_IC_DATA_WIDTH=32,C_M_AXI_IC_ADDR_WIDTH=32,C_M_AXI_IC_USER_VALUE=31,C_M_AXI_IC_AWUSER_WIDTH=5,C_M_AXI_IC_ARUSER_WIDTH=5,C_M_AXI_IC_WUSER_WIDTH=1,C_M_AXI_IC_RUSER_WIDTH=1,C_M_AXI_IC_BUSER_WIDTH=1,C_DCACHE_BASEADDR=0x00000000,C_DCACHE_HIGHADDR=0x3fffffff,C_USE_DCACHE=0,C_ALLOW_DCACHE_WR=1,C_DCACHE_ADDR_TAG=0,C_DCACHE_BYTE_SIZE=4096,C_DCACHE_LINE_LEN=4,C_DCACHE_ALWAYS_USED=0,C_DCACHE_USE_WRITEBACK=0,C_DCACHE_VICTIMS=0,C_DCACHE_FORCE_TAG_LUTRAM=0,C_DCACHE_DATA_WIDTH=0,C_M_AXI_DC_THREAD_ID_WIDTH=1,C_M_AXI_DC_DATA_WIDTH=32,C_M_AXI_DC_ADDR_WIDTH=32,C_M_AXI_DC_EXCLUSIVE_ACCESS=0,C_M_AXI_DC_USER_VALUE=31,C_M_AXI_DC_AWUSER_WIDTH=5,C_M_AXI_DC_ARUSER_WIDTH=5,C_M_AXI_DC_WUSER_WIDTH=1,C_M_AXI_DC_RUSER_WIDTH=1,C_M_AXI_DC_BUSER_WIDTH=1}";
+  attribute core_generation_info of microblaze_0 : entity is "microblaze_0,MicroBlaze,{x_ipProduct=Vivado 2015.4.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=microblaze,x_ipVersion=9.5,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_SCO=0,C_FREQ=0,C_USE_CONFIG_RESET=0,C_NUM_SYNC_FF_CLK=2,C_NUM_SYNC_FF_CLK_IRQ=1,C_NUM_SYNC_FF_CLK_DEBUG=2,C_NUM_SYNC_FF_DBG_CLK=1,C_FAULT_TOLERANT=0,C_ECC_USE_CE_EXCEPTION=0,C_LOCKSTEP_SLAVE=0,C_ENDIANNESS=1,C_FAMILY=kintex7,C_DATA_SIZE=32,C_INSTANCE=microblaze_0,C_AVOID_PRIMITIVES=0,C_AREA_OPTIMIZED=1,C_OPTIMIZATION=0,C_INTERCONNECT=2,C_BASE_VECTORS=0x00000000,C_M_AXI_DP_THREAD_ID_WIDTH=1,C_M_AXI_DP_DATA_WIDTH=32,C_M_AXI_DP_ADDR_WIDTH=32,C_M_AXI_DP_EXCLUSIVE_ACCESS=0,C_M_AXI_D_BUS_EXCEPTION=0,C_M_AXI_IP_THREAD_ID_WIDTH=1,C_M_AXI_IP_DATA_WIDTH=32,C_M_AXI_IP_ADDR_WIDTH=32,C_M_AXI_I_BUS_EXCEPTION=0,C_D_LMB=1,C_D_AXI=1,C_I_LMB=1,C_I_AXI=0,C_USE_MSR_INSTR=0,C_USE_PCMP_INSTR=0,C_USE_BARREL=0,C_USE_DIV=0,C_USE_HW_MUL=0,C_USE_FPU=0,C_USE_REORDER_INSTR=0,C_UNALIGNED_EXCEPTIONS=0,C_ILL_OPCODE_EXCEPTION=0,C_DIV_ZERO_EXCEPTION=0,C_FPU_EXCEPTION=0,C_FSL_LINKS=0,C_USE_EXTENDED_FSL_INSTR=0,C_FSL_EXCEPTION=0,C_USE_STACK_PROTECTION=0,C_IMPRECISE_EXCEPTIONS=0,C_USE_INTERRUPT=0,C_USE_EXT_BRK=1,C_USE_EXT_NM_BRK=1,C_USE_MMU=0,C_MMU_DTLB_SIZE=2,C_MMU_ITLB_SIZE=1,C_MMU_TLB_ACCESS=3,C_MMU_ZONES=2,C_MMU_PRIVILEGED_INSTR=0,C_USE_BRANCH_TARGET_CACHE=0,C_BRANCH_TARGET_CACHE_SIZE=0,C_PC_WIDTH=32,C_PVR=0,C_PVR_USER1=0x00,C_PVR_USER2=0x00000000,C_DYNAMIC_BUS_SIZING=0,C_RESET_MSR=0x00000000,C_OPCODE_0x0_ILLEGAL=0,C_DEBUG_ENABLED=0,C_NUMBER_OF_PC_BRK=0,C_NUMBER_OF_RD_ADDR_BRK=0,C_NUMBER_OF_WR_ADDR_BRK=0,C_DEBUG_EVENT_COUNTERS=5,C_DEBUG_LATENCY_COUNTERS=1,C_DEBUG_COUNTER_WIDTH=32,C_DEBUG_TRACE_SIZE=8192,C_DEBUG_EXTERNAL_TRACE=0,C_DEBUG_PROFILE_SIZE=0,C_INTERRUPT_IS_EDGE=0,C_EDGE_IS_POSITIVE=1,C_ASYNC_INTERRUPT=1,C_M0_AXIS_DATA_WIDTH=32,C_S0_AXIS_DATA_WIDTH=32,C_M1_AXIS_DATA_WIDTH=32,C_S1_AXIS_DATA_WIDTH=32,C_M2_AXIS_DATA_WIDTH=32,C_S2_AXIS_DATA_WIDTH=32,C_M3_AXIS_DATA_WIDTH=32,C_S3_AXIS_DATA_WIDTH=32,C_M4_AXIS_DATA_WIDTH=32,C_S4_AXIS_DATA_WIDTH=32,C_M5_AXIS_DATA_WIDTH=32,C_S5_AXIS_DATA_WIDTH=32,C_M6_AXIS_DATA_WIDTH=32,C_S6_AXIS_DATA_WIDTH=32,C_M7_AXIS_DATA_WIDTH=32,C_S7_AXIS_DATA_WIDTH=32,C_M8_AXIS_DATA_WIDTH=32,C_S8_AXIS_DATA_WIDTH=32,C_M9_AXIS_DATA_WIDTH=32,C_S9_AXIS_DATA_WIDTH=32,C_M10_AXIS_DATA_WIDTH=32,C_S10_AXIS_DATA_WIDTH=32,C_M11_AXIS_DATA_WIDTH=32,C_S11_AXIS_DATA_WIDTH=32,C_M12_AXIS_DATA_WIDTH=32,C_S12_AXIS_DATA_WIDTH=32,C_M13_AXIS_DATA_WIDTH=32,C_S13_AXIS_DATA_WIDTH=32,C_M14_AXIS_DATA_WIDTH=32,C_S14_AXIS_DATA_WIDTH=32,C_M15_AXIS_DATA_WIDTH=32,C_S15_AXIS_DATA_WIDTH=32,C_ICACHE_BASEADDR=0x00000000,C_ICACHE_HIGHADDR=0x3fffffff,C_USE_ICACHE=0,C_ALLOW_ICACHE_WR=1,C_ADDR_TAG_BITS=0,C_CACHE_BYTE_SIZE=4096,C_ICACHE_LINE_LEN=4,C_ICACHE_ALWAYS_USED=0,C_ICACHE_STREAMS=0,C_ICACHE_VICTIMS=0,C_ICACHE_FORCE_TAG_LUTRAM=0,C_ICACHE_DATA_WIDTH=0,C_M_AXI_IC_THREAD_ID_WIDTH=1,C_M_AXI_IC_DATA_WIDTH=32,C_M_AXI_IC_ADDR_WIDTH=32,C_M_AXI_IC_USER_VALUE=31,C_M_AXI_IC_AWUSER_WIDTH=5,C_M_AXI_IC_ARUSER_WIDTH=5,C_M_AXI_IC_WUSER_WIDTH=1,C_M_AXI_IC_RUSER_WIDTH=1,C_M_AXI_IC_BUSER_WIDTH=1,C_DCACHE_BASEADDR=0x00000000,C_DCACHE_HIGHADDR=0x3fffffff,C_USE_DCACHE=0,C_ALLOW_DCACHE_WR=1,C_DCACHE_ADDR_TAG=0,C_DCACHE_BYTE_SIZE=4096,C_DCACHE_LINE_LEN=4,C_DCACHE_ALWAYS_USED=0,C_DCACHE_USE_WRITEBACK=0,C_DCACHE_VICTIMS=0,C_DCACHE_FORCE_TAG_LUTRAM=0,C_DCACHE_DATA_WIDTH=0,C_M_AXI_DC_THREAD_ID_WIDTH=1,C_M_AXI_DC_DATA_WIDTH=32,C_M_AXI_DC_ADDR_WIDTH=32,C_M_AXI_DC_EXCLUSIVE_ACCESS=0,C_M_AXI_DC_USER_VALUE=31,C_M_AXI_DC_AWUSER_WIDTH=5,C_M_AXI_DC_ARUSER_WIDTH=5,C_M_AXI_DC_WUSER_WIDTH=1,C_M_AXI_DC_RUSER_WIDTH=1,C_M_AXI_DC_BUSER_WIDTH=1}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of microblaze_0 : entity is "yes";
   attribute x_core_info : string;
@@ -68623,8 +66861,13 @@ architecture STRUCTURE of microblaze_0 is
   signal NLW_U0_M_AXI_IC_WLAST_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_M_AXI_IC_WVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_M_AXI_IP_ARLOCK_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_M_AXI_IP_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_M_AXI_IP_AWLOCK_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_M_AXI_IP_AWVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_M_AXI_IP_BREADY_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_M_AXI_IP_RREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_M_AXI_IP_WLAST_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_M_AXI_IP_WVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S0_AXIS_TREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S10_AXIS_TREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S11_AXIS_TREADY_UNCONNECTED : STD_LOGIC;
@@ -68753,18 +66996,24 @@ architecture STRUCTURE of microblaze_0 is
   signal NLW_U0_M_AXI_IC_WDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_M_AXI_IC_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_M_AXI_IC_WUSER_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_U0_M_AXI_IP_ARADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_M_AXI_IP_ARBURST_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_U0_M_AXI_IP_ARCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_M_AXI_IP_ARID_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_U0_M_AXI_IP_ARLEN_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_U0_M_AXI_IP_ARPROT_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_U0_M_AXI_IP_ARQOS_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_M_AXI_IP_ARSIZE_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_U0_M_AXI_IP_AWADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_M_AXI_IP_AWBURST_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_U0_M_AXI_IP_AWCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_M_AXI_IP_AWID_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_U0_M_AXI_IP_AWLEN_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_U0_M_AXI_IP_AWPROT_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_U0_M_AXI_IP_AWQOS_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_M_AXI_IP_AWSIZE_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_U0_M_AXI_IP_WDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_U0_M_AXI_IP_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_U0_Trace_Data_Address_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 31 );
   signal NLW_U0_Trace_Data_Byte_Enable_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 3 );
   signal NLW_U0_Trace_Data_Write_Value_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 31 );
@@ -68882,7 +67131,7 @@ architecture STRUCTURE of microblaze_0 is
   attribute C_INTERRUPT_IS_EDGE : integer;
   attribute C_INTERRUPT_IS_EDGE of U0 : label is 0;
   attribute C_I_AXI : integer;
-  attribute C_I_AXI of U0 : label is 1;
+  attribute C_I_AXI of U0 : label is 0;
   attribute C_I_LMB : integer;
   attribute C_I_LMB of U0 : label is 1;
   attribute C_LOCKSTEP_SLAVE : integer;
@@ -69361,43 +67610,43 @@ U0: entity work.microblaze_0_MicroBlaze
       M_AXI_IC_WSTRB(3 downto 0) => NLW_U0_M_AXI_IC_WSTRB_UNCONNECTED(3 downto 0),
       M_AXI_IC_WUSER(0) => NLW_U0_M_AXI_IC_WUSER_UNCONNECTED(0),
       M_AXI_IC_WVALID => NLW_U0_M_AXI_IC_WVALID_UNCONNECTED,
-      M_AXI_IP_ARADDR(31 downto 0) => M_AXI_IP_ARADDR(31 downto 0),
+      M_AXI_IP_ARADDR(31 downto 0) => NLW_U0_M_AXI_IP_ARADDR_UNCONNECTED(31 downto 0),
       M_AXI_IP_ARBURST(1 downto 0) => NLW_U0_M_AXI_IP_ARBURST_UNCONNECTED(1 downto 0),
       M_AXI_IP_ARCACHE(3 downto 0) => NLW_U0_M_AXI_IP_ARCACHE_UNCONNECTED(3 downto 0),
       M_AXI_IP_ARID(0) => NLW_U0_M_AXI_IP_ARID_UNCONNECTED(0),
       M_AXI_IP_ARLEN(7 downto 0) => NLW_U0_M_AXI_IP_ARLEN_UNCONNECTED(7 downto 0),
       M_AXI_IP_ARLOCK => NLW_U0_M_AXI_IP_ARLOCK_UNCONNECTED,
-      M_AXI_IP_ARPROT(2 downto 0) => M_AXI_IP_ARPROT(2 downto 0),
+      M_AXI_IP_ARPROT(2 downto 0) => NLW_U0_M_AXI_IP_ARPROT_UNCONNECTED(2 downto 0),
       M_AXI_IP_ARQOS(3 downto 0) => NLW_U0_M_AXI_IP_ARQOS_UNCONNECTED(3 downto 0),
-      M_AXI_IP_ARREADY => M_AXI_IP_ARREADY,
+      M_AXI_IP_ARREADY => '0',
       M_AXI_IP_ARSIZE(2 downto 0) => NLW_U0_M_AXI_IP_ARSIZE_UNCONNECTED(2 downto 0),
-      M_AXI_IP_ARVALID => M_AXI_IP_ARVALID,
-      M_AXI_IP_AWADDR(31 downto 0) => M_AXI_IP_AWADDR(31 downto 0),
+      M_AXI_IP_ARVALID => NLW_U0_M_AXI_IP_ARVALID_UNCONNECTED,
+      M_AXI_IP_AWADDR(31 downto 0) => NLW_U0_M_AXI_IP_AWADDR_UNCONNECTED(31 downto 0),
       M_AXI_IP_AWBURST(1 downto 0) => NLW_U0_M_AXI_IP_AWBURST_UNCONNECTED(1 downto 0),
       M_AXI_IP_AWCACHE(3 downto 0) => NLW_U0_M_AXI_IP_AWCACHE_UNCONNECTED(3 downto 0),
       M_AXI_IP_AWID(0) => NLW_U0_M_AXI_IP_AWID_UNCONNECTED(0),
       M_AXI_IP_AWLEN(7 downto 0) => NLW_U0_M_AXI_IP_AWLEN_UNCONNECTED(7 downto 0),
       M_AXI_IP_AWLOCK => NLW_U0_M_AXI_IP_AWLOCK_UNCONNECTED,
-      M_AXI_IP_AWPROT(2 downto 0) => M_AXI_IP_AWPROT(2 downto 0),
+      M_AXI_IP_AWPROT(2 downto 0) => NLW_U0_M_AXI_IP_AWPROT_UNCONNECTED(2 downto 0),
       M_AXI_IP_AWQOS(3 downto 0) => NLW_U0_M_AXI_IP_AWQOS_UNCONNECTED(3 downto 0),
-      M_AXI_IP_AWREADY => M_AXI_IP_AWREADY,
+      M_AXI_IP_AWREADY => '0',
       M_AXI_IP_AWSIZE(2 downto 0) => NLW_U0_M_AXI_IP_AWSIZE_UNCONNECTED(2 downto 0),
-      M_AXI_IP_AWVALID => M_AXI_IP_AWVALID,
+      M_AXI_IP_AWVALID => NLW_U0_M_AXI_IP_AWVALID_UNCONNECTED,
       M_AXI_IP_BID(0) => '0',
-      M_AXI_IP_BREADY => M_AXI_IP_BREADY,
-      M_AXI_IP_BRESP(1 downto 0) => M_AXI_IP_BRESP(1 downto 0),
-      M_AXI_IP_BVALID => M_AXI_IP_BVALID,
-      M_AXI_IP_RDATA(31 downto 0) => M_AXI_IP_RDATA(31 downto 0),
+      M_AXI_IP_BREADY => NLW_U0_M_AXI_IP_BREADY_UNCONNECTED,
+      M_AXI_IP_BRESP(1 downto 0) => B"00",
+      M_AXI_IP_BVALID => '0',
+      M_AXI_IP_RDATA(31 downto 0) => B"00000000000000000000000000000000",
       M_AXI_IP_RID(0) => '0',
       M_AXI_IP_RLAST => '0',
-      M_AXI_IP_RREADY => M_AXI_IP_RREADY,
-      M_AXI_IP_RRESP(1 downto 0) => M_AXI_IP_RRESP(1 downto 0),
-      M_AXI_IP_RVALID => M_AXI_IP_RVALID,
-      M_AXI_IP_WDATA(31 downto 0) => M_AXI_IP_WDATA(31 downto 0),
+      M_AXI_IP_RREADY => NLW_U0_M_AXI_IP_RREADY_UNCONNECTED,
+      M_AXI_IP_RRESP(1 downto 0) => B"00",
+      M_AXI_IP_RVALID => '0',
+      M_AXI_IP_WDATA(31 downto 0) => NLW_U0_M_AXI_IP_WDATA_UNCONNECTED(31 downto 0),
       M_AXI_IP_WLAST => NLW_U0_M_AXI_IP_WLAST_UNCONNECTED,
-      M_AXI_IP_WREADY => M_AXI_IP_WREADY,
-      M_AXI_IP_WSTRB(3 downto 0) => M_AXI_IP_WSTRB(3 downto 0),
-      M_AXI_IP_WVALID => M_AXI_IP_WVALID,
+      M_AXI_IP_WREADY => '0',
+      M_AXI_IP_WSTRB(3 downto 0) => NLW_U0_M_AXI_IP_WSTRB_UNCONNECTED(3 downto 0),
+      M_AXI_IP_WVALID => NLW_U0_M_AXI_IP_WVALID_UNCONNECTED,
       Mb_Reset => '0',
       Read_Strobe => Read_Strobe,
       Reset => Reset,

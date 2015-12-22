@@ -1593,7 +1593,7 @@
       <spirit:vendorExtensions>
         <xilinx:busInterfaceInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.M_AXI_IP" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="BUSIF_ENABLEMENT.M_AXI_IP" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:busInterfaceInfo>
       </spirit:vendorExtensions>
@@ -7812,7 +7812,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -7820,7 +7820,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -7828,7 +7828,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:49:59 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:21 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -7847,7 +7847,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -7855,7 +7855,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -7863,7 +7863,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:03 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:21 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -7881,7 +7881,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -7889,7 +7889,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -7897,7 +7897,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:03 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:21 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -7916,7 +7916,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -7924,7 +7924,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -7932,7 +7932,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:03 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:21 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -7951,7 +7951,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>5e51ce87</spirit:value>
+            <spirit:value>fc742536</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -7959,7 +7959,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -7967,7 +7967,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:04 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -7986,7 +7986,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>5e51ce87</spirit:value>
+            <spirit:value>fc742536</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -7994,7 +7994,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -8002,7 +8002,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:04 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -8020,7 +8020,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -8028,7 +8028,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -8036,7 +8036,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:04 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -8054,7 +8054,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -8062,7 +8062,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -8070,7 +8070,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:50:04 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:44:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -8088,7 +8088,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>575f92c6</spirit:value>
+            <spirit:value>61754265</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -8096,7 +8096,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>f44ae47f</spirit:value>
+            <spirit:value>37e7940f</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -8104,7 +8104,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Dec 21 14:51:06 UTC 2015</spirit:value>
+            <spirit:value>Mon Dec 21 15:45:47 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -8839,7 +8839,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWADDR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWADDR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -8979,7 +8979,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWPROT" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWPROT" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9023,7 +9023,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9046,7 +9046,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_AWREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9070,7 +9070,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WDATA" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WDATA" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9094,7 +9094,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WSTRB" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WSTRB" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9134,7 +9134,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9157,7 +9157,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_WREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9211,7 +9211,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_BRESP" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_BRESP" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9234,7 +9234,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_BVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_BVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9254,7 +9254,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_BREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_BREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9302,7 +9302,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARADDR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARADDR" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9442,7 +9442,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARPROT" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARPROT" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9486,7 +9486,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9509,7 +9509,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_ARREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9563,7 +9563,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RDATA" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RDATA" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9590,7 +9590,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RRESP" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RRESP" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9636,7 +9636,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RVALID" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -9656,7 +9656,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.M_AXI_IP_RREADY" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERCONNECT&apos;)) >= 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_I_AXI&apos;)) = 1) and ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LOCKSTEP_SLAVE&apos;)) = 0) or (spirit:decode(id(&apos;PARAM_VALUE.C_IP_AXI_MON&apos;)) = 0)))">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -17794,7 +17794,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_I_AXI</spirit:name>
         <spirit:displayName>Enable Peripheral AXI Instruction Interface</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_I_AXI" spirit:choiceRef="choice_pairs_4873554b">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_I_AXI" spirit:choiceRef="choice_pairs_4873554b">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_MSR_INSTR</spirit:name>
@@ -19328,7 +19328,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     <spirit:parameter>
       <spirit:name>C_I_AXI</spirit:name>
       <spirit:displayName>Enable Peripheral AXI Instruction Interface</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_I_AXI" spirit:choiceRef="choice_pairs_4873554b" spirit:order="8060" spirit:configGroups="8 NoDisplay">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_I_AXI" spirit:choiceRef="choice_pairs_4873554b" spirit:order="8060" spirit:configGroups="8 NoDisplay">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
